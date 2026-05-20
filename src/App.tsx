@@ -525,8 +525,8 @@ function ReclamiSection() {
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-4">
-          <button className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-[#0f3328] text-white px-8 py-4 font-bold hover:bg-[#154737] transition-all duration-300">Scarica procedura reclami</button>
-          <button className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 font-bold text-slate-700 hover:bg-slate-50 transition-all duration-300">Scarica modulo reclamo</button>
+          <a href="/documenti/procedura-reclami.pdf" target="_blank" rel="noopener noreferrer" className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-[#0f3328] text-white px-8 py-4 font-bold hover:bg-[#154737] transition-all duration-300">Scarica procedura reclami</a>
+          <a href="/documenti/modulo-reclamo.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 font-bold text-slate-700 hover:bg-slate-50 transition-all duration-300">Scarica modulo reclamo</a>
         </div>
       </div>
     </section>
@@ -574,6 +574,7 @@ function PrivatiView({ activeDetail, setActiveDetail, goHome }: { activeDetail: 
 function SectionView({ accent, eyebrow, title, subtitle, heroTitle, heroText, heroButton, activeDetail, setActiveDetail, goHome, primaryKey, primaryDetail, cards, details, gridTitle }: { accent: Accent; eyebrow: string; title: string; subtitle: string; heroTitle: string; heroText: string; heroButton: string; activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void; primaryKey: string | null; primaryDetail: React.ReactNode; cards: CardData[]; details: Record<string, DetailData>; gridTitle: string }) {
   const style = accents[accent];
   const viewId = accent === "blue" ? "professionisti" : accent === "green" ? "aziende" : "privati";
+  const [questionariOpen, setQuestionariOpen] = React.useState(false);
 
   const openDetail = (key: string) => {
     setActiveDetail(activeDetail === key ? null : key);
@@ -581,6 +582,12 @@ function SectionView({ accent, eyebrow, title, subtitle, heroTitle, heroText, he
       document.getElementById(`detail-${key}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 160);
   };
+
+  const questionari = [
+    { title: "Architetti, Ingegneri e Geometri", href: "/documenti/questionario-architetti-ingegneri-geometri.pdf" },
+    { title: "Avvocati", href: "/documenti/questionario-avvocati.pdf" },
+    { title: "Commercialisti", href: "/documenti/questionario-commercialisti.pdf" },
+  ];
 
   return (
     <section id={`view-${viewId}`} className="bg-white rounded-[2rem] border border-slate-200 p-10 lg:p-14 shadow-sm mb-10 sigma-reveal scroll-mt-28">
@@ -597,9 +604,16 @@ function SectionView({ accent, eyebrow, title, subtitle, heroTitle, heroText, he
             <h3 className="text-4xl lg:text-5xl font-black tracking-[-0.04em] leading-[0.95] mb-8">{heroTitle}</h3>
             <p className="text-xl text-white/80 leading-relaxed mb-8 max-w-3xl">{heroText}</p>
             {primaryKey && (
-              <button onClick={() => setActiveDetail(activeDetail === primaryKey ? null : primaryKey)} className="sigma-button-motion inline-flex rounded-full bg-white text-[#0f172a] px-8 py-4 font-bold hover:bg-slate-100 transition-all duration-300">
-                {activeDetail === primaryKey ? "Chiudi approfondimento" : heroButton}
-              </button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button onClick={() => setActiveDetail(activeDetail === primaryKey ? null : primaryKey)} className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-white text-[#0f172a] px-8 py-4 font-bold hover:bg-slate-100 transition-all duration-300">
+                  {activeDetail === primaryKey ? "Chiudi approfondimento" : heroButton}
+                </button>
+                {viewId === "professionisti" && (
+                  <button onClick={() => setQuestionariOpen(!questionariOpen)} className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur px-8 py-4 font-bold text-white hover:bg-white/15 transition-all duration-300">
+                    Scarica questionario
+                  </button>
+                )}
+              </div>
             )}
           </div>
           <div className="space-y-4">
@@ -614,6 +628,21 @@ function SectionView({ accent, eyebrow, title, subtitle, heroTitle, heroText, he
           </div>
         </div>
       </div>
+      {viewId === "professionisti" && questionariOpen && (
+        <div className="rounded-[2rem] border border-slate-200 bg-[#f8fafc] p-8 mb-10 sigma-reveal">
+          <div className="text-sm uppercase tracking-[0.2em] font-bold text-[#243c7b] mb-4">Questionari professionisti</div>
+          <h3 className="text-3xl font-black tracking-[-0.03em] mb-4">Scarica il questionario dedicato alla tua categoria.</h3>
+          <p className="text-slate-600 leading-relaxed mb-6">I documenti potranno essere compilati e inviati a Sigma Studi Brescia per una valutazione più mirata della copertura professionale.</p>
+          <div className="grid md:grid-cols-3 gap-4">
+            {questionari.map((item) => (
+              <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" className="rounded-2xl bg-white border border-slate-200 p-5 font-bold text-slate-800 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+                {item.title}
+                <span className="block text-sm font-semibold text-[#243c7b] mt-3">Scarica PDF →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
       {primaryKey && activeDetail === primaryKey && primaryDetail}
       <DetailGrid title={gridTitle} cards={cards} active={activeDetail} setActive={setActiveDetail} activeBorder={style.border} details={details} />
     </section>
