@@ -450,7 +450,7 @@ function AutomotiveAffinitySection() {
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
           {items.map(([cardTitle, cardText]) => (
-            <div key={cardTitle} className="sigma-float-card rounded-[2rem] bg-[#f8fafc] border border-slate-200 p-7">
+            <div key={cardTitle} className="rounded-[2rem] bg-[#f8fafc] border border-slate-200 p-7">
               <h3 className="text-2xl font-extrabold mb-3">{cardTitle}</h3>
               <p className="text-slate-600 leading-relaxed">{cardText}</p>
             </div>
