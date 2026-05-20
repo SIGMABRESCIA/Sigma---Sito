@@ -214,11 +214,17 @@ export default function SigmaWebsiteMockup() {
   const goTo = (view: View) => {
     setActiveView(view);
     setMobileMenuOpen(false);
-    window.setTimeout(() => {
-      if (view === "home") {
+
+    if (view === "home") {
+      window.history.replaceState(null, "", window.location.pathname);
+      window.setTimeout(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
-        return;
-      }
+      }, 120);
+      return;
+    }
+
+    window.history.replaceState(null, "", `${window.location.pathname}#${view}`);
+    window.setTimeout(() => {
       document.getElementById(`view-${view}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 180);
   };
@@ -226,9 +232,11 @@ export default function SigmaWebsiteMockup() {
   const goToSection = (sectionId: string) => {
     setActiveView("home");
     setMobileMenuOpen(false);
+    window.history.replaceState(null, "", `${window.location.pathname}#${sectionId}`);
+
     window.setTimeout(() => {
       document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 250);
+    }, 300);
   };
 
   return (
