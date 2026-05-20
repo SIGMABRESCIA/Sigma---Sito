@@ -2,6 +2,7 @@ import React from "react";
 import {
   Building2,
   BriefcaseBusiness,
+  Car,
   Home,
   ShieldCheck,
   Handshake,
@@ -30,7 +31,14 @@ type CardData = {
   text: string;
 };
 
-const accents: Record<Accent, { text: string; bg: string; border: string; gradient: string }> = {
+type AccentStyle = {
+  text: string;
+  bg: string;
+  border: string;
+  gradient: string;
+};
+
+const accents: Record<Accent, AccentStyle> = {
   blue: {
     text: "text-[#243c7b]",
     bg: "bg-[#eef2ff]",
@@ -198,7 +206,6 @@ export default function SigmaWebsiteMockup() {
   const [activePrivateDetail, setActivePrivateDetail] = React.useState<Detail>(null);
 
   React.useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
     setActiveProfessionalDetail(null);
     setActiveBusinessDetail(null);
     setActivePrivateDetail(null);
@@ -207,13 +214,28 @@ export default function SigmaWebsiteMockup() {
   const goTo = (view: View) => {
     setActiveView(view);
     setMobileMenuOpen(false);
+    window.setTimeout(() => {
+      if (view === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      document.getElementById(`view-${view}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 180);
+  };
+
+  const goToSection = (sectionId: string) => {
+    setActiveView("home");
+    setMobileMenuOpen(false);
+    window.setTimeout(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 250);
   };
 
   return (
     <div className="min-h-screen bg-[#f6f7f7] text-slate-900">
       <MotionStyles />
-      <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} goTo={goTo} />
-      <Hero />
+      <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} goTo={goTo} goToSection={goToSection} />
+      <Hero goTo={goTo} goToSection={goToSection} />
       <main className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
         {activeView === "home" && <HomeView goTo={goTo} />}
         {activeView === "professionisti" && <ProfessionistiView activeDetail={activeProfessionalDetail} setActiveDetail={setActiveProfessionalDetail} goHome={() => goTo("home")} />}
@@ -245,7 +267,7 @@ function MotionStyles() {
   );
 }
 
-function Header({ mobileMenuOpen, setMobileMenuOpen, goTo }: { mobileMenuOpen: boolean; setMobileMenuOpen: (value: boolean) => void; goTo: (view: View) => void }) {
+function Header({ mobileMenuOpen, setMobileMenuOpen, goTo, goToSection }: { mobileMenuOpen: boolean; setMobileMenuOpen: (value: boolean) => void; goTo: (view: View) => void; goToSection: (sectionId: string) => void }) {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-white/60 shadow-[0_8px_30px_rgba(15,23,42,0.04)] transition-all duration-500">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -254,9 +276,10 @@ function Header({ mobileMenuOpen, setMobileMenuOpen, goTo }: { mobileMenuOpen: b
           <button onClick={() => goTo("home")} className="hover:text-[#008f4c] transition">Home</button>
           <button onClick={() => goTo("professionisti")} className="hover:text-[#243c7b] transition">Professionisti</button>
           <button onClick={() => goTo("aziende")} className="hover:text-[#0f7a43] transition">Aziende</button>
-          <a href="#convenzioni" className="hover:text-[#9a5b16] transition">Convenzioni</a>
-          <a href="#contatti" className="hover:text-[#008f4c] transition">Contatti</a>
-          <button className="hover:text-[#008f4c] transition">Reclami</button>
+          <button onClick={() => goToSection("automotive")} className="hover:text-[#008f4c] transition">Automotive</button>
+          <button onClick={() => goToSection("convenzioni")} className="hover:text-[#9a5b16] transition">Convenzioni</button>
+          <button onClick={() => goToSection("contatti")} className="hover:text-[#008f4c] transition">Contatti</button>
+          <button onClick={() => goToSection("reclami")} className="hover:text-[#008f4c] transition">Reclami</button>
         </nav>
         <button className="hidden md:flex items-center gap-2 rounded-full border border-[#008f4c] px-5 py-2 text-sm font-semibold text-[#008f4c] hover:bg-[#e8f5ef] transition">
           <UserRound size={18} /> Area riservata
@@ -270,16 +293,17 @@ function Header({ mobileMenuOpen, setMobileMenuOpen, goTo }: { mobileMenuOpen: b
           <button onClick={() => goTo("home")} className="block font-semibold">Home</button>
           <button onClick={() => goTo("professionisti")} className="block font-semibold">Professionisti</button>
           <button onClick={() => goTo("aziende")} className="block font-semibold">Aziende</button>
-          <a href="#convenzioni" className="block font-semibold">Convenzioni</a>
-          <a href="#contatti" className="block font-semibold">Contatti</a>
-          <button className="block font-semibold">Reclami</button>
+          <button onClick={() => goToSection("automotive")} className="block font-semibold">Automotive</button>
+          <button onClick={() => goToSection("convenzioni")} className="block font-semibold">Convenzioni</button>
+          <button onClick={() => goToSection("contatti")} className="block font-semibold">Contatti</button>
+          <button onClick={() => goToSection("reclami")} className="block font-semibold">Reclami</button>
         </div>
       )}
     </header>
   );
 }
 
-function Hero() {
+function Hero({ goTo, goToSection }: { goTo: (view: View) => void; goToSection: (sectionId: string) => void }) {
   return (
     <section id="home" className="relative overflow-hidden bg-[#071f19] text-white">
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1800&auto=format&fit=crop')] bg-cover bg-center opacity-30 scale-[1.03]" />
@@ -292,19 +316,11 @@ function Hero() {
           <div className="inline-flex items-center gap-3 rounded-full bg-white/10 backdrop-blur-xl px-5 py-3 text-sm font-semibold text-[#b8f2d3] mb-10 border border-white/10 shadow-[0_10px_40px_rgba(255,255,255,0.05)]">
             <ShieldCheck size={18} /> Consulenza assicurativa evoluta per aziende, professionisti e patrimoni
           </div>
-          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black tracking-[-0.065em] leading-[0.88] mb-10 max-w-6xl text-white">
-            Protezione assicurativa progettata intorno ai rischi reali.
-          </h1>
-          <p className="text-xl lg:text-2xl text-white/72 leading-relaxed mb-12 max-w-4xl">
-            Analizziamo responsabilità, continuità operativa, patrimonio ed esposizioni concrete per costruire coperture più coerenti, sostenibili e realmente utili nel momento in cui servono.
-          </p>
+          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black tracking-[-0.065em] leading-[0.88] mb-10 max-w-6xl text-white">Protezione assicurativa progettata intorno ai rischi reali.</h1>
+          <p className="text-xl lg:text-2xl text-white/72 leading-relaxed mb-12 max-w-4xl">Analizziamo responsabilità, continuità operativa, patrimonio ed esposizioni concrete per costruire coperture più coerenti, sostenibili e realmente utili nel momento in cui servono.</p>
           <div className="flex flex-col sm:flex-row gap-5 mb-16">
-            <a href="#contatti" className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-white text-[#0f3328] px-9 py-5 font-bold text-base hover:bg-slate-100 transition shadow-[0_18px_60px_rgba(0,0,0,0.18)]">
-              Richiedi una revisione assicurativa
-            </a>
-            <a href="#professionisti" className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/10 backdrop-blur-xl px-9 py-5 font-bold text-white hover:bg-white/15 transition-all duration-300">
-              Esplora le soluzioni
-            </a>
+            <button onClick={() => goToSection("contatti")} className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-white text-[#0f3328] px-9 py-5 font-bold text-base hover:bg-slate-100 transition shadow-[0_18px_60px_rgba(0,0,0,0.18)]">Richiedi una revisione assicurativa</button>
+            <button onClick={() => goTo("professionisti")} className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/10 backdrop-blur-xl px-9 py-5 font-bold text-white hover:bg-white/15 transition-all duration-300">Esplora le soluzioni</button>
           </div>
           <div className="grid sm:grid-cols-3 gap-4 max-w-5xl sigma-delay-2 sigma-reveal">
             <HeroMetric value="50+" label="Esperienza" text="Oltre cinquant’anni di affiancamento a imprese, studi professionali e famiglie." />
@@ -343,8 +359,10 @@ function HomeView({ goTo }: { goTo: (view: View) => void }) {
         </div>
       </section>
       <ConvenzioniSection />
+      <AutomotiveAffinitySection />
       <WhySigmaSection />
       <ContactSection />
+      <ReclamiSection />
     </>
   );
 }
@@ -396,6 +414,116 @@ function ConvenzioniSection() {
   );
 }
 
+function AutomotiveAffinitySection() {
+  const items = [
+    ["Convenzioni CVT", "Programmi dedicati per coperture corpi veicoli terrestri e garanzie accessorie."],
+    ["Partnership dealer", "Soluzioni pensate per concessionari, gruppi automotive e reti vendita."],
+    ["Compagnie primarie", "Accesso a convenzioni e prodotti sviluppati con partner assicurativi qualificati."],
+    ["Fidelizzazione cliente", "Coperture integrate nel percorso di acquisto e nella relazione post vendita."],
+  ];
+
+  return (
+    <section id="automotive" className="bg-white rounded-[2.5rem] border border-slate-200 p-10 lg:p-16 mb-16 overflow-hidden relative shadow-sm sigma-reveal scroll-mt-28">
+      <div className="absolute -right-24 -top-24 w-96 h-96 bg-[#e8f5ef] rounded-full blur-3xl opacity-80" />
+      <div className="relative z-10 grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
+        <div>
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#eefaf3] text-[#008f4c] px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] mb-6"><Car size={18} /> Affinity & Automotive</div>
+          <h2 className="text-4xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.95] mb-8">Programmi assicurativi per concessionari e settore automotive.</h2>
+          <p className="text-xl text-slate-600 leading-relaxed mb-8">Affianchiamo realtà automotive e dealer nella costruzione di convenzioni assicurative dedicate alla vendita di coperture CVT, con il supporto di primarie compagnie e soluzioni integrate nel percorso post vendita.</p>
+          <div className="flex flex-wrap gap-2">
+            {["CVT", "Dealer", "Concessionari", "Affinity", "Post vendita"].map((item) => (
+              <span key={item} className="rounded-full bg-[#eefaf3] px-4 py-2 text-sm font-bold text-[#0f7a43]">{item}</span>
+            ))}
+          </div>
+        </div>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {items.map(([cardTitle, cardText]) => (
+            <div key={cardTitle} className="sigma-float-card rounded-[2rem] bg-[#f8fafc] border border-slate-200 p-7">
+              <h3 className="text-2xl font-extrabold mb-3">{cardTitle}</h3>
+              <p className="text-slate-600 leading-relaxed">{cardText}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ReclamiSection() {
+  const requiredInfo = ["Estremi del ricorrente", "Data e luogo di presentazione del reclamo", "Motivi del reclamo", "Documentazione eventualmente utile"];
+
+  return (
+    <section id="reclami" className="bg-white rounded-[2.5rem] border border-slate-200 p-10 lg:p-14 mb-16 shadow-sm scroll-mt-28 sigma-reveal overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-[#eefaf3] rounded-full blur-3xl opacity-60" />
+      <div className="relative z-10 max-w-6xl">
+        <div className="inline-flex rounded-full bg-[#eefaf3] text-[#0f7a43] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6">Reclami</div>
+        <h2 className="text-4xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.95] mb-8">Gestione reclami e tutela degli utenti.</h2>
+        <div className="max-w-5xl space-y-6 text-slate-600 leading-relaxed text-lg mb-14">
+          <p>La soddisfazione dei propri clienti e collaboratori è al centro delle priorità di Sigma Studi Brescia Srl.</p>
+          <p>A seguito del Provvedimento IVASS n. 46 del 3 maggio 2016 Sigma Studi Brescia Srl ha istituito una funzione e una procedura specifica di gestione degli eventuali reclami da parte degli utenti, secondo gli standard di qualità previsti per il settore assicurativo.</p>
+          <p>Per reclamo si intende una dichiarazione di insoddisfazione presentata in forma scritta nei confronti di un’impresa di assicurazione o di un intermediario assicurativo relativamente a un contratto o a un servizio assicurativo.</p>
+          <p>Ogni segnalazione viene considerata come un’opportunità per migliorare la qualità del servizio e rafforzare trasparenza, correttezza e imparzialità nella gestione dei rapporti con clienti e collaboratori.</p>
+        </div>
+        <div className="grid lg:grid-cols-2 gap-6 mb-10">
+          <div className="rounded-[2rem] bg-[#f8fafc] border border-slate-200 p-8">
+            <div className="text-sm uppercase tracking-[0.2em] font-bold text-[#0f7a43] mb-5">Come presentare un reclamo</div>
+            <p className="text-slate-600 leading-relaxed mb-6">Eventuali reclami inerenti il rapporto contrattuale o la gestione dei sinistri dovranno essere inoltrati in forma scritta utilizzando uno dei seguenti canali.</p>
+            <div className="space-y-5 text-slate-700">
+              <div>
+                <div className="font-bold mb-2">E-mail</div>
+                <div className="space-y-1 text-slate-600">
+                  <div>reclami@sigmabrescia.it</div>
+                  <div>sigmabrescia@pec.sigmabrescia.it</div>
+                </div>
+              </div>
+              <div>
+                <div className="font-bold mb-2">Posta ordinaria o raccomandata</div>
+                <div className="text-slate-600 leading-relaxed">SIGMA STUDI SRL - Ufficio Reclami<br />Via Malta 12/N<br />25124 Brescia</div>
+              </div>
+            </div>
+          </div>
+          <div className="rounded-[2rem] bg-[#0f172a] text-white p-8 overflow-hidden relative">
+            <div className="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-white/10 blur-3xl" />
+            <div className="relative z-10">
+              <div className="text-sm uppercase tracking-[0.2em] font-bold text-[#8ee0b5] mb-5">Informazioni richieste</div>
+              <p className="text-white/75 leading-relaxed mb-6">I reclami dovranno contenere le seguenti informazioni oppure essere presentati tramite il modulo dedicato.</p>
+              <div className="space-y-3">
+                {requiredInfo.map((item) => (
+                  <div key={item} className="rounded-xl border border-white/10 bg-white/5 px-4 py-4 text-white/85 font-medium">{item}</div>
+                ))}
+              </div>
+              <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div className="text-sm uppercase tracking-[0.2em] text-white/45 mb-2">Tempistiche</div>
+                <p className="text-white/80 leading-relaxed">La Società invierà riscontro entro 45 giorni dal ricevimento del reclamo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-8 lg:p-10 shadow-sm mb-10">
+          <div className="text-sm uppercase tracking-[0.2em] font-bold text-[#243c7b] mb-5">Tutela dell’utente</div>
+          <div className="space-y-5 text-slate-600 leading-relaxed">
+            <p>Qualora il reclamante non dovesse ritenersi soddisfatto dell’esito del reclamo oppure in caso di mancato riscontro entro 45 giorni, potrà rivolgersi a:</p>
+            <div className="rounded-2xl bg-[#f8fafc] border border-slate-200 p-6">
+              <div className="font-bold text-slate-900 mb-3">IVASS - Servizio Vigilanza Intermediari</div>
+              <div className="space-y-1 text-slate-600">
+                <div>Via del Quirinale 21 - 00187 Roma</div>
+                <div>PEC: ivass@pec.ivass.it</div>
+                <div>Fax: 06 42133206</div>
+                <div>www.ivass.it</div>
+              </div>
+            </div>
+            <p>È inoltre possibile presentare ricorso all’Arbitro Assicurativo tramite il portale dedicato oppure utilizzare gli strumenti alternativi di risoluzione delle controversie previsti dalla normativa vigente e indicati nei DIP aggiuntivi.</p>
+          </div>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <button className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-[#0f3328] text-white px-8 py-4 font-bold hover:bg-[#154737] transition-all duration-300">Scarica procedura reclami</button>
+          <button className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 font-bold text-slate-700 hover:bg-slate-50 transition-all duration-300">Scarica modulo reclamo</button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function MethodItem({ title, text }: { title: string; text: string }) {
   return (
     <div>
@@ -423,27 +551,30 @@ function SolutionCard({ icon, title, text, tags, color, onClick }: { icon: React
 }
 
 function ProfessionistiView({ activeDetail, setActiveDetail, goHome }: { activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void }) {
-  return (
-    <SectionView accent="blue" eyebrow="Soluzioni per Professionisti" title="Protezione dedicata a studi, consulenti e professionisti." subtitle="Coperture costruite intorno all’attività professionale, alla responsabilità e alla continuità dello studio." heroTitle="RC Professionale" heroText="Coperture dedicate a studi e professionisti che desiderano tutelare attività e patrimonio." heroButton="Approfondisci RC Professionale" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey="rc" primaryDetail={<RcProfessionaleDetail />} cards={professionalCards} details={professionalDetails} gridTitle="Altre soluzioni per completare la protezione professionale." />
-  );
+  return <SectionView accent="blue" eyebrow="Soluzioni per Professionisti" title="Protezione dedicata a studi, consulenti e professionisti." subtitle="Coperture costruite intorno all’attività professionale, alla responsabilità e alla continuità dello studio." heroTitle="RC Professionale" heroText="Coperture dedicate a studi e professionisti che desiderano tutelare attività e patrimonio." heroButton="Approfondisci RC Professionale" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey="rc" primaryDetail={<RcProfessionaleDetail />} cards={professionalCards} details={professionalDetails} gridTitle="Altre soluzioni per completare la protezione professionale." />;
 }
 
 function AziendeView({ activeDetail, setActiveDetail, goHome }: { activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void }) {
-  return (
-    <SectionView accent="green" eyebrow="Soluzioni per Aziende" title="Proteggere un’azienda significa proteggere continuità, persone e responsabilità." subtitle="Costruiamo programmi assicurativi coordinati per imprese che desiderano tutelare operatività, patrimonio, governance e continuità aziendale." heroTitle="RC Aziendale & Responsabilità d’impresa" heroText="Una copertura efficace deve adattarsi al reale funzionamento dell’impresa: attività operative, clienti, dipendenti, fornitori e responsabilità gestionali." heroButton="Approfondisci RC Aziendale" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey="rc-azienda" primaryDetail={<SimpleDetail data={businessDetails["rc-azienda"]} />} cards={businessCards} details={businessDetails} gridTitle="Soluzioni per una protezione aziendale più evoluta." />
-  );
+  return <SectionView accent="green" eyebrow="Soluzioni per Aziende" title="Proteggere un’azienda significa proteggere continuità, persone e responsabilità." subtitle="Costruiamo programmi assicurativi coordinati per imprese che desiderano tutelare operatività, patrimonio, governance e continuità aziendale." heroTitle="RC Aziendale & Responsabilità d’impresa" heroText="Una copertura efficace deve adattarsi al reale funzionamento dell’impresa: attività operative, clienti, dipendenti, fornitori e responsabilità gestionali." heroButton="Approfondisci RC Aziendale" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey="rc-azienda" primaryDetail={<SimpleDetail data={businessDetails["rc-azienda"]} />} cards={businessCards} details={businessDetails} gridTitle="Soluzioni per una protezione aziendale più evoluta." />;
 }
 
 function PrivatiView({ activeDetail, setActiveDetail, goHome }: { activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void }) {
-  return (
-    <SectionView accent="gold" eyebrow="Soluzioni per Privati" title="Protezione per famiglia, casa e patrimonio personale." subtitle="Soluzioni pensate per tutelare la vita quotidiana con chiarezza, semplicità e coerenza." heroTitle="Casa, famiglia e responsabilità personale" heroText="Una protezione privata efficace deve essere semplice da capire ma costruita sulle esigenze reali della persona e della famiglia." heroButton="Scopri le soluzioni" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey={null} primaryDetail={null} cards={privateCards} details={privateDetails} gridTitle="Soluzioni per completare la protezione personale e familiare." />
-  );
+  return <SectionView accent="gold" eyebrow="Soluzioni per Privati" title="Protezione per famiglia, casa e patrimonio personale." subtitle="Soluzioni pensate per tutelare la vita quotidiana con chiarezza, semplicità e coerenza." heroTitle="Casa, famiglia e responsabilità personale" heroText="Una protezione privata efficace deve essere semplice da capire ma costruita sulle esigenze reali della persona e della famiglia." heroButton="Scopri le soluzioni" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey={null} primaryDetail={null} cards={privateCards} details={privateDetails} gridTitle="Soluzioni per completare la protezione personale e familiare." />;
 }
 
 function SectionView({ accent, eyebrow, title, subtitle, heroTitle, heroText, heroButton, activeDetail, setActiveDetail, goHome, primaryKey, primaryDetail, cards, details, gridTitle }: { accent: Accent; eyebrow: string; title: string; subtitle: string; heroTitle: string; heroText: string; heroButton: string; activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void; primaryKey: string | null; primaryDetail: React.ReactNode; cards: CardData[]; details: Record<string, DetailData>; gridTitle: string }) {
   const style = accents[accent];
+  const viewId = accent === "blue" ? "professionisti" : accent === "green" ? "aziende" : "privati";
+
+  const openDetail = (key: string) => {
+    setActiveDetail(activeDetail === key ? null : key);
+    window.setTimeout(() => {
+      document.getElementById(`detail-${key}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 160);
+  };
+
   return (
-    <section className="bg-white rounded-[2rem] border border-slate-200 p-10 lg:p-14 shadow-sm mb-10 sigma-reveal">
+    <section id={`view-${viewId}`} className="bg-white rounded-[2rem] border border-slate-200 p-10 lg:p-14 shadow-sm mb-10 sigma-reveal scroll-mt-28">
       <button onClick={goHome} className="mb-8 inline-flex rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold hover:-translate-y-0.5 hover:shadow-md transition-all duration-300">← Torna alla home</button>
       <div className="max-w-5xl mb-12">
         <div className={`inline-flex rounded-full ${style.bg} ${style.text} px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6`}>{eyebrow}</div>
@@ -464,7 +595,12 @@ function SectionView({ accent, eyebrow, title, subtitle, heroTitle, heroText, he
           </div>
           <div className="space-y-4">
             {cards.slice(0, 4).map((item) => (
-              <div key={item.key} className="rounded-2xl bg-white/10 border border-white/10 backdrop-blur px-6 py-5 font-semibold text-white transition-transform duration-300 hover:translate-x-1">{item.title}</div>
+              <button key={item.key} onClick={() => openDetail(item.key)} className="group w-full text-left rounded-2xl bg-white/10 border border-white/10 backdrop-blur px-6 py-5 font-semibold text-white transition-all duration-300 hover:translate-x-1 hover:bg-white/15 hover:border-white/25 focus:outline-none focus:ring-2 focus:ring-white/30 cursor-pointer">
+                <span className="flex items-center justify-between gap-4">
+                  <span>{item.title}</span>
+                  <span className="text-sm text-white/60 transition-all duration-300 group-hover:text-white group-hover:translate-x-1">Apri →</span>
+                </span>
+              </button>
             ))}
           </div>
         </div>
@@ -508,7 +644,7 @@ function DetailGrid({ title, cards, active, setActive, activeBorder, details }: 
               <p className="text-slate-600 leading-relaxed">{card.text}</p>
             </button>
             {active === card.key && details[card.key] && (
-              <div className="md:col-span-2 lg:col-span-3 sigma-reveal">
+              <div id={`detail-${card.key}`} className="md:col-span-2 lg:col-span-3 sigma-reveal scroll-mt-28">
                 <SimpleDetail data={details[card.key]} compact />
               </div>
             )}
@@ -528,7 +664,9 @@ function SimpleDetail({ data, compact = false }: { data?: DetailData; compact?: 
       <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-4xl whitespace-pre-line">{data.text}</p>
       {data.points && (
         <div className="grid md:grid-cols-3 gap-5">
-          {data.points.map((item) => <div key={item} className="rounded-2xl bg-[#f8fafc] border border-slate-200 p-6 font-semibold">{item}</div>)}
+          {data.points.map((item) => (
+            <div key={item} className="rounded-2xl bg-[#f8fafc] border border-slate-200 p-6 font-semibold">{item}</div>
+          ))}
         </div>
       )}
     </div>
@@ -607,7 +745,7 @@ function Footer() {
         </div>
         <div>
           <h4 className="font-bold mb-3">Soluzioni</h4>
-          <p className="text-white/60 leading-8">Professionisti<br />Aziende<br />Privati</p>
+          <p className="text-white/60 leading-8">Professionisti<br />Aziende<br />Privati<br />Automotive</p>
         </div>
         <div>
           <h4 className="font-bold mb-3">Informazioni</h4>
@@ -625,4 +763,3 @@ function Footer() {
     </footer>
   );
 }
-
