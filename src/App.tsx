@@ -14,7 +14,7 @@ import {
   X,
 } from "lucide-react";
 
-type View = "home" | "professionisti" | "aziende" | "privati" | "reclami";
+type View = "home" | "professionisti" | "aziende" | "privati" | "reclami" | "whistleblowing";
 type Detail = string | null;
 type Accent = "blue" | "green" | "gold";
 
@@ -223,7 +223,7 @@ export default function SigmaWebsiteMockup() {
       return;
     }
 
-    const targetId = view === "reclami" ? "reclami" : `view-${view}`;
+    const targetId = view === "reclami" || view === "whistleblowing" ? view : `view-${view}`;
     window.history.replaceState(null, "", `${window.location.pathname}#${view}`);
     window.setTimeout(() => {
       document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -251,8 +251,9 @@ export default function SigmaWebsiteMockup() {
         {activeView === "aziende" && <AziendeView activeDetail={activeBusinessDetail} setActiveDetail={setActiveBusinessDetail} goHome={() => goTo("home")} />}
         {activeView === "privati" && <PrivatiView activeDetail={activePrivateDetail} setActiveDetail={setActivePrivateDetail} goHome={() => goTo("home")} />}
         {activeView === "reclami" && <ReclamiSection />}
+        {activeView === "whistleblowing" && <WhistleblowingSection />}
       </main>
-      <Footer />
+      <Footer goTo={goTo} />
     </div>
   );
 }
@@ -280,9 +281,9 @@ function MotionStyles() {
 function Header({ mobileMenuOpen, setMobileMenuOpen, goTo, goToSection }: { mobileMenuOpen: boolean; setMobileMenuOpen: (value: boolean) => void; goTo: (view: View) => void; goToSection: (sectionId: string) => void }) {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-white/60 shadow-[0_8px_30px_rgba(15,23,42,0.04)] transition-all duration-500">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
         <img src="/logo-sigma-originale.png" alt="Sigma Studi Brescia" className="h-14 w-auto object-contain" />
-        <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
+        <nav className="hidden xl:flex items-center gap-7 text-sm font-medium">
           <button onClick={() => goTo("home")} className="hover:text-[#008f4c] transition">Home</button>
           <button onClick={() => goTo("professionisti")} className="hover:text-[#243c7b] transition">Professionisti</button>
           <button onClick={() => goTo("aziende")} className="hover:text-[#0f7a43] transition">Aziende</button>
@@ -290,16 +291,17 @@ function Header({ mobileMenuOpen, setMobileMenuOpen, goTo, goToSection }: { mobi
           <button onClick={() => goToSection("convenzioni")} className="hover:text-[#9a5b16] transition">Convenzioni</button>
           <button onClick={() => goToSection("contatti")} className="hover:text-[#008f4c] transition">Contatti</button>
           <button onClick={() => goTo("reclami")} className="hover:text-[#008f4c] transition">Reclami</button>
+          <button onClick={() => goTo("whistleblowing")} className="hover:text-[#243c7b] transition">Segnalazione illeciti</button>
         </nav>
-        <button className="hidden md:flex items-center gap-2 rounded-full border border-[#008f4c] px-5 py-2 text-sm font-semibold text-[#008f4c] hover:bg-[#e8f5ef] transition">
+        <button className="hidden md:flex items-center gap-2 rounded-full border border-[#008f4c] px-5 py-2 text-sm font-semibold text-[#008f4c] hover:bg-[#e8f5ef] transition whitespace-nowrap">
           <UserRound size={18} /> Area riservata
         </button>
-        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden flex items-center justify-center w-11 h-11 rounded-full border border-slate-200 bg-white" aria-label="Apri menu">
+        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="xl:hidden flex items-center justify-center w-11 h-11 rounded-full border border-slate-200 bg-white" aria-label="Apri menu">
           {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-slate-200 px-6 py-5 space-y-4 shadow-lg">
+        <div className="xl:hidden bg-white border-t border-slate-200 px-6 py-5 space-y-4 shadow-lg">
           <button onClick={() => goTo("home")} className="block font-semibold">Home</button>
           <button onClick={() => goTo("professionisti")} className="block font-semibold">Professionisti</button>
           <button onClick={() => goTo("aziende")} className="block font-semibold">Aziende</button>
@@ -307,6 +309,7 @@ function Header({ mobileMenuOpen, setMobileMenuOpen, goTo, goToSection }: { mobi
           <button onClick={() => goToSection("convenzioni")} className="block font-semibold">Convenzioni</button>
           <button onClick={() => goToSection("contatti")} className="block font-semibold">Contatti</button>
           <button onClick={() => goTo("reclami")} className="block font-semibold">Reclami</button>
+          <button onClick={() => goTo("whistleblowing")} className="block font-semibold">Segnalazione illeciti</button>
         </div>
       )}
     </header>
@@ -533,6 +536,41 @@ function ReclamiSection() {
   );
 }
 
+function WhistleblowingSection() {
+  return (
+    <section id="whistleblowing" className="bg-white rounded-[2.5rem] border border-slate-200 p-10 lg:p-14 mb-16 shadow-sm scroll-mt-28 sigma-reveal overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-[#eef2ff] rounded-full blur-3xl opacity-60" />
+      <div className="relative z-10 max-w-6xl">
+        <div className="inline-flex rounded-full bg-[#eef2ff] text-[#243c7b] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6">Segnalazione illeciti</div>
+        <h2 className="text-4xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.95] mb-8">Whistleblowing</h2>
+        <div className="max-w-5xl space-y-6 text-slate-600 leading-relaxed text-lg mb-12">
+          <p>In attuazione del D.lgs. 242023, Sigma Studi Brescia Srl mette a disposizione un canale di segnalazione degli illeciti commessi nella propria organizzazione ed ha regolamentato un processo di Whistleblowing che garantisca ai segnalanti la riservatezza della loro identità, la corretta gestione della segnalazione e la protezione da eventuali atti di ritorsione.</p>
+          <p>Si rendono disponibili per il download i documenti previsti da tali disposizioni.</p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6 mb-10">
+          <a href="/documenti/whistleblowing-manuale-procedura-segnalazioni.pdf" target="_blank" rel="noopener noreferrer" className="sigma-float-card rounded-[2rem] border border-slate-200 bg-[#f8fafc] p-8 hover:bg-white transition-all duration-300">
+            <div className="text-sm uppercase tracking-[0.2em] font-bold text-[#243c7b] mb-4">Documento</div>
+            <h3 className="text-2xl font-extrabold mb-3">Whistleblowing - Manuale e procedura segnalazioni</h3>
+            <p className="text-slate-600 leading-relaxed mb-6">Scarica il manuale e la procedura relativi alla segnalazione degli illeciti.</p>
+            <span className="font-bold text-[#243c7b]">Scarica PDF →</span>
+          </a>
+          <a href="/documenti/dlgs-24-2023.pdf" target="_blank" rel="noopener noreferrer" className="sigma-float-card rounded-[2rem] border border-slate-200 bg-[#f8fafc] p-8 hover:bg-white transition-all duration-300">
+            <div className="text-sm uppercase tracking-[0.2em] font-bold text-[#243c7b] mb-4">Normativa</div>
+            <h3 className="text-2xl font-extrabold mb-3">D.lgs. 242023</h3>
+            <p className="text-slate-600 leading-relaxed mb-6">Testo normativo di riferimento relativo alla protezione delle persone che segnalano violazioni del diritto dell’Unione e degli illeciti.</p>
+            <span className="font-bold text-[#243c7b]">Scarica PDF →</span>
+          </a>
+        </div>
+        <div className="rounded-[2rem] bg-[#0f172a] text-white p-8">
+          <div className="text-sm uppercase tracking-[0.2em] text-[#8ee0b5] font-bold mb-4">Normativa di riferimento</div>
+          <h3 className="text-2xl font-extrabold mb-3">D.lgs. 242023</h3>
+          <p className="text-white/75 leading-relaxed">Disciplina della protezione delle persone che segnalano violazioni del diritto dell’Unione e disposizioni riguardanti la protezione dei segnalanti.</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function MethodItem({ title, text }: { title: string; text: string }) {
   return (
     <div>
@@ -576,18 +614,18 @@ function SectionView({ accent, eyebrow, title, subtitle, heroTitle, heroText, he
   const viewId = accent === "blue" ? "professionisti" : accent === "green" ? "aziende" : "privati";
   const [questionariOpen, setQuestionariOpen] = React.useState(false);
 
+  const questionari = [
+    { title: "Architetti, Ingegneri e Geometri", href: "/documenti/questionario-architetti-ingegneri-geometri.pdf" },
+    { title: "Avvocati", href: "/documenti/questionario-avvocati.pdf" },
+    { title: "Commercialisti", href: "/documenti/questionario-commercialisti.pdf" },
+  ];
+
   const openDetail = (key: string) => {
     setActiveDetail(activeDetail === key ? null : key);
     window.setTimeout(() => {
       document.getElementById(`detail-${key}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 160);
   };
-
-  const questionari = [
-    { title: "Architetti, Ingegneri e Geometri", href: "/documenti/questionario-architetti-ingegneri-geometri.pdf" },
-    { title: "Avvocati", href: "/documenti/questionario-avvocati.pdf" },
-    { title: "Commercialisti", href: "/documenti/questionario-commercialisti.pdf" },
-  ];
 
   return (
     <section id={`view-${viewId}`} className="bg-white rounded-[2rem] border border-slate-200 p-10 lg:p-14 shadow-sm mb-10 sigma-reveal scroll-mt-28">
@@ -773,7 +811,7 @@ function ContactSection() {
   );
 }
 
-function Footer() {
+function Footer({ goTo }: { goTo: (view: View) => void }) {
   return (
     <footer className="bg-[#0b241d] text-white py-12">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
@@ -787,7 +825,11 @@ function Footer() {
         </div>
         <div>
           <h4 className="font-bold mb-3">Informazioni</h4>
-          <p className="text-white/60 leading-8">Chi siamo<br />Convenzioni<br />Reclami<br />Segnalazioni illeciti</p>
+          <div className="text-white/60 leading-8 flex flex-col items-start">
+            <button onClick={() => goTo("home")} className="hover:text-white transition">Chi siamo</button>
+            <button onClick={() => goTo("reclami")} className="hover:text-white transition">Reclami</button>
+            <button onClick={() => goTo("whistleblowing")} className="hover:text-white transition">Segnalazione illeciti</button>
+          </div>
         </div>
         <div>
           <h4 className="font-bold mb-3">Contatti</h4>
