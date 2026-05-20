@@ -14,7 +14,7 @@ import {
   X,
 } from "lucide-react";
 
-type View = "home" | "professionisti" | "aziende" | "privati";
+type View = "home" | "professionisti" | "aziende" | "privati" | "reclami";
 type Detail = string | null;
 type Accent = "blue" | "green" | "gold";
 
@@ -223,9 +223,10 @@ export default function SigmaWebsiteMockup() {
       return;
     }
 
+    const targetId = view === "reclami" ? "reclami" : `view-${view}`;
     window.history.replaceState(null, "", `${window.location.pathname}#${view}`);
     window.setTimeout(() => {
-      document.getElementById(`view-${view}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 180);
   };
 
@@ -249,6 +250,7 @@ export default function SigmaWebsiteMockup() {
         {activeView === "professionisti" && <ProfessionistiView activeDetail={activeProfessionalDetail} setActiveDetail={setActiveProfessionalDetail} goHome={() => goTo("home")} />}
         {activeView === "aziende" && <AziendeView activeDetail={activeBusinessDetail} setActiveDetail={setActiveBusinessDetail} goHome={() => goTo("home")} />}
         {activeView === "privati" && <PrivatiView activeDetail={activePrivateDetail} setActiveDetail={setActivePrivateDetail} goHome={() => goTo("home")} />}
+        {activeView === "reclami" && <ReclamiSection />}
       </main>
       <Footer />
     </div>
@@ -287,7 +289,7 @@ function Header({ mobileMenuOpen, setMobileMenuOpen, goTo, goToSection }: { mobi
           <button onClick={() => goToSection("automotive")} className="hover:text-[#008f4c] transition">Automotive</button>
           <button onClick={() => goToSection("convenzioni")} className="hover:text-[#9a5b16] transition">Convenzioni</button>
           <button onClick={() => goToSection("contatti")} className="hover:text-[#008f4c] transition">Contatti</button>
-          <button onClick={() => goToSection("reclami")} className="hover:text-[#008f4c] transition">Reclami</button>
+          <button onClick={() => goTo("reclami")} className="hover:text-[#008f4c] transition">Reclami</button>
         </nav>
         <button className="hidden md:flex items-center gap-2 rounded-full border border-[#008f4c] px-5 py-2 text-sm font-semibold text-[#008f4c] hover:bg-[#e8f5ef] transition">
           <UserRound size={18} /> Area riservata
@@ -304,7 +306,7 @@ function Header({ mobileMenuOpen, setMobileMenuOpen, goTo, goToSection }: { mobi
           <button onClick={() => goToSection("automotive")} className="block font-semibold">Automotive</button>
           <button onClick={() => goToSection("convenzioni")} className="block font-semibold">Convenzioni</button>
           <button onClick={() => goToSection("contatti")} className="block font-semibold">Contatti</button>
-          <button onClick={() => goToSection("reclami")} className="block font-semibold">Reclami</button>
+          <button onClick={() => goTo("reclami")} className="block font-semibold">Reclami</button>
         </div>
       )}
     </header>
@@ -370,7 +372,6 @@ function HomeView({ goTo }: { goTo: (view: View) => void }) {
       <AutomotiveAffinitySection />
       <WhySigmaSection />
       <ContactSection />
-      <ReclamiSection />
     </>
   );
 }
