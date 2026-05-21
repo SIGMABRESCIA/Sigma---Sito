@@ -13,6 +13,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import Footer from "./components/Footer";
 
 type View = "home" | "professionisti" | "aziende" | "privati" | "reclami" | "whistleblowing";
 type Detail = string | null;
@@ -253,7 +254,7 @@ export default function SigmaWebsiteMockup() {
         {activeView === "reclami" && <ReclamiSection />}
         {activeView === "whistleblowing" && <WhistleblowingSection />}
       </main>
-      <Footer goTo={goTo} />
+      <Footer />
     </div>
   );
 }
@@ -811,35 +812,4 @@ function ContactSection() {
   );
 }
 
-function Footer({ goTo }: { goTo: (view: View) => void }) {
-  return (
-    <footer className="bg-[#0b241d] text-white py-12">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
-        <div>
-          <div className="font-extrabold text-xl mb-3">SIGMA STUDI <span className="text-[#8ee0b5]">Brescia</span></div>
-          <p className="text-white/60">Broker di Assicurazioni per aziende, professionisti e privati.</p>
-        </div>
-        <div>
-          <h4 className="font-bold mb-3">Soluzioni</h4>
-          <p className="text-white/60 leading-8">Professionisti<br />Aziende<br />Privati<br />Automotive</p>
-        </div>
-        <div>
-          <h4 className="font-bold mb-3">Informazioni</h4>
-          <div className="text-white/60 leading-8 flex flex-col items-start">
-            <button onClick={() => goTo("home")} className="hover:text-white transition">Chi siamo</button>
-            <button onClick={() => goTo("reclami")} className="hover:text-white transition">Reclami</button>
-            <button onClick={() => goTo("whistleblowing")} className="hover:text-white transition">Segnalazione illeciti</button>
-          </div>
-        </div>
-        <div>
-          <h4 className="font-bold mb-3">Contatti</h4>
-          <div className="space-y-3 text-white/60">
-            <div className="flex gap-2 items-center"><MapPin size={16} /> Via Codignole 45</div>
-            <div className="flex gap-2 items-center"><Phone size={16} /> 030 2059880</div>
-            <div className="flex gap-2 items-center"><Mail size={16} /> info@sigmabrescia.it</div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
+
