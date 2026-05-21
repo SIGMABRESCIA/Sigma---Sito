@@ -287,7 +287,7 @@ function HomeView({ goTo }: { goTo: (view: View) => void }) {
         </div>
         <div className="grid lg:grid-cols-3 gap-8 items-stretch mt-10">
           <SolutionCard
-  icon={<BriefcaseBusiness className="text-[#243c7b]" size={28} />}
+ 
   title="Soluzioni per Professionisti"
   text="Coperture dedicate a studi professionali, consulenti e professionisti iscritti ad albi."
   tags={professionalCategories}
@@ -297,7 +297,7 @@ function HomeView({ goTo }: { goTo: (view: View) => void }) {
 />
 
 <SolutionCard
-  icon={<Building2 className="text-[#0f7a43]" size={28} />}
+ 
   title="Soluzioni per Aziende"
   text="Programmi assicurativi dedicati alla continuità operativa."
   tags={["RC Aziendale", "Property", "D&O", "Cyber Risk"]}
@@ -307,7 +307,7 @@ function HomeView({ goTo }: { goTo: (view: View) => void }) {
 />
 
 <SolutionCard
-  icon={<Home className="text-[#9a5b16]" size={28} />}
+
   title="Soluzioni per Privati"
   text="Soluzioni pensate per la tutela della persona e della famiglia."
   tags={privateSolutions}
@@ -438,7 +438,7 @@ function WhistleblowingSection() {
 
 
 function SolutionCard({
-  icon,
+  
   title,
   text,
   tags,
@@ -446,7 +446,7 @@ function SolutionCard({
   onClick,
   image,
 }: {
-  icon: React.ReactNode;
+  
   title: string;
   text: string;
   tags: string[];
