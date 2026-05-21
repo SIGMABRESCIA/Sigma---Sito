@@ -1,4 +1,11 @@
-export default function Footer() {
+type View = "home" | "professionisti" | "aziende" | "privati" | "reclami" | "whistleblowing";
+
+type FooterProps = {
+  goTo: (view: View) => void;
+  goToSection: (sectionId: string) => void;
+};
+
+export default function Footer({ goTo, goToSection }: FooterProps) {
   return (
     <footer className="bg-[#0b241d] text-white py-14">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-4 gap-12">
@@ -54,10 +61,21 @@ export default function Footer() {
           <h4 className="font-bold mb-4 text-lg">Soluzioni</h4>
 
           <div className="text-white/60 leading-8 flex flex-col items-start">
-            <span>Professionisti</span>
-            <span>Aziende</span>
-            <span>Privati</span>
-            <span>Automotive</span>
+           <button onClick={() => goTo("professionisti")}>
+  Professionisti
+</button>
+
+<button onClick={() => goTo("aziende")}>
+  Aziende
+</button>
+
+<button onClick={() => goTo("privati")}>
+  Privati
+</button>
+
+<button onClick={() => goToSection("automotive")}>
+  Automotive
+</button>
           </div>
         </div>
 
