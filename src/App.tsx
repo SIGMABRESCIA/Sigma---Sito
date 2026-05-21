@@ -4,7 +4,6 @@ import {
   BriefcaseBusiness,
   Car,
   Home,
-  ShieldCheck,
   Handshake,
   Phone,
   Mail,
@@ -13,6 +12,7 @@ import {
 } from "lucide-react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Hero from "./components/Hero";
 type View = "home" | "professionisti" | "aziende" | "privati" | "reclami" | "whistleblowing";
 type Detail = string | null;
 type Accent = "blue" | "green" | "gold";
@@ -243,7 +243,7 @@ export default function SigmaWebsiteMockup() {
     <div className="min-h-screen bg-[#f6f7f7] text-slate-900">
       <MotionStyles />
       <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} goTo={goTo} goToSection={goToSection} />
-      <Hero goTo={goTo} goToSection={goToSection} />
+      <Hero />
       <main className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
         {activeView === "home" && <HomeView goTo={goTo} />}
         {activeView === "professionisti" && <ProfessionistiView activeDetail={activeProfessionalDetail} setActiveDetail={setActiveProfessionalDetail} goHome={() => goTo("home")} />}
@@ -274,46 +274,6 @@ function MotionStyles() {
       .sigma-button-motion { transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1), background-color 300ms ease; }
       .sigma-button-motion:hover { transform: translateY(-2px); box-shadow: 0 18px 42px rgba(15, 23, 42, 0.16); }
     `}</style>
-  );
-}
-
-function Hero({ goTo, goToSection }: { goTo: (view: View) => void; goToSection: (sectionId: string) => void }) {
-  return (
-    <section id="home" className="relative overflow-hidden bg-[#071f19] text-white">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1800&auto=format&fit=crop')] bg-cover bg-center opacity-30 scale-[1.03]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#061b16] via-[#071f19]/95 to-[#071f19]/45" />
-      <div className="absolute -right-32 -top-32 w-[560px] h-[560px] rounded-full bg-[#00a35a]/20 blur-3xl animate-pulse" />
-      <div className="absolute left-1/3 bottom-0 w-[420px] h-[420px] rounded-full bg-white/10 blur-3xl" />
-      <div className="absolute left-10 top-24 w-40 h-40 rounded-full border border-white/10 opacity-30" />
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-28 lg:py-40">
-        <div className="max-w-5xl sigma-reveal-slow">
-          <div className="inline-flex items-center gap-3 rounded-full bg-white/10 backdrop-blur-xl px-5 py-3 text-sm font-semibold text-[#b8f2d3] mb-10 border border-white/10 shadow-[0_10px_40px_rgba(255,255,255,0.05)]">
-            <ShieldCheck size={18} /> Consulenza assicurativa evoluta per aziende, professionisti e patrimoni
-          </div>
-          <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black tracking-[-0.065em] leading-[0.88] mb-10 max-w-6xl text-white">Protezione assicurativa progettata intorno ai rischi reali.</h1>
-          <p className="text-xl lg:text-2xl text-white/72 leading-relaxed mb-12 max-w-4xl">Analizziamo responsabilità, continuità operativa, patrimonio ed esposizioni concrete per costruire coperture più coerenti, sostenibili e realmente utili nel momento in cui servono.</p>
-          <div className="flex flex-col sm:flex-row gap-5 mb-16">
-            <button onClick={() => goToSection("contatti")} className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-white text-[#0f3328] px-9 py-5 font-bold text-base hover:bg-slate-100 transition shadow-[0_18px_60px_rgba(0,0,0,0.18)]">Richiedi una revisione assicurativa</button>
-            <button onClick={() => goTo("professionisti")} className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/10 backdrop-blur-xl px-9 py-5 font-bold text-white hover:bg-white/15 transition-all duration-300">Esplora le soluzioni</button>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-4 max-w-5xl sigma-delay-2 sigma-reveal">
-            <HeroMetric value="50+" label="Esperienza" text="Oltre cinquant’anni di affiancamento a imprese, studi professionali e famiglie." />
-            <HeroMetric value="360°" label="Visione integrata" text="Analisi coordinata di responsabilità, continuità operativa e patrimonio." />
-            <HeroMetric value="Tailor" label="Approccio consulenziale" text="Nessuna soluzione standardizzata: ogni copertura nasce dall’analisi reale del rischio." />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function HeroMetric({ value, label, text }: { value: string; label: string; text: string }) {
-  return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5 hover:bg-white/10 transition-all duration-500">
-      <div className="text-3xl font-black mb-2 text-[#8ee0b5]">{value}</div>
-      <div className="text-sm uppercase tracking-[0.18em] text-white/45 mb-2">{label}</div>
-      <p className="text-white/70 leading-relaxed text-sm">{text}</p>
-    </div>
   );
 }
 
