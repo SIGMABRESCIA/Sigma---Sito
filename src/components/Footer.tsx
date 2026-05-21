@@ -61,19 +61,30 @@ export default function Footer({ goTo, goToSection }: FooterProps) {
           <h4 className="font-bold mb-4 text-lg">Soluzioni</h4>
 
           <div className="text-white/60 leading-8 flex flex-col items-start">
-           <button onClick={() => goTo("professionisti")}>
+           <button
+  onClick={() => goTo("professionisti")}
+  className="hover:text-white transition text-left"
+>
   Professionisti
 </button>
 
-<button onClick={() => goTo("aziende")}>
+<button
+  onClick={() => goTo("aziende")}
+  className="hover:text-white transition text-left"
+>
   Aziende
 </button>
 
-<button onClick={() => goTo("privati")}>
+<button
+  onClick={() => goTo("privati")}
+  className="hover:text-white transition text-left"
+>
   Privati
 </button>
 
-<button onClick={() => goToSection("automotive")}>
+<button onClick={() => goToSection("automotive")}
+  className="hover:text-white transition text-left"
+>
   Automotive
 </button>
           </div>
@@ -83,9 +94,26 @@ export default function Footer({ goTo, goToSection }: FooterProps) {
           <h4 className="font-bold mb-4 text-lg">Informazioni</h4>
 
           <div className="text-white/60 leading-8 flex flex-col items-start">
-            <span>Chi siamo</span>
-            <span>Reclami</span>
-            <span>Segnalazione illeciti</span>
+            <button
+  onClick={() => goTo("home")}
+  className="hover:text-white transition text-left"
+>
+  Chi siamo
+</button>
+
+<button
+  onClick={() => goTo("reclami")}
+  className="hover:text-white transition text-left"
+>
+  Reclami
+</button>
+
+<button
+  onClick={() => goTo("whistleblowing")}
+  className="hover:text-white transition text-left"
+>
+  Segnalazione illeciti
+</button>
 
             <a
               href="/documenti/elenco-mandati.pdf"
