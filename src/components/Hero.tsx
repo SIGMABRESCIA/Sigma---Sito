@@ -2,11 +2,14 @@ import { ShieldCheck } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-[#071f19] text-white">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#061b16] via-[#071f19]/95 to-[#071f19]/45" />
+   <section id="home" className="relative overflow-hidden bg-[#061b16] text-white">
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,143,76,0.38),transparent_32%),radial-gradient(circle_at_82%_18%,rgba(36,60,123,0.32),transparent_30%),linear-gradient(135deg,#04120f_0%,#071f19_48%,#0b2f25_100%)]" />
+  <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.55),rgba(0,0,0,0.18),rgba(0,0,0,0.45))]" />
+  <div className="absolute -right-32 top-20 w-[520px] h-[520px] rounded-full bg-[#008f4c]/20 blur-3xl" />
+  <div className="absolute left-1/2 bottom-0 w-[700px] h-[260px] -translate-x-1/2 bg-white/5 blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-28 lg:py-40">
-        <div className="max-w-5xl sigma-reveal-slow">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 lg:py-28 animate-[sigmaFadeUp_1400ms_cubic-bezier(0.22,1,0.36,1)_both]">
+        
           <div className="inline-flex items-center gap-3 rounded-full bg-white/10 backdrop-blur-xl px-5 py-3 text-sm font-semibold text-[#b8f2d3] mb-10 border border-white/10">
             <ShieldCheck size={18} />
             Consulenza assicurativa evoluta per aziende, professionisti e patrimoni
@@ -46,7 +49,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }

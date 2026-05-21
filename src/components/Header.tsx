@@ -18,7 +18,9 @@ export default function Header({
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-white/60 shadow-[0_8px_30px_rgba(15,23,42,0.04)] transition-all duration-500">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
-        <img src="/logo-sigma-originale.png" alt="Sigma Studi Brescia" className="h-14 w-auto object-contain" />
+        <div className="bg-white rounded-xl px-3 py-2">
+  <img src="/logo-sigma-originale.png" alt="Sigma Studi Brescia" className="h-12 w-auto object-contain" />
+</div>
 
         <nav className="hidden xl:flex items-center gap-7 text-sm font-medium">
           <button onClick={() => goTo("home")} className="hover:text-[#008f4c] transition">Home</button>

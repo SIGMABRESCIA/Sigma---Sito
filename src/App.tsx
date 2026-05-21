@@ -280,15 +280,41 @@ function HomeView({ goTo }: { goTo: (view: View) => void }) {
   return (
     <>
       <AboutSection />
-      <section id="professionisti" className="mb-16 sigma-reveal sigma-delay-1">
+      <section id="professionisti" className="mb-16 sigma-reveal sigma-delay-1 px-6 lg:px-16">
         <div className="mb-8">
           <div className="text-sm font-bold uppercase tracking-[0.2em] text-[#2f7a57] mb-4 ml-5 opacity-80">Soluzioni dedicate</div>
           <h2 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-5 leading-[1.05]">Coperture costruite intorno alle esigenze di professionisti, aziende e privati.</h2>
         </div>
-        <div className="grid lg:grid-cols-3 gap-6 items-stretch">
-          <SolutionCard icon={<BriefcaseBusiness className="text-[#243c7b]" size={28} />} title="Soluzioni per Professionisti" text="Coperture dedicate a studi professionali, consulenti e professionisti iscritti ad albi." tags={professionalCategories} color="blue" onClick={() => goTo("professionisti")} />
-          <SolutionCard icon={<Building2 className="text-[#0f7a43]" size={28} />} title="Soluzioni per Aziende" text="Programmi assicurativi dedicati alla continuità operativa." tags={["RC Aziendale", "Property", "D&O", "Cyber Risk"]} color="green" onClick={() => goTo("aziende")} />
-          <SolutionCard icon={<Home className="text-[#9a5b16]" size={28} />} title="Soluzioni per Privati" text="Soluzioni pensate per la tutela della persona e della famiglia." tags={privateSolutions} color="gold" onClick={() => goTo("privati")} />
+        <div className="grid lg:grid-cols-3 gap-8 items-stretch mt-10">
+          <SolutionCard
+  icon={<BriefcaseBusiness className="text-[#243c7b]" size={28} />}
+  title="Soluzioni per Professionisti"
+  text="Coperture dedicate a studi professionali, consulenti e professionisti iscritti ad albi."
+  tags={professionalCategories}
+  color="blue"
+  onClick={() => goTo("professionisti")}
+  image="/images/professionisti.png"
+/>
+
+<SolutionCard
+  icon={<Building2 className="text-[#0f7a43]" size={28} />}
+  title="Soluzioni per Aziende"
+  text="Programmi assicurativi dedicati alla continuità operativa."
+  tags={["RC Aziendale", "Property", "D&O", "Cyber Risk"]}
+  color="green"
+  onClick={() => goTo("aziende")}
+  image="/images/aziende.png"
+/>
+
+<SolutionCard
+  icon={<Home className="text-[#9a5b16]" size={28} />}
+  title="Soluzioni per Privati"
+  text="Soluzioni pensate per la tutela della persona e della famiglia."
+  tags={privateSolutions}
+  color="gold"
+  onClick={() => goTo("privati")}
+  image="/images/privati.png"
+/>
         </div>
       </section>
       <ConvenzioniSection />
@@ -411,20 +437,68 @@ function WhistleblowingSection() {
 }
 
 
-
-function SolutionCard({ icon, title, text, tags, color, onClick }: { icon: React.ReactNode; title: string; text: string; tags: string[]; color: Accent; onClick: () => void }) {
+function SolutionCard({
+  icon,
+  title,
+  text,
+  tags,
+  color,
+  onClick,
+  image,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  text: string;
+  tags: string[];
+  color: Accent;
+  onClick: () => void;
+  image: string;
+}) {
   const style = accents[color];
+
   return (
-    <div className="sigma-float-card group rounded-[2.75rem] border border-white/70 bg-white/80 backdrop-blur-2xl p-9 lg:p-10 shadow-[0_24px_80px_rgba(15,23,42,0.08)] flex flex-col transition-all duration-500 ease-out">
-      <div className={`w-16 h-16 rounded-[1.6rem] bg-white border ${style.border} flex items-center justify-center mb-8 shadow-sm transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1`}>{icon}</div>
-      <h3 className="text-[2rem] leading-tight font-black mb-4">{title}</h3>
-      <p className="text-slate-600 leading-relaxed mb-8 min-h-[88px]">{text}</p>
-      <div className="flex flex-wrap gap-2 mb-8">
-        {tags.map((item) => (
-          <span key={item} className={`px-3 py-2 rounded-full ${style.bg} ${style.text} text-sm font-semibold`}>{item}</span>
-        ))}
-      </div>
-      <button onClick={onClick} className={`mt-auto inline-flex items-center gap-2 font-semibold ${style.text} group-hover:gap-3 transition-all duration-300`}>Approfondisci →</button>
+    <div className="group relative overflow-hidden rounded-[2.75rem] border border-white/70 bg-gradient-to-br from-white via-white to-slate-50 p-12 lg:p-14 backdrop-blur-2xl shadow-[0_20px_70px_rgba(15,23,42,0.08)] hover:shadow-[0_35px_120px_rgba(15,23,42,0.14)] hover:-translate-y-2 transition-all duration-500 flex flex-col">
+      <div className="relative mb-8 h-48 overflow-hidden rounded-[2rem]">
+  <img
+    src={image}
+    alt={title}
+    className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
+</div>
+    
+
+      <h3 className="text-[2rem] leading-tight font-black mb-4">
+        {title}
+      </h3>
+
+      <p className="text-slate-600 leading-relaxed mb-8 min-h-[88px]">
+        {text}
+      </p>
+
+      <div className="mb-10">
+  <div className="text-xs uppercase tracking-[0.18em] text-slate-400 mb-3 font-bold">
+    Ambiti principali
+  </div>
+
+  <div className="flex flex-wrap gap-x-3 gap-y-2 text-[15px] font-medium text-slate-600">
+    {tags.map((item, index) => (
+      <span key={item}>
+        {item}
+        {index !== tags.length - 1 && (
+          <span className="ml-3 text-slate-300">•</span>
+        )}
+      </span>
+    ))}
+  </div>
+</div>
+
+      <button
+        onClick={onClick}
+        className={`mt-auto inline-flex items-center gap-2 font-semibold ${style.text} group-hover:gap-3 transition-all duration-300`}
+      >
+        Approfondisci →
+      </button>
     </div>
   );
 }
