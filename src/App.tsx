@@ -456,7 +456,7 @@ function SolutionCard({
   <img
     src={image}
     alt={title}
-    className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+   className="h-full w-full object-cover md:grayscale transition-all duration-700 md:group-hover:grayscale-0 group-hover:scale-110"
   />
   <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
 </div>
