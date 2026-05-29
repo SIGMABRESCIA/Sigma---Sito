@@ -671,10 +671,33 @@ function WhySigmaSection() {
         <h2 className="text-4xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.95] mb-8 max-w-5xl">Non ci limitiamo a proporre polizze.<br />Analizziamo rischi, continuità e sostenibilità delle coperture nel tempo.</h2>
         <p className="text-xl text-slate-600 leading-relaxed max-w-4xl mb-14">Il nostro approccio parte dall’analisi concreta dell’attività, delle responsabilità e delle esposizioni reali. Costruiamo soluzioni assicurative coordinate, evitando sovrapposizioni, incoerenze e aree scoperte che spesso emergono solo nei momenti più delicati.</p>
         <div className="grid lg:grid-cols-4 gap-6 mb-14">
-          <WhyCard value="50+" title="Anni di esperienza" text="Una presenza consolidata nel mondo assicurativo e della consulenza ai clienti." color="text-[#0f7a43]" />
-          <WhyCard value="360°" title="Visione integrata" text="Valutiamo coperture, continuità, responsabilità e patrimonio in modo coordinato." color="text-[#243c7b]" />
-          <WhyCard value="Tailor" title="Approccio personalizzato" text="Ogni attività presenta esposizioni differenti e richiede valutazioni specifiche." color="text-[#9a5b16]" />
-          <WhyCard value="Direct" title="Relazione continua" text="Seguiamo il cliente nel tempo con un confronto diretto e costante." color="text-[#0f172a]" />
+<WhyCard
+  value="Free"
+  title="Indipendenza"
+  text="Selezioniamo soluzioni senza vincoli verso singole compagnie."
+  color="text-[#0f7a43]"
+/>
+
+<WhyCard
+  value="Focus"
+  title="Analisi prima della proposta"
+  text="Ascoltiamo esigenze, responsabilità ed esposizioni prima di proporre coperture."
+  color="text-[#243c7b]"
+/>
+
+<WhyCard
+  value="Tailor"
+  title="Approccio consulenziale"
+  text="Ogni attività richiede valutazioni specifiche e soluzioni coerenti con il rischio."
+  color="text-[#9a5b16]"
+/>
+
+<WhyCard
+  value="Care"
+  title="Assistenza continua"
+  text="Affianchiamo il cliente nel tempo, anche nella gestione dei sinistri."
+  color="text-slate-900"
+/>   
         </div>
         <CallToAction title="Hai già una polizza? Possiamo aiutarti a capire se è davvero coerente con la tua attività." text="Verifichiamo struttura delle coperture, massimali, esclusioni, continuità assicurativa e possibili aree di criticità." />
       </div>
