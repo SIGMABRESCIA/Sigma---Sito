@@ -1055,7 +1055,6 @@ function CallToAction({ title, text }: { title: string; text: string }) {
         <h4 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-4">{title}</h4>
         <p className="text-slate-300 leading-relaxed text-lg">{text}</p>
       </div>
-      <button className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-white text-[#0f172a] px-8 py-4 font-bold whitespace-nowrap hover:bg-slate-100 transition-all duration-300">Richiedi una valutazione</button>
     </div>
   );
 }
