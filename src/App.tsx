@@ -352,9 +352,14 @@ export default function SigmaWebsiteMockup() {
           </div>
 
           <div className="space-y-4">
-            <button className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors">
-              Questionario professionale
-            </button>
+     <a
+  href="/documenti/questionario-commercialisti.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors"
+>
+  Questionario professionale
+</a>
 
             <button className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors">
               Modulo privacy
@@ -378,138 +383,233 @@ export default function SigmaWebsiteMockup() {
 )}
 
 {activeView === "convenzioni-avvocati" && (
-  <section className="bg-white rounded-[2.5rem] border border-slate-200 p-10 lg:p-16 shadow-sm sigma-reveal">
-    <div className="max-w-5xl">
-      <div className="inline-flex items-center rounded-full bg-[#eafaf3] text-[#008f4c] px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] mb-6">
-        Convenzione dedicata
-      </div>
+  <section className="rounded-[2.5rem] border border-slate-200 bg-white overflow-hidden shadow-sm sigma-reveal">
 
-      <h1 className="text-4xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.95] text-[#0b132d] mb-8">
-        Convenzione Avvocati
-      </h1>
+    <div className="border-b border-slate-200 bg-[#f8fafc] px-10 lg:px-14 py-12">
+      <button
+        onClick={() => goToSection("convenzioni")}
+        className="text-[#008f4c] text-sm font-semibold mb-8 hover:opacity-70 transition-opacity"
+      >
+        ← Torna alle convenzioni
+      </button>
 
-      <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
-        <p>
-          Sigma Studi Brescia sviluppa coperture assicurative dedicate ad avvocati e studi legali, con particolare attenzione ai profili di responsabilità professionale, tutela patrimoniale e continuità dell’attività.
-        </p>
-
-        <p>
-          L’attività forense richiede strumenti assicurativi evoluti, capaci di rispondere sia agli obblighi normativi sia alle reali esposizioni operative del professionista.
-        </p>
-
-        <p>
-          Il nostro approccio parte dall’analisi concreta dell’attività svolta e delle coperture già presenti, con supporto dedicato anche nella gestione dei sinistri.
-        </p>
-      </div>
-
-      <div className="grid md:grid-cols-3 gap-5 mt-12">
-        <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-          <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
-            RC Professionale
-          </div>
-          <p className="text-slate-600 leading-relaxed">
-            Coperture dedicate alla responsabilità professionale dell’attività legale.
-          </p>
+      <div className="max-w-4xl">
+        <div className="inline-flex items-center rounded-full bg-[#e9f7f0] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#008f4c] mb-6">
+          Convenzione dedicata
         </div>
 
-        <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-          <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
-            Tutela dello studio
-          </div>
-          <p className="text-slate-600 leading-relaxed">
-            Soluzioni integrative per proteggere attività, patrimonio e continuità operativa.
-          </p>
-        </div>
+        <h1 className="text-5xl lg:text-7xl font-black tracking-[-0.06em] leading-[0.95] text-[#0b132d] mb-8">
+          Convenzione per la tutela del rischio professionale legale.
+        </h1>
 
-        <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-          <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
-            Gestione sinistri
-          </div>
-          <p className="text-slate-600 leading-relaxed">
-            Supporto operativo e consulenziale nelle fasi successive alla sottoscrizione.
-          </p>
-        </div>
+        <div className="w-20 h-[3px] bg-[#008f4c] mb-8 rounded-full" />
+
+        <p className="text-slate-600 text-xl leading-relaxed max-w-3xl">
+          Soluzioni assicurative dedicate ad avvocati e studi legali, con particolare attenzione alla responsabilità professionale e alla continuità dell’attività.
+        </p>
       </div>
+    </div>
 
-      <div className="flex flex-wrap gap-4 mt-12">
-        <button className="sigma-button-motion rounded-full bg-[#008f4c] text-white px-7 py-4 font-semibold">
-          Richiedi informazioni
-        </button>
+    <div className="px-10 lg:px-14 py-14">
+      <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
 
-        <button className="rounded-full border border-slate-300 px-7 py-4 font-semibold text-slate-700 hover:border-[#008f4c] hover:text-[#008f4c] transition-colors">
-          Scarica documentazione
-        </button>
+        <div>
+          <h2 className="text-3xl lg:text-4xl font-black tracking-[-0.04em] text-[#0b132d] mb-8">
+            Un riferimento dedicato per studi legali e professionisti.
+          </h2>
+
+          <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
+            <p>
+              Sigma Studi Brescia affianca avvocati e studi legali nella valutazione delle coperture assicurative dedicate alla responsabilità professionale.
+            </p>
+
+            <p>
+              La convenzione consente di analizzare le esigenze dello studio e verificare l’adeguatezza delle garanzie già presenti.
+            </p>
+
+            <p>
+              Il supporto comprende assistenza consulenziale, verifica delle coperture e affiancamento nella gestione delle pratiche di sinistro.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5 mt-12">
+            <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
+              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+                Responsabilità professionale
+              </div>
+              <p className="text-slate-600 leading-relaxed">
+                Coperture dedicate all’attività legale e agli studi professionali.
+              </p>
+            </div>
+
+            <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
+              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+                Verifica garanzie
+              </div>
+              <p className="text-slate-600 leading-relaxed">
+                Analisi delle coperture già attive e delle eventuali necessità integrative.
+              </p>
+            </div>
+
+            <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
+              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+                Gestione sinistri
+              </div>
+              <p className="text-slate-600 leading-relaxed">
+                Supporto operativo nella denuncia e nel monitoraggio delle pratiche.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-[2rem] border border-slate-200 bg-[#f8fafc] p-8">
+          <div className="text-[#008f4c] text-sm uppercase tracking-[0.2em] font-bold mb-6">
+            Documentazione
+          </div>
+
+          <div className="space-y-4">
+            <a
+  href="/documenti/questionario-avvocati.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors"
+>
+  Questionario professionale
+</a>
+
+            <button className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium">
+              Modulo privacy
+            </button>
+
+            <button className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium">
+              Documentazione precontrattuale
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 )}
 {activeView === "convenzioni-tecnici" && (
-  <section className="bg-white rounded-[2.5rem] border border-slate-200 p-10 lg:p-16 shadow-sm sigma-reveal">
-    <div className="max-w-5xl">
-      <div className="inline-flex items-center rounded-full bg-[#eafaf3] text-[#008f4c] px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] mb-6">
-        Convenzione dedicata
-      </div>
+  <section className="rounded-[2.5rem] border border-slate-200 bg-white overflow-hidden shadow-sm sigma-reveal">
 
-      <h1 className="text-4xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.95] text-[#0b132d] mb-8">
-        Convenzione Tecnici Professionisti
-      </h1>
+    <div className="border-b border-slate-200 bg-[#f8fafc] px-10 lg:px-14 py-12">
+      <button
+        onClick={() => goToSection("convenzioni")}
+        className="text-[#008f4c] text-sm font-semibold mb-8 hover:opacity-70 transition-opacity"
+      >
+        ← Torna alle convenzioni
+      </button>
 
-      <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
-        <p>
-          Soluzioni assicurative dedicate ad architetti, ingegneri e geometri, progettate per rispondere alle responsabilità tecniche e professionali dell’attività.
-        </p>
-
-        <p>
-          Sigma Studi Brescia sviluppa programmi assicurativi coordinati per studi professionali, liberi professionisti e realtà strutturate che operano nel settore tecnico.
-        </p>
-
-        <p>
-          L’approccio consulenziale comprende analisi delle coperture esistenti, valutazione dei rischi operativi e assistenza continua nella gestione assicurativa.
-        </p>
-      </div>
-
-      <div className="grid md:grid-cols-3 gap-5 mt-12">
-        <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-          <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
-            RC Professionale
-          </div>
-
-          <p className="text-slate-600 leading-relaxed">
-            Coperture dedicate alla responsabilità civile professionale tecnica.
-          </p>
+      <div className="max-w-4xl">
+        <div className="inline-flex items-center rounded-full bg-[#e9f7f0] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#008f4c] mb-6">
+          Convenzione dedicata
         </div>
 
-        <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-          <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
-            Cantieri e attività
-          </div>
+        <h1 className="text-5xl lg:text-7xl font-black tracking-[-0.06em] leading-[0.95] text-[#0b132d] mb-8">
+          Convenzione Tecnici Professionisti.
+        </h1>
 
-          <p className="text-slate-600 leading-relaxed">
-            Soluzioni coordinate per attività professionali, cantieri e incarichi specialistici.
-          </p>
-        </div>
+        <div className="w-20 h-[3px] bg-[#008f4c] mb-8 rounded-full" />
 
-        <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-          <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
-            Supporto continuativo
-          </div>
-
-          <p className="text-slate-600 leading-relaxed">
-            Assistenza consulenziale e gestione dedicata durante tutto il rapporto assicurativo.
-          </p>
-        </div>
-      </div>
-
-      <div className="flex flex-wrap gap-4 mt-12">
-        <button className="sigma-button-motion rounded-full bg-[#008f4c] text-white px-7 py-4 font-semibold">
-          Richiedi informazioni
-        </button>
-
-        <button className="rounded-full border border-slate-300 px-7 py-4 font-semibold text-slate-700 hover:border-[#008f4c] hover:text-[#008f4c] transition-colors">
-          Scarica documentazione
-        </button>
+        <p className="text-slate-600 text-xl leading-relaxed max-w-3xl">
+          Soluzioni dedicate ad architetti, ingegneri e geometri per la tutela del rischio professionale e la protezione dell'attività tecnica.
+        </p>
       </div>
     </div>
+
+    <div className="px-10 lg:px-14 py-14">
+      <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
+
+        <div>
+          <h2 className="text-3xl lg:text-4xl font-black tracking-[-0.04em] text-[#0b132d] mb-8">
+            Una convenzione costruita per le professioni tecniche.
+          </h2>
+
+          <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
+            <p>
+              Sigma Studi Brescia affianca professionisti tecnici e studi associati nell’analisi delle responsabilità professionali e delle esposizioni connesse all’attività progettuale e consulenziale.
+            </p>
+
+            <p>
+              La convenzione nasce per offrire strumenti assicurativi coerenti con le esigenze di architetti, ingegneri e geometri, con particolare attenzione alla tutela patrimoniale e professionale.
+            </p>
+
+            <p>
+              L’attività comprende verifica delle coperture in essere, consulenza specialistica e assistenza nella gestione delle eventuali richieste di risarcimento.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5 mt-12">
+
+            <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
+              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+                Responsabilità professionale
+              </div>
+
+              <p className="text-slate-600 leading-relaxed">
+                Coperture dedicate alle attività tecniche e progettuali.
+              </p>
+            </div>
+
+            <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
+              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+                Tutela patrimoniale
+              </div>
+
+              <p className="text-slate-600 leading-relaxed">
+                Protezione del patrimonio personale e professionale.
+              </p>
+            </div>
+
+            <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
+              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+                Assistenza specialistica
+              </div>
+
+              <p className="text-slate-600 leading-relaxed">
+                Supporto consulenziale e operativo nella gestione delle pratiche.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <div className="rounded-[2rem] border border-slate-200 bg-[#f8fafc] p-8">
+          <div className="text-[#008f4c] text-sm uppercase tracking-[0.2em] font-bold mb-6">
+            Documentazione
+          </div>
+
+          <div className="space-y-4">
+            <a
+  href="/documenti/questionario-architetti-ingegneri-geometri.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors"
+>
+  Questionario professionale
+</a>
+
+            <button className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors">
+              Modulo privacy
+            </button>
+
+            <button className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors">
+              Documentazione precontrattuale
+            </button>
+          </div>
+
+          <a
+            href="mailto:info@sigmabrescia.it"
+            className="mt-8 inline-flex w-full justify-center rounded-full bg-[#008f4c] px-6 py-4 font-semibold text-white hover:bg-[#007642] transition-colors"
+          >
+            Richiedi informazioni
+          </a>
+        </div>
+
+      </div>
+    </div>
+
   </section>
 )}
       </main>
