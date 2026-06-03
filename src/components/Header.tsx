@@ -26,6 +26,12 @@ export default function Header({
           <button onClick={() => goTo("home")} className="hover:text-[#008f4c] transition">Home</button>
           <button onClick={() => goTo("professionisti")} className="hover:text-[#243c7b] transition">Professionisti</button>
           <button onClick={() => goTo("aziende")} className="hover:text-[#0f7a43] transition">Aziende</button>
+          <button
+  onClick={() => goTo("privati")}
+  className="hover:text-[#008f4c] transition"
+>
+  Privati
+</button>
           <button onClick={() => goToSection("automotive")} className="hover:text-[#008f4c] transition">Automotive</button>
           <button onClick={() => goToSection("convenzioni")} className="hover:text-[#9a5b16] transition">Convenzioni</button>
           <button onClick={() => goToSection("contatti")} className="hover:text-[#008f4c] transition">Contatti</button>

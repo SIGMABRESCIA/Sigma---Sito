@@ -988,17 +988,80 @@ function SectionView({ accent, eyebrow, title, subtitle, heroTitle, heroText, he
 function RcProfessionaleDetail() {
   return (
     <div className="mt-10 rounded-[2.5rem] border border-slate-200 bg-white overflow-hidden shadow-[0_20px_80px_rgba(15,23,42,0.08)] sigma-reveal">
-      <div className="bg-gradient-to-br from-[#243c7b] via-[#314a86] to-[#425ea6] text-white p-10 lg:p-14 relative overflow-hidden">
-        <div className="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-white/10 blur-3xl" />
-        <div className="relative max-w-5xl">
-          <div className="inline-flex rounded-full bg-white/10 backdrop-blur px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6 border border-white/10">RC Professionale</div>
-          <h3 className="text-4xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.95] mb-8">Una polizza può sembrare corretta.<br />Finché non arriva una contestazione.</h3>
-          <p className="text-xl lg:text-2xl text-blue-100/90 leading-relaxed max-w-4xl mb-10">Molti professionisti scoprono limiti, esclusioni o scoperture soltanto quando devono realmente utilizzare la copertura. Il nostro lavoro parte proprio da qui: capire se la polizza protegge davvero l’attività che svolgi ogni giorno.</p>
+      <section className="rounded-t-[2.5rem] bg-gradient-to-br from-[#1c3563] via-[#25457d] to-[#31589c] text-white p-10 lg:p-16 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-white/10 rounded-full blur-3xl" />
+
+        <div className="relative z-10">
+          <div className="inline-flex rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-white/80 mb-8">
+            RC Professionale
+          </div>
+
+          <h3 className="text-4xl lg:text-6xl font-black tracking-[-0.05em] leading-[0.95] mb-8 max-w-5xl">
+            Una polizza può sembrare corretta.
+            <br />
+            Finché non arriva una contestazione.
+          </h3>
+
+          <div className="space-y-5 text-white/78 text-lg lg:text-xl leading-relaxed max-w-5xl">
+            <p>
+              Molti professionisti verificano il premio, il massimale o la presenza delle garanzie obbligatorie, ma raramente analizzano gli elementi che possono fare la differenza nel momento del sinistro.
+            </p>
+
+            <p>
+              Definizioni contrattuali, esclusioni, attività non correttamente dichiarate o coperture non adeguate alla reale operatività dello studio possono generare criticità proprio quando la tutela dovrebbe intervenire.
+            </p>
+
+            <p>
+              Sigma Studi Brescia affianca professionisti e studi associati nell’analisi del rischio professionale, verificando la coerenza tra attività svolta, responsabilità assunte e coperture assicurative esistenti.
+            </p>
+
+            <p>
+              L’obiettivo non è proporre una soluzione standardizzata, ma contribuire a costruire una tutela realmente coerente con l’attività professionale svolta.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5 mt-12">
+           <div className="rounded-[1.75rem] bg-white/8 border border-white/20 p-6 backdrop-blur-xl">
+             <div className="text-white/40 text-4xl font-black mb-2">
+  01
+</div>
+
+<div className="text-white font-bold text-xl mb-3">
+  Analisi attività
+</div>
+              <p className="text-white/70 leading-relaxed">
+                Verifica delle attività realmente svolte e delle responsabilità professionali assunte.
+              </p>
+            </div>
+
+            <div className="rounded-[1.75rem] bg-white/8 border border-white/20 p-6 backdrop-blur-xl">
+          <div className="text-white/40 text-4xl font-black mb-2">
+  02
+</div>
+
+<div className="text-white font-bold text-xl mb-3">
+  Verifica coperture
+</div>
+              <p className="text-white/70 leading-relaxed">
+                Controllo delle garanzie esistenti, delle esclusioni e delle eventuali aree scoperte.
+              </p>
+            </div>
+
+            <div className="rounded-[1.75rem] bg-white/8 border border-white/20 p-6 backdrop-blur-xl">
+          <div className="text-white/40 text-4xl font-black mb-2">
+  03
+</div>
+
+<div className="text-white font-bold text-xl mb-3">
+  Supporto sinistri
+</div>
+              <p className="text-white/70 leading-relaxed">
+                Supporto consulenziale dedicato e affiancamento nella gestione di eventuali sinistri.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="p-10 lg:p-14">
-        <CallToAction title="Vuoi capire se la tua RC professionale è davvero coerente con la tua attività?" text="Possiamo aiutarti ad analizzare la copertura attuale e individuare eventuali criticità prima che si trasformino in problemi concreti." />
-      </div>
+      </section>
     </div>
   );
 }
