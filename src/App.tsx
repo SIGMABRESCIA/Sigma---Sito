@@ -361,13 +361,23 @@ export default function SigmaWebsiteMockup() {
   Questionario professionale
 </a>
 
-            <button className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors">
-              Modulo privacy
-            </button>
+           <a
+  href="/documenti/privacy.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors"
+>
+  Informativa Privacy
+</a>
 
-            <button className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors">
-              Documentazione precontrattuale
-            </button>
+  <a
+  href="/documenti/mup.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors"
+>
+  MUP - Modulo Unico Precontrattuale
+</a>
           </div>
 
           <a
@@ -477,13 +487,23 @@ export default function SigmaWebsiteMockup() {
   Questionario professionale
 </a>
 
-            <button className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium">
-              Modulo privacy
-            </button>
+  <a
+  href="/documenti/privacy.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors"
+>
+  Informativa Privacy
+</a>
 
-            <button className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium">
-              Documentazione precontrattuale
-            </button>
+<a
+  href="/documenti/mup.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors"
+>
+  MUP - Modulo Unico Precontrattuale
+</a>
           </div>
         </div>
       </div>
@@ -590,13 +610,23 @@ export default function SigmaWebsiteMockup() {
   Questionario professionale
 </a>
 
-            <button className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors">
-              Modulo privacy
-            </button>
+           <a
+  href="/documenti/privacy.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors"
+>
+  Informativa Privacy
+</a>
 
-            <button className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors">
-              Documentazione precontrattuale
-            </button>
+<a
+  href="/documenti/mup.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors"
+>
+  MUP - Modulo Unico Precontrattuale
+</a>
           </div>
 
           <a
