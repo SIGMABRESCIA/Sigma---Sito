@@ -202,7 +202,15 @@ const privateDetails: Record<string, DetailData> = {
 
 export default function SigmaWebsiteMockup() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-  const [activeView, setActiveView] = React.useState<View>("home");
+const [activeView, setActiveView] = React.useState<View>(() => {
+  const hash = window.location.hash;
+
+  if (hash === "#professionisti") return "professionisti";
+  if (hash === "#aziende") return "aziende";
+  if (hash === "#privati") return "privati";
+
+  return "home";
+});
   const [activeProfessionalDetail, setActiveProfessionalDetail] = React.useState<Detail>(null);
   const [activeBusinessDetail, setActiveBusinessDetail] = React.useState<Detail>(null);
   const [activePrivateDetail, setActivePrivateDetail] = React.useState<Detail>(null);
@@ -255,8 +263,8 @@ export default function SigmaWebsiteMockup() {
     <div className="min-h-screen bg-[#f6f7f7] text-slate-900">
       <MotionStyles />
       <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} goTo={goTo} goToSection={goToSection} />
-      <Hero />
-      <main id="main-content" className="max-w-7xl mx-auto px-6 py-14 lg:py-20">
+      {activeView === "home" && <Hero />}
+     <main id="main-content" className="max-w-[1440px] mx-auto px-6 lg:px-10 py-14 lg:py-20">
         {activeView === "home" && <HomeView goTo={goTo} />}
         {activeView === "professionisti" && <ProfessionistiView activeDetail={activeProfessionalDetail} setActiveDetail={setActiveProfessionalDetail} goHome={() => goTo("home")} />}
         {activeView === "aziende" && <AziendeView activeDetail={activeBusinessDetail} setActiveDetail={setActiveBusinessDetail} goHome={() => goTo("home")} />}
@@ -675,7 +683,12 @@ function HomeView({ goTo }: { goTo: (view: View) => void }) {
       <section id="professionisti" className="mb-16 sigma-reveal sigma-delay-1 px-6 lg:px-16">
         <div className="mb-8">
           <div className="text-sm font-bold uppercase tracking-[0.2em] text-[#2f7a57] mb-4 ml-5 opacity-80">Soluzioni dedicate</div>
-          <h2 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-5 leading-[1.05]">Coperture costruite intorno alle esigenze di professionisti, aziende e privati.</h2>
+<h2
+  style={{ fontFamily: '"Inter", sans-serif' }}
+  className="text-3xl lg:text-[40px] font-semibold tracking-[-0.025em] leading-[1.08] mb-5"
+>
+  Coperture costruite intorno alle esigenze di professionisti, aziende e privati.
+</h2>
         </div>
         <div className="grid lg:grid-cols-3 gap-8 items-stretch mt-10">
           <SolutionCard
@@ -864,16 +877,16 @@ function SolutionCard({
         {title}
       </h3>
 
-      <p className="text-slate-600 leading-relaxed mb-8 min-h-[88px]">
+      <p className="text-[16px] text-slate-600 leading-[1.65] mb-8 min-h-[88px]">
         {text}
       </p>
 
       <div className="mb-10">
-  <div className="text-xs uppercase tracking-[0.18em] text-slate-400 mb-3 font-bold">
+<div className="text-[12px] uppercase tracking-[0.18em] text-slate-400 mb-3 font-bold">
     Ambiti principali
   </div>
 
-  <div className="flex flex-wrap gap-x-3 gap-y-2 text-[15px] font-medium text-slate-600">
+  <div className="flex flex-wrap gap-x-3 gap-y-2 text-[16px] font-medium text-slate-600">
     {tags.map((item, index) => (
       <span key={item}>
         {item}
@@ -887,7 +900,7 @@ function SolutionCard({
 
       <button
         onClick={onClick}
-        className={`mt-auto inline-flex items-center gap-2 font-semibold ${style.text} group-hover:gap-3 transition-all duration-300`}
+      className={`mt-auto inline-flex items-center gap-2 text-[16px] font-semibold ${style.text} group-hover:gap-3 transition-all duration-300`}
       >
         Approfondisci →
       </button>
@@ -896,18 +909,18 @@ function SolutionCard({
 }
 
 function ProfessionistiView({ activeDetail, setActiveDetail, goHome }: { activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void }) {
-  return <SectionView accent="blue" eyebrow="Soluzioni per Professionisti" title="Protezione dedicata a studi, consulenti e professionisti." subtitle="Coperture costruite intorno all’attività professionale, alla responsabilità e alla continuità dello studio." heroTitle="RC Professionale" heroText="Coperture dedicate a studi e professionisti che desiderano tutelare attività e patrimonio." heroButton="Approfondisci RC Professionale" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey="rc" primaryDetail={<RcProfessionaleDetail />} cards={professionalCards} details={professionalDetails} gridTitle="Altre soluzioni per completare la protezione professionale." />;
+  return <SectionView heroImage="/images/professionisti-hero.png" accent="blue" eyebrow="Soluzioni per Professionisti" title="Protezione dedicata a studi, consulenti e professionisti." subtitle="Coperture costruite intorno all’attività professionale, alla responsabilità e alla continuità dello studio." heroTitle="RC Professionale" heroText="Coperture dedicate a studi e professionisti che desiderano tutelare attività e patrimonio." heroButton="Approfondisci RC Professionale" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey="rc" primaryDetail={<RcProfessionaleDetail />} cards={professionalCards} details={professionalDetails} gridTitle="Altre soluzioni per completare la protezione professionale." />;
 }
 
 function AziendeView({ activeDetail, setActiveDetail, goHome }: { activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void }) {
-  return <SectionView accent="green" eyebrow="Soluzioni per Aziende" title="Proteggere un’azienda significa proteggere continuità, persone e responsabilità." subtitle="Costruiamo programmi assicurativi coordinati per imprese che desiderano tutelare operatività, patrimonio, governance e continuità aziendale." heroTitle="RC Aziendale & Responsabilità d’impresa" heroText="Una copertura efficace deve adattarsi al reale funzionamento dell’impresa: attività operative, clienti, dipendenti, fornitori e responsabilità gestionali." heroButton="Approfondisci RC Aziendale" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey="rc-azienda" primaryDetail={<SimpleDetail data={businessDetails["rc-azienda"]} />} cards={businessCards} details={businessDetails} gridTitle="Soluzioni per una protezione aziendale più evoluta." />;
+  return <SectionView heroImage="/images/aziende-hero.png" accent="green" eyebrow="Soluzioni per Aziende" title="Proteggere un’azienda significa proteggere continuità, persone e responsabilità." subtitle="Costruiamo programmi assicurativi coordinati per imprese che desiderano tutelare operatività, patrimonio, governance e continuità aziendale." heroTitle="RC Aziendale & Responsabilità d’impresa" heroText="Una copertura efficace deve adattarsi al reale funzionamento dell’impresa: attività operative, clienti, dipendenti, fornitori e responsabilità gestionali." heroButton="Approfondisci RC Aziendale" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey="rc-azienda" primaryDetail={<SimpleDetail data={businessDetails["rc-azienda"]} />} cards={businessCards} details={businessDetails} gridTitle="Soluzioni per una protezione aziendale più evoluta." />;
 }
 
 function PrivatiView({ activeDetail, setActiveDetail, goHome }: { activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void }) {
-  return <SectionView accent="gold" eyebrow="Soluzioni per Privati" title="Protezione per famiglia, casa e patrimonio personale." subtitle="Soluzioni pensate per tutelare la vita quotidiana con chiarezza, semplicità e coerenza." heroTitle="Casa, famiglia e responsabilità personale" heroText="Una protezione privata efficace deve essere semplice da capire ma costruita sulle esigenze reali della persona e della famiglia." heroButton="Scopri le soluzioni" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey={null} primaryDetail={null} cards={privateCards} details={privateDetails} gridTitle="Soluzioni per completare la protezione personale e familiare." />;
+  return <SectionView heroImage="/images/privati-hero.png" accent="gold" eyebrow="Soluzioni per Privati" title="Protezione per famiglia, casa e patrimonio personale." subtitle="Soluzioni pensate per tutelare la vita quotidiana con chiarezza, semplicità e coerenza." heroTitle="Casa, famiglia e responsabilità personale" heroText="Una protezione privata efficace deve essere semplice da capire ma costruita sulle esigenze reali della persona e della famiglia." heroButton="Scopri le soluzioni" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey={null} primaryDetail={null} cards={privateCards} details={privateDetails} gridTitle="Soluzioni per completare la protezione personale e familiare." />;
 }
 
-function SectionView({ accent, eyebrow, title, subtitle, heroTitle, heroText, heroButton, activeDetail, setActiveDetail, goHome, primaryKey, primaryDetail, cards, details, gridTitle }: { accent: Accent; eyebrow: string; title: string; subtitle: string; heroTitle: string; heroText: string; heroButton: string; activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void; primaryKey: string | null; primaryDetail: React.ReactNode; cards: CardData[]; details: Record<string, DetailData>; gridTitle: string }) {
+function SectionView({ heroImage, accent, eyebrow, title, subtitle, heroTitle, heroText, heroButton, activeDetail, setActiveDetail, goHome, primaryKey, primaryDetail, cards, details, gridTitle }: { heroImage: string; accent: Accent; eyebrow: string; title: string; subtitle: string; heroTitle: string; heroText: string; heroButton: string; activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void; primaryKey: string | null; primaryDetail: React.ReactNode; cards: CardData[]; details: Record<string, DetailData>; gridTitle: string }) {
   const style = accents[accent];
   const viewId = accent === "blue" ? "professionisti" : accent === "green" ? "aziende" : "privati";
   const [questionariOpen, setQuestionariOpen] = React.useState(false);
@@ -926,38 +939,86 @@ function SectionView({ accent, eyebrow, title, subtitle, heroTitle, heroText, he
   };
 
   return (
-    <section id={`view-${viewId}`} className="bg-white rounded-[2rem] border border-slate-200 p-10 lg:p-14 shadow-sm mb-10 sigma-reveal scroll-mt-28">
+   <section
+  id={`view-${viewId}`}
+  className="w-full max-w-[1380px] mx-auto bg-white rounded-[2rem] border border-slate-200 p-10 lg:p-16 shadow-sm mb-10 sigma-reveal scroll-mt-28"
+>
       <button onClick={goHome} className="mb-8 inline-flex rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold hover:-translate-y-0.5 hover:shadow-md transition-all duration-300">← Torna alla home</button>
       <div className="max-w-5xl mb-12">
         <div className={`inline-flex rounded-full ${style.bg} ${style.text} px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6`}>{eyebrow}</div>
         <h2 className="text-4xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.95] mb-8">{title}</h2>
         <p className="text-xl text-slate-600 leading-relaxed max-w-4xl">{subtitle}</p>
       </div>
-      <div className={`rounded-[2.5rem] overflow-hidden bg-gradient-to-br ${style.gradient} text-white mb-12 shadow-[0_20px_80px_rgba(15,51,40,0.18)]`}>
-        <div className="p-10 lg:p-14 grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+      <div className={`relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br ${style.gradient} text-white mb-12 shadow-[0_20px_80px_rgba(15,51,40,0.18)]`}>
+        {/* Fotografia dedicata, visibile sul lato destro e sfumata verso il colore */}
+        {/* Immagine editoriale della sezione */}
+<div className="absolute inset-0 hidden lg:block pointer-events-none">
+  <img
+    src={heroImage}
+    alt=""
+    className="absolute inset-0 h-full w-full object-cover object-right"
+  />
+
+{accent === "blue" && (
+  <div className="absolute inset-0 bg-gradient-to-r from-[#304d8c] from-[0%] via-[#304d8c]/95 via-[28%] to-transparent to-[88%]" />
+)}
+
+{accent === "green" && (
+  <div className="absolute inset-0 bg-gradient-to-r from-[#123f32] from-[0%] via-[#123f32]/95 via-[28%] to-transparent to-[88%]" />
+)}
+
+{accent === "gold" && (
+  <div className="absolute inset-0 bg-gradient-to-r from-[#965816] from-[0%] via-[#965816]/95 via-[28%] to-transparent to-[88%]" />
+)}
+</div>
+
+        <div className="relative z-10 p-10 lg:p-14 grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
           <div>
-            <div className="inline-flex rounded-full bg-white/10 backdrop-blur px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6 border border-white/10">In primo piano</div>
-            <h3 className="text-4xl lg:text-5xl font-black tracking-[-0.04em] leading-[0.95] mb-8">{heroTitle}</h3>
-            <p className="text-xl text-white/80 leading-relaxed mb-8 max-w-3xl">{heroText}</p>
+            <div className="inline-flex rounded-full bg-white/10 backdrop-blur-md px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6 border border-white/15">
+              In primo piano
+            </div>
+
+            <h3 className="text-4xl lg:text-5xl font-black tracking-[-0.04em] leading-[0.95] mb-8 max-w-3xl">
+              {heroTitle}
+            </h3>
+
+            <p className="text-[18px] lg:text-[20px] text-white/90 leading-[1.65] mb-8 max-w-3xl">
+              {heroText}
+            </p>
+
             {primaryKey && (
               <div className="flex flex-col sm:flex-row gap-4">
-                <button onClick={() => setActiveDetail(activeDetail === primaryKey ? null : primaryKey)} className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-white text-[#0f172a] px-8 py-4 font-bold hover:bg-slate-100 transition-all duration-300">
+                <button
+                  onClick={() => setActiveDetail(activeDetail === primaryKey ? null : primaryKey)}
+                  className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-white text-[#0f172a] px-8 py-4 font-bold hover:bg-slate-100 transition-all duration-300"
+                >
                   {activeDetail === primaryKey ? "Chiudi approfondimento" : heroButton}
                 </button>
+
                 {viewId === "professionisti" && (
-                  <button onClick={() => setQuestionariOpen(!questionariOpen)} className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur px-8 py-4 font-bold text-white hover:bg-white/15 transition-all duration-300">
+                  <button
+                    onClick={() => setQuestionariOpen(!questionariOpen)}
+                    className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-8 py-4 font-bold text-white hover:bg-white/15 transition-all duration-300"
+                  >
                     Scarica questionario
                   </button>
                 )}
               </div>
             )}
           </div>
-          <div className="space-y-4">
+
+          <div className="space-y-3 max-w-[480px] ml-auto animate-[sigmaFadeUp_1000ms_cubic-bezier(0.22,1,0.36,1)_both]">
             {cards.slice(0, 4).map((item) => (
-              <button key={item.key} onClick={() => openDetail(item.key)} className="group w-full text-left rounded-2xl bg-white/10 border border-white/10 backdrop-blur px-6 py-5 font-semibold text-white transition-all duration-300 hover:translate-x-1 hover:bg-white/15 hover:border-white/25 focus:outline-none focus:ring-2 focus:ring-white/30 cursor-pointer">
+              <button
+                key={item.key}
+                onClick={() => openDetail(item.key)}
+               className={`group w-full text-left rounded-2xl ${accent === "blue" ? "bg-[#20345f]/75" : accent === "green" ? "bg-[#123f32]/75" : "bg-[#5f3718]/78"} border border-white/20 backdrop-blur-md px-6 py-4 text-[17px] font-semibold text-white transition-all duration-300 hover:-translate-x-1 hover:bg-black/25`}
+              >
                 <span className="flex items-center justify-between gap-4">
                   <span>{item.title}</span>
-                  <span className="text-sm text-white/60 transition-all duration-300 group-hover:text-white group-hover:translate-x-1">Apri →</span>
+                  <span className="text-[15px] text-white/70 transition-all duration-300 group-hover:text-white group-hover:translate-x-1">
+                    Apri →
+                  </span>
                 </span>
               </button>
             ))}
@@ -980,7 +1041,7 @@ function SectionView({ accent, eyebrow, title, subtitle, heroTitle, heroText, he
         </div>
       )}
       {primaryKey && activeDetail === primaryKey && primaryDetail}
-      <DetailGrid title={gridTitle} cards={cards} active={activeDetail} setActive={setActiveDetail} activeBorder={style.border} details={details} />
+      <DetailGrid title={gridTitle} cards={cards} active={activeDetail} setActive={setActiveDetail} activeBorder={style.border} details={details} accent={accent} />
     </section>
   );
 }
@@ -1066,19 +1127,23 @@ function RcProfessionaleDetail() {
   );
 }
 
-function DetailGrid({ title, cards, active, setActive, activeBorder, details }: { title: string; cards: CardData[]; active: Detail; setActive: (value: Detail) => void; activeBorder: string; details: Record<string, DetailData> }) {
+function DetailGrid({ title, cards, active, setActive, activeBorder, details, accent }: { title: string; cards: CardData[]; active: Detail; setActive: (value: Detail) => void; activeBorder: string; details: Record<string, DetailData>; accent: Accent; }) {
   return (
     <>
       <div className="mt-12 mb-8">
-        <div className="text-sm font-bold uppercase tracking-[0.2em] text-[#2f7a57] mb-4 opacity-80">Aree complementari</div>
+<div className={`text-sm font-bold uppercase tracking-[0.2em] mb-4 opacity-80 ${accent === "blue" ? "text-[#304d8c]" : accent === "green" ? "text-[#2f7a57]" : "text-[#a6631b]"}`}>Aree complementari</div>
         <h3 className="text-3xl lg:text-4xl font-extrabold tracking-tight">{title}</h3>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {cards.map((card) => (
           <React.Fragment key={card.key}>
             <button onClick={() => setActive(active === card.key ? null : card.key)} className={`text-left rounded-[2rem] border p-7 transition-all duration-500 ease-out ${active === card.key ? `bg-white ${activeBorder} shadow-xl -translate-y-1` : "border-slate-200 bg-[#f8fafc] hover:bg-white hover:-translate-y-1 hover:shadow-xl"}`}>
-              <h4 className="text-2xl font-extrabold mb-4">{card.title}</h4>
-              <p className="text-slate-600 leading-relaxed">{card.text}</p>
+             <h4 className="text-[20px] lg:text-[22px] font-bold tracking-[-0.02em] leading-[1.2] mb-3">
+  {card.title}
+</h4>
+            <p className="text-[16px] lg:text-[17px] text-slate-600 leading-[1.6]">
+  {card.text}
+</p>
             </button>
             {active === card.key && details[card.key] && (
               <div id={`detail-${card.key}`} className="md:col-span-2 lg:col-span-3 sigma-reveal scroll-mt-28">
@@ -1130,50 +1195,66 @@ function WhySigmaSection() {
         <div className="inline-flex rounded-full bg-[#eefaf3] text-[#0f7a43] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6">Perché Sigma</div>
         <h2 className="text-4xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.95] mb-8 max-w-5xl">Non ci limitiamo a proporre polizze.<br />Analizziamo rischi, continuità e sostenibilità delle coperture nel tempo.</h2>
         <p className="text-xl text-slate-600 leading-relaxed max-w-4xl mb-14">Il nostro approccio parte dall’analisi concreta dell’attività, delle responsabilità e delle esposizioni reali. Costruiamo soluzioni assicurative coordinate, evitando sovrapposizioni, incoerenze e aree scoperte che spesso emergono solo nei momenti più delicati.</p>
-        <div className="grid lg:grid-cols-4 gap-6 mb-14">
-<WhyCard
-  value="Free"
-  title="Indipendenza"
-  text="Selezioniamo soluzioni senza vincoli verso singole compagnie."
-  color="text-[#0f7a43]"
-/>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 mb-14 border-y border-[#dce5df]">
 
-<WhyCard
-  value="Focus"
-  title="Analisi prima della proposta"
-  text="Ascoltiamo esigenze, responsabilità ed esposizioni prima di proporre coperture."
-  color="text-[#243c7b]"
-/>
+  <div className="py-7 lg:pr-7">
+    <div className="text-3xl font-bold tracking-[-0.03em] text-[#0f7a43] mb-3">
+      Free
+    </div>
+    <h3 className="text-[18px] font-semibold mb-2">
+      Indipendenza
+    </h3>
+    <p className="text-[17px] text-slate-600 leading-[1.6]">
+      Selezioniamo soluzioni senza vincoli verso singole compagnie.
+    </p>
+  </div>
 
-<WhyCard
-  value="Tailor"
-  title="Approccio consulenziale"
-  text="Ogni attività richiede valutazioni specifiche e soluzioni coerenti con il rischio."
-  color="text-[#9a5b16]"
-/>
+  <div className="py-7 lg:px-7 lg:border-l border-[#dce5df]">
+    <div className="text-3xl font-bold tracking-[-0.03em] text-[#243c7b] mb-3">
+      Focus
+    </div>
+    <h3 className="text-[18px] font-semibold mb-2">
+      Analisi prima della proposta
+    </h3>
+    <p className="text-[17px] text-slate-600 leading-[1.6]">
+      Ascoltiamo esigenze, responsabilità ed esposizioni prima di proporre coperture.
+    </p>
+  </div>
 
-<WhyCard
-  value="Care"
-  title="Assistenza continua"
-  text="Affianchiamo il cliente nel tempo, anche nella gestione dei sinistri."
-  color="text-slate-900"
-/>   
-        </div>
+  <div className="py-7 lg:px-7 lg:border-l border-[#dce5df]">
+    <div className="text-3xl font-bold tracking-[-0.03em] text-[#9a5b16] mb-3">
+      Tailor
+    </div>
+    <h3 className="text-[18px] font-semibold mb-2">
+      Approccio consulenziale
+    </h3>
+    <p className="text-[17px] text-slate-600 leading-[1.6]">
+      Ogni attività richiede valutazioni specifiche e soluzioni coerenti con il rischio.
+    </p>
+  </div>
+
+  <div className="py-7 lg:pl-7 lg:border-l border-[#dce5df]">
+    <div className="text-3xl font-bold tracking-[-0.03em] text-[#102f2c] mb-3">
+      Care
+    </div>
+    <h3 className="text-[18px] font-semibold mb-2">
+      Assistenza continua
+    </h3>
+    <p className="text-[17px] text-slate-600 leading-[1.6]">
+      Affianchiamo il cliente nel tempo, anche nella gestione dei sinistri.
+    </p>
+  </div>
+
+</div>
         <CallToAction title="Hai già una polizza? Possiamo aiutarti a capire se è davvero coerente con la tua attività." text="Verifichiamo struttura delle coperture, massimali, esclusioni, continuità assicurativa e possibili aree di criticità." />
       </div>
     </section>
   );
 }
 
-function WhyCard({ value, title, text, color }: { value: string; title: string; text: string; color: string }) {
-  return (
-    <div className="sigma-float-card rounded-[2rem] bg-[#f8fafc] border border-slate-200 p-8">
-      <div className={`text-5xl font-black ${color} mb-4`}>{value}</div>
-      <div className="text-lg font-bold mb-2">{title}</div>
-      <p className="text-slate-600 leading-relaxed">{text}</p>
-    </div>
-  );
-}
+
+
+
 
 
 

@@ -17,12 +17,16 @@ export default function Header({
 }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-white/60 shadow-[0_8px_30px_rgba(15,23,42,0.04)] transition-all duration-500">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
-        <div className="bg-white rounded-xl px-3 py-2">
-  <img src="/logo-sigma-originale.png" alt="Sigma Studi Brescia" className="h-12 w-auto object-contain" />
+     <div className="w-full max-w-[1500px] mx-auto px-8 lg:px-12 h-20 grid grid-cols-[260px_1fr_180px] items-center">
+      <div className="flex items-center shrink-0">
+  <img
+    src="/logo-sigma-originale.png"
+    alt="Sigma Studi Brescia"
+    className="w-[250px] h-auto object-contain"
+  />
 </div>
 
-        <nav className="hidden xl:flex items-center gap-7 text-sm font-medium">
+      <nav className="hidden xl:flex items-center justify-center gap-8 text-[16px] font-medium">
           <button onClick={() => goTo("home")} className="hover:text-[#008f4c] transition">Home</button>
           <button onClick={() => goTo("professionisti")} className="hover:text-[#243c7b] transition">Professionisti</button>
           <button onClick={() => goTo("aziende")} className="hover:text-[#0f7a43] transition">Aziende</button>
@@ -38,10 +42,11 @@ export default function Header({
           <button onClick={() => goTo("reclami")} className="hover:text-[#008f4c] transition">Reclami</button>
           <button onClick={() => goTo("whistleblowing")} className="hover:text-[#243c7b] transition">Segnalazione illeciti</button>
         </nav>
-
+<div className="flex justify-end">
         <button className="hidden md:flex items-center gap-2 rounded-full border border-[#008f4c] px-5 py-2 text-sm font-semibold text-[#008f4c] hover:bg-[#e8f5ef] transition whitespace-nowrap">
           <UserRound size={18} /> Area riservata
         </button>
+        </div>
 
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

@@ -1,4 +1,4 @@
-import { Handshake } from "lucide-react";
+import { ArrowRight, Handshake } from "lucide-react";
 
 type View =
   | "home"
@@ -11,56 +11,92 @@ type View =
   | "convenzioni-avvocati"
   | "convenzioni-tecnici";
 
-export default function ConvenzioniSection({ goTo }: { goTo: (view: View) => void }) {
+export default function ConvenzioniSection({
+  goTo,
+}: {
+  goTo: (view: View) => void;
+}) {
+  const convenzioni = [
+    {
+      label: "Commercialisti",
+      view: "convenzioni-commercialisti" as View,
+    },
+    {
+      label: "Avvocati",
+      view: "convenzioni-avvocati" as View,
+    },
+    {
+      label: "Tecnici professionisti",
+      view: "convenzioni-tecnici" as View,
+    },
+  ];
+
   return (
     <section
       id="convenzioni"
-      className="relative overflow-hidden rounded-[2.5rem] bg-[#06281f] text-white p-10 lg:p-14 mb-16 sigma-reveal"
+      className="relative overflow-hidden rounded-[2.5rem] border border-[#dce5df] bg-[#f7f5f0] text-[#102f2c] p-10 lg:p-14 mb-16 sigma-reveal"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.22),transparent_38%)]" />
+      {/* Accenti di sfondo */}
+      <div className="pointer-events-none absolute -top-28 -right-24 h-[340px] w-[340px] rounded-full bg-[#e6f2eb] blur-3xl opacity-80" />
+      <div className="pointer-events-none absolute -bottom-32 -left-20 h-[300px] w-[300px] rounded-full bg-white blur-3xl opacity-90" />
 
-      <div className="relative z-10 grid lg:grid-cols-[1fr_1fr] gap-12 items-center">
+      <div className="relative z-10 grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center">
+
+        {/* COLONNA SINISTRA */}
         <div>
-          <div className="flex items-center gap-3 text-[#7ff0c5] text-sm uppercase tracking-[0.22em] font-semibold mb-8">
-            <Handshake size={18} />
+          <div className="inline-flex items-center gap-3 text-[#16875f] text-xs uppercase tracking-[0.22em] font-semibold mb-7">
+            <Handshake size={18} strokeWidth={1.8} />
             Convenzioni professionali
           </div>
 
-          <h2 className="text-5xl lg:text-6xl font-black tracking-[-0.05em] leading-[0.95] mb-8 max-w-xl">
-            Convenzioni professionali progettate intorno alle esigenze reali degli studi.
+          <h2
+            style={{ fontFamily: '"Inter", sans-serif' }}
+            className="text-3xl lg:text-[38px] font-semibold tracking-[-0.025em] leading-[1.08] max-w-[590px]"
+          >
+            Convenzioni professionali progettate intorno alle esigenze reali
+            degli studi.
           </h2>
 
-          <div className="w-20 h-[2px] bg-[#7ff0c5] mb-8" />
+          <div className="w-12 h-[2px] bg-[#16875f] mt-8 mb-7" />
 
-          <p className="text-white/78 text-lg leading-relaxed max-w-xl">
-            Convenzioni dedicate alla tutela del rischio professionale sviluppate per ordini, categorie professionali e studi associati.
+          <p className="text-[#526174] text-base lg:text-[17px] leading-[1.7] max-w-[570px]">
+            Convenzioni dedicate alla tutela del rischio professionale
+            sviluppate per ordini, categorie professionali e studi associati.
           </p>
         </div>
 
-        <div className="grid gap-5">
-          {[
-            { label: "Commercialisti", view: "convenzioni-commercialisti" as View },
-            { label: "Avvocati", view: "convenzioni-avvocati" as View },
-            { label: "Tecnici professionisti", view: "convenzioni-tecnici" as View },
-          ].map((item) => (
+        {/* COLONNA DESTRA */}
+        <div className="grid gap-4">
+          {convenzioni.map((item, index) => (
             <button
               key={item.label}
               onClick={() => goTo(item.view)}
-              className="group rounded-[2rem] border border-white/10 bg-white/[0.05] backdrop-blur-xl p-7 min-h-[130px] flex items-center justify-between text-left transition-all duration-500 hover:-translate-y-1 hover:bg-white/[0.08]"
+              className="group rounded-[1.5rem] border border-[#d8e3dc] bg-white/80 px-6 py-6 lg:px-7 lg:py-7 flex items-center justify-between text-left transition-all duration-300 hover:-translate-y-1 hover:border-[#a9cbbb] hover:shadow-[0_18px_45px_rgba(16,47,44,0.08)]"
             >
-              <div>
-                <div className="w-14 h-[2px] bg-[#7ff0c5]/60 mb-5" />
-                <h3 className="text-3xl font-black tracking-[-0.03em] leading-tight">
-                  {item.label}
-                </h3>
-                <p className="text-[#7ff0c5] uppercase tracking-[0.2em] text-xs font-semibold mt-3">
-                  Scopri la convenzione
-                </p>
+              <div className="flex items-center gap-5">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#eaf4ee] text-[#16875f] text-sm font-semibold">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                <div>
+                  <h3
+                    style={{ fontFamily: '"Inter", sans-serif' }}
+                    className="text-xl font-semibold tracking-[-0.02em] text-[#102f2c]"
+                  >
+                    {item.label}
+                  </h3>
+
+                  <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#16875f]">
+                    Scopri la convenzione
+                  </p>
+                </div>
               </div>
 
-              <div className="text-[#7ff0c5] text-4xl opacity-70 group-hover:translate-x-1 transition-transform">
-                →
-              </div>
+              <ArrowRight
+                size={21}
+                strokeWidth={1.7}
+                className="text-[#16875f] transition-transform duration-300 group-hover:translate-x-1"
+              />
             </button>
           ))}
         </div>

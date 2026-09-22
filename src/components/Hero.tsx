@@ -2,70 +2,210 @@ import { ShieldCheck } from "lucide-react";
 
 export default function Hero() {
   return (
-   <section id="home" className="relative overflow-hidden bg-[#061b16] text-white">
-  <div className="absolute inset-0 animate-[floatSlow_18s_ease-in-out_infinite] bg-[radial-gradient(circle_at_20%_20%,rgba(0,143,76,0.42),transparent_32%)]" />
-  <div className="absolute inset-0 animate-[floatSlow2_24s_ease-in-out_infinite] bg-[radial-gradient(circle_at_80%_30%,rgba(0,120,255,0.16),transparent_38%)]" />
-  <div className="absolute -right-32 top-20 w-[520px] h-[520px] rounded-full bg-[#008f4c]/20 blur-3xl" />
-  <div className="absolute left-1/2 bottom-0 w-[700px] h-[260px] -translate-x-1/2 bg-white/5 blur-3xl" />
-<div className="absolute top-[-120px] left-[-80px] w-[420px] h-[420px] bg-emerald-400/20 rounded-full blur-3xl animate-pulse" />
+    <>
+      <section
+        id="home"
+        className="relative overflow-hidden bg-[#f7f5f0] text-[#102f2c]"
+      >
+        {/* IMMAGINE EDITORIALE - SOLO DESKTOP */}
+        <div className="absolute inset-y-0 right-0 hidden lg:block w-[54%] pointer-events-none overflow-hidden">
+          <img
+            src="/images/hero-editorial.png"
+            alt=""
+            className="hero-image-motion absolute inset-0 h-full w-full object-cover object-center"
+          />
 
-<div
-  className="absolute bottom-[-140px] right-[-120px] w-[520px] h-[520px] bg-cyan-400/10 rounded-full blur-3xl"
-  style={{
-    animation: "floatSlow 14s ease-in-out infinite",
-  }}
-/>
+          {/* Dissolvenza verso il testo */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f7f5f0] via-[#f7f5f0]/90 via-[20%] to-transparent" />
 
-<div
-  className="absolute top-[30%] left-[45%] w-[260px] h-[260px] bg-green-300/10 rounded-full blur-3xl"
-  style={{
-    animation: "floatSlow2 18s ease-in-out infinite",
-  }}
-/>
-<div className="absolute inset-0 bg-black/25" />
-      <div className="relative z-10 max-w-[1240px] mx-auto px-8 lg:px-12 py-16 lg:py-28 animate-[sigmaFadeUp_1400ms_cubic-bezier(0.22,1,0.36,1)_both]">
-        
-          <div className="inline-flex items-center gap-3 rounded-full bg-white/10 backdrop-blur-xl px-5 py-3 text-sm font-semibold text-[#b8f2d3] mb-10 border border-white/10">
-            <ShieldCheck size={18} />
-            Consulenza assicurativa evoluta per aziende, professionisti e patrimoni
+          {/* Leggera dissolvenza inferiore */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#f7f5f0]/80" />
+        </div>
+
+        {/* CONTENUTO */}
+        <div className="relative z-10 max-w-[1280px] mx-auto px-8 lg:px-12 pt-10 lg:pt-12 pb-10 lg:pb-12">
+          <div className="max-w-[790px]">
+
+            {/* BADGE */}
+            <div className="hero-enter hero-delay-1 inline-flex items-center gap-3 rounded-full bg-[#edf1eb]/90 px-5 py-3 text-[15px] font-semibold text-[#23845f] mb-10 border border-[#d9e1dc]">
+              <ShieldCheck size={19} strokeWidth={1.8} />
+              Consulenza assicurativa evoluta per aziende, professionisti e patrimoni
+            </div>
+
+            {/* TITOLO */}
+            <h1
+              style={{ fontFamily: '"Inter", sans-serif' }}
+              className="hero-enter hero-delay-2 text-5xl sm:text-6xl lg:text-[4.3rem] font-bold tracking-[-0.025em] leading-[0.98] mb-8 max-w-[760px]"
+            >
+              Protezione assicurativa progettata intorno ai rischi reali.
+            </h1>
+
+            {/* TARGET */}
+            <div className="hero-enter hero-delay-3 mb-8 text-[18px] lg:text-[21px] font-medium text-[#16875f]">
+              Per professionisti, aziende e famiglie.
+            </div>
+
+            {/* DESCRIZIONE */}
+            <p className="hero-enter hero-delay-4 text-lg lg:text-[20px] text-[#526174] leading-[1.65] max-w-[680px]">
+              Analizziamo responsabilità, continuità operativa, patrimonio ed
+              esposizioni concrete per costruire coperture più coerenti,
+              sostenibili e realmente utili nel momento in cui servono.
+            </p>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-[7.2rem] font-black tracking-[-0.065em] leading-[0.88] mb-10 max-w-6xl text-white animate-[sigmaFadeUp_1800ms_cubic-bezier(0.22,1,0.36,1)_both]">
-            Protezione assicurativa progettata intorno ai rischi reali.
-          </h1>
+          {/* DATI */}
+          <div className="mt-10 lg:mt-11 max-w-[900px]">
+            <div className="grid sm:grid-cols-3">
 
-         <p
-  className="text-xl lg:text-2xl text-white/72 leading-relaxed mb-12 max-w-4xl animate-[sigmaFadeUp_2200ms_cubic-bezier(0.22,1,0.36,1)_both]"
->
-            Analizziamo responsabilità, continuità operativa, patrimonio ed esposizioni concrete per costruire coperture più coerenti, sostenibili e realmente utili nel momento in cui servono.
-          </p>
+              {/* 15+ */}
+              <div className="hero-enter hero-delay-5 py-5 sm:pr-8 border-b sm:border-b-0 border-[#cfd8d2]">
+                <div className="text-[32px] font-semibold text-[#16875f]">
+                  15+
+                </div>
 
-          <div className="grid sm:grid-cols-3 gap-4 max-w-5xl">
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5 transition-all duration-700 hover:-translate-y-2 hover:bg-white/10 hover:border-[#8ce0b5]/30">
-              <div className="text-3xl font-black mb-2 text-[#8ee0b5]">15+</div>
-              <div className="text-sm uppercase tracking-[0.18em] text-white/45 mb-2">Esperienza</div>
-              <p className="text-white/70 text-sm">
-                Oltre quindici anni di affiancamento a imprese, studi professionali e famiglie.
-              </p>
-            </div>
+                <div className="mt-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#52615b]">
+                  Esperienza
+                </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5 transition-all duration-700 hover:-translate-y-2 hover:bg-white/10 hover:border-[#8ce0b5]/30">
-              <div className="text-3xl font-black mb-2 text-[#8ee0b5]">360°</div>
-              <div className="text-sm uppercase tracking-[0.18em] text-white/45 mb-2">Visione integrata</div>
-              <p className="text-white/70 text-sm">
-                Analisi coordinata di responsabilità, continuità e patrimonio.
-              </p>
-            </div>
+                <p className="mt-3 text-[17px] leading-[1.6] text-[#42514c] max-w-[270px]">
+                  Oltre quindici anni di affiancamento a imprese, studi
+                  professionali e famiglie.
+                </p>
+              </div>
 
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5 transition-all duration-700 hover:-translate-y-2 hover:bg-white/10 hover:border-[#8ce0b5]/30">
-              <div className="text-3xl font-black mb-2 text-[#8ee0b5]">Tailor</div>
-              <div className="text-sm uppercase tracking-[0.18em] text-white/45 mb-2">Approccio consulenziale</div>
-              <p className="text-white/70 text-sm">
-                Nessuna soluzione standardizzata: ogni copertura nasce dall’analisi reale del rischio.
-              </p>
+              {/* 360° */}
+              <div className="hero-enter hero-delay-6 py-5 sm:px-8 border-b sm:border-b-0 sm:border-l border-[#cfd8d2]">
+                <div className="text-[32px] font-semibold text-[#16875f]">
+                  360°
+                </div>
+
+                <div className="mt-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#52615b]">
+                  Visione integrata
+                </div>
+
+                <p className="mt-3 text-[17px] leading-[1.6] text-[#42514c] max-w-[270px]">
+                  Analisi coordinata di responsabilità, continuità e patrimonio.
+                </p>
+              </div>
+
+              {/* TAILOR */}
+              <div className="hero-enter hero-delay-7 py-5 sm:pl-8 sm:border-l border-[#cfd8d2]">
+                <div className="text-[32px] font-semibold text-[#16875f]">
+                  Tailor
+                </div>
+
+                <div className="mt-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#52615b]">
+                  Approccio consulenziale
+                </div>
+
+                <p className="mt-3 text-[17px] leading-[1.6] text-[#42514c] max-w-[290px]">
+                  Nessuna soluzione standardizzata: ogni copertura nasce
+                  dall’analisi reale del rischio.
+                </p>
+              </div>
+
             </div>
           </div>
         </div>
-    </section>
+      </section>
+
+      {/* ANIMAZIONI HERO */}
+<style>{`
+  .hero-enter {
+    opacity: 0;
+    transform: translateY(28px);
+    animation: heroReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .hero-delay-1 {
+    animation-delay: 0.05s;
+  }
+
+  .hero-delay-2 {
+    animation-delay: 0.18s;
+  }
+
+  .hero-delay-3 {
+    animation-delay: 0.34s;
+  }
+
+  .hero-delay-4 {
+    animation-delay: 0.46s;
+  }
+
+  .hero-delay-5 {
+    animation-delay: 0.62s;
+  }
+
+  .hero-delay-6 {
+    animation-delay: 0.76s;
+  }
+
+  .hero-delay-7 {
+    animation-delay: 0.90s;
+  }
+
+  /* Il titolo entra leggermente da sinistra */
+  h1.hero-enter {
+    transform: translateX(-35px);
+    animation-name: heroTitleReveal;
+  }
+
+  @keyframes heroReveal {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes heroTitleReveal {
+    from {
+      opacity: 0;
+      transform: translateX(-35px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Movimento editoriale della fotografia */
+  .hero-image-motion {
+    transform: scale(1.02) translateX(0);
+    animation: heroImageMotion 10s ease-in-out infinite alternate;
+    transform-origin: center center;
+  }
+
+  @keyframes heroImageMotion {
+    from {
+      transform: scale(1.02) translateX(0);
+    }
+
+    to {
+      transform: scale(1.09) translateX(-18px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-enter,
+    h1.hero-enter {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+
+    .hero-image-motion {
+      transform: none;
+      animation: none;
+    }
+  }
+`}</style>
+    </>
   );
 }
