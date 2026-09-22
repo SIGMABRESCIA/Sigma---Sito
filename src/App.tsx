@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  CarFront,
+  Handshake,
+  ShieldCheck,
+  RefreshCw,
+} from "lucide-react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -12,6 +18,7 @@ type View =
   | "professionisti"
   | "aziende"
   | "privati"
+  | "automotive"
   | "reclami"
   | "whistleblowing"
   | "convenzioni-commercialisti"
@@ -269,6 +276,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
         {activeView === "professionisti" && <ProfessionistiView activeDetail={activeProfessionalDetail} setActiveDetail={setActiveProfessionalDetail} goHome={() => goTo("home")} />}
         {activeView === "aziende" && <AziendeView activeDetail={activeBusinessDetail} setActiveDetail={setActiveBusinessDetail} goHome={() => goTo("home")} />}
         {activeView === "privati" && <PrivatiView activeDetail={activePrivateDetail} setActiveDetail={setActivePrivateDetail} goHome={() => goTo("home")} />}
+          {activeView === "automotive" && <AutomotiveView goHome={() => goTo("home")} />}
         {activeView === "reclami" && <ReclamiSection />}
         {activeView === "whistleblowing" && <WhistleblowingSection />}
 {activeView === "convenzioni-commercialisti" && (
@@ -723,7 +731,9 @@ function HomeView({ goTo }: { goTo: (view: View) => void }) {
         </div>
       </section>
       <ConvenzioniSection goTo={goTo} />
-      <AutomotiveAffinitySection />
+<AutomotiveAffinitySection
+   onOpenAutomotive={() => goTo("automotive")}
+/>
       <WhySigmaSection />
       <ContactSection />
     </>
@@ -919,7 +929,180 @@ function AziendeView({ activeDetail, setActiveDetail, goHome }: { activeDetail: 
 function PrivatiView({ activeDetail, setActiveDetail, goHome }: { activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void }) {
   return <SectionView heroImage="/images/privati-hero.png" accent="gold" eyebrow="Soluzioni per Privati" title="Protezione per famiglia, casa e patrimonio personale." subtitle="Soluzioni pensate per tutelare la vita quotidiana con chiarezza, semplicità e coerenza." heroTitle="Casa, famiglia e responsabilità personale" heroText="Una protezione privata efficace deve essere semplice da capire ma costruita sulle esigenze reali della persona e della famiglia." heroButton="Scopri le soluzioni" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey={null} primaryDetail={null} cards={privateCards} details={privateDetails} gridTitle="Soluzioni per completare la protezione personale e familiare." />;
 }
+function AutomotiveView({ goHome }: { goHome: () => void }) {
+const automotiveAreas = [
+  {
+    icon: CarFront,
+    iconColor: "text-[#16875f]",
+    iconBg: "bg-[#eaf5ef]",
+    title: "Convenzioni CVT",
+    text: "Programmi dedicati per coperture Corpi Veicoli Terrestri e garanzie accessorie, strutturati in funzione delle caratteristiche della rete e dei veicoli.",
+  },
+  {
+    icon: Handshake,
+    iconColor: "text-[#2878c8]",
+    iconBg: "bg-[#eaf2fb]",
+    title: "Partnership dealer",
+    text: "Soluzioni pensate per concessionari, gruppi automotive e reti vendita, integrate nel percorso commerciale.",
+  },
+  {
+    icon: ShieldCheck,
+    iconColor: "text-[#c88718]",
+    iconBg: "bg-[#fbf3e4]",
+    title: "Compagnie primarie",
+    text: "Accesso a convenzioni e prodotti sviluppati con partner assicurativi qualificati.",
+  },
+  {
+    icon: RefreshCw,
+    iconColor: "text-[#c85b57]",
+    iconBg: "bg-[#faeceb]",
+    title: "Fidelizzazione cliente",
+    text: "Coperture integrate nel processo di acquisto e nella relazione post vendita, per ampliare i servizi offerti al cliente.",
+  },
+];
 
+  const automotiveMethod = [
+    {
+      step: "01",
+      title: "Analisi",
+      text: "Analizziamo struttura della rete, tipologia di clientela, volumi e modalità distributive.",
+    },
+    {
+      step: "02",
+      title: "Progettazione",
+      text: "Costruiamo il programma assicurativo individuando coperture, garanzie e modalità operative.",
+    },
+    {
+      step: "03",
+      title: "Implementazione",
+      text: "Affianchiamo il dealer nell'integrazione delle soluzioni assicurative nel processo di vendita.",
+    },
+    {
+      step: "04",
+      title: "Assistenza",
+      text: "Seguiamo il programma nel tempo con supporto operativo e aggiornamento delle soluzioni.",
+    },
+  ];
+
+  return (
+    <section
+      id="view-automotive"
+      className="w-full max-w-[1380px] mx-auto bg-white rounded-[2rem] border border-slate-200 p-10 lg:p-16 shadow-sm mb-10 sigma-reveal scroll-mt-28"
+    >
+      <button
+        onClick={goHome}
+        className="mb-10 inline-flex rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold hover:-translate-y-0.5 hover:shadow-md transition-all duration-300"
+      >
+        ← Torna alla home
+      </button>
+
+{/* INTRODUZIONE */}
+<div className="relative overflow-hidden rounded-[2rem] min-h-[390px] mb-14 border border-slate-200">
+  
+  {/* IMMAGINE */}
+  <img
+    src="/images/automotive-showroom-hero.png"
+    alt=""
+    className="absolute inset-0 h-full w-full object-cover object-center"
+  />
+
+  {/* SFUMATURA CHIARA PER LEGGIBILITÀ */}
+<div className="absolute inset-0 bg-gradient-to-r from-white from-[0%] via-white via-[48%] to-white/20 to-[78%]" />
+
+  {/* CONTENUTO */}
+  <div className="relative z-10 px-8 py-10 lg:px-12 lg:py-12 max-w-[720px]">
+    
+    <div className="inline-flex rounded-full bg-[#eaf5ef] text-[#08754b] px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] mb-6">
+      Affinity & Automotive
+    </div>
+
+    <h1 className="text-4xl lg:text-[52px] font-semibold tracking-[-0.045em] leading-[1.02] text-[#101828]">
+      Programmi assicurativi per il settore automotive.
+    </h1>
+
+    <p className="mt-6 text-[18px] lg:text-[19px] text-[#526174] leading-[1.7] max-w-[680px]">
+      Affianchiamo concessionari, dealer, gruppi automotive e operatori del
+      settore nella progettazione di programmi assicurativi integrati nei
+      processi di vendita e post vendita. Costruiamo soluzioni dedicate,
+      sviluppate in collaborazione con primarie compagnie assicurative e
+      calibrate sulle esigenze della rete e del cliente finale.
+    </p>
+  </div>
+</div>
+
+{/* 4 AREE */}
+<div className="border-y border-[#dce5df]">
+  <div className="grid sm:grid-cols-2 lg:grid-cols-4">
+    {automotiveAreas.map((area) => {
+      const Icon = area.icon;
+
+      return (
+        <div
+          key={area.title}
+          className="py-9 lg:px-7 first:pl-0 lg:border-l first:border-l-0 border-[#dce5df]"
+        >
+          <div
+            className={`flex h-12 w-12 items-center justify-center rounded-full ${area.iconBg} ${area.iconColor} mb-5`}
+          >
+            <Icon size={22} strokeWidth={1.8} />
+          </div>
+
+          <h2 className="text-[21px] font-semibold tracking-[-0.02em] text-[#102f2c] mb-3">
+            {area.title}
+          </h2>
+
+         <p className="text-[17px] text-[#526174] leading-[1.7]">
+  {area.text}
+          </p>
+        </div>
+      );
+    })}
+  </div>
+</div>
+
+      {/* METODO */}
+      <div className="mt-16 lg:mt-20">
+        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-20 mb-12">
+          <div>
+            <div className="text-sm font-bold uppercase tracking-[0.18em] text-[#008f4c] mb-4">
+              Il nostro approccio
+            </div>
+
+            <h2 className="text-3xl lg:text-[42px] font-semibold tracking-[-0.035em] leading-[1.08] text-[#101828]">
+              Un programma costruito intorno alla rete.
+            </h2>
+          </div>
+
+        <p className="text-[19px] text-[#526174] leading-[1.7] max-w-[680px] lg:self-end lg:pb-1">
+            Non un prodotto standard, ma un progetto assicurativo sviluppato
+            considerando modello distributivo, tipologia di clientela, volumi
+            e obiettivi commerciali.
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 rounded-[2rem] border border-slate-200 overflow-hidden bg-[#fafbf9]">
+          {automotiveMethod.map((item) => (
+            <div
+              key={item.step}
+              className="p-7 lg:p-8 lg:border-l first:border-l-0 border-slate-200"
+            >
+              <div className="text-sm font-bold text-[#008f4c] mb-6">
+                {item.step}
+              </div>
+
+              <h3 className="text-xl font-semibold text-[#102f2c] mb-3">
+                {item.title}
+              </h3>
+<p className="text-[17px] text-[#526174] leading-[1.7]">
+  {item.text}
+</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 function SectionView({ heroImage, accent, eyebrow, title, subtitle, heroTitle, heroText, heroButton, activeDetail, setActiveDetail, goHome, primaryKey, primaryDetail, cards, details, gridTitle }: { heroImage: string; accent: Accent; eyebrow: string; title: string; subtitle: string; heroTitle: string; heroText: string; heroButton: string; activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void; primaryKey: string | null; primaryDetail: React.ReactNode; cards: CardData[]; details: Record<string, DetailData>; gridTitle: string }) {
   const style = accents[accent];
   const viewId = accent === "blue" ? "professionisti" : accent === "green" ? "aziende" : "privati";
@@ -946,7 +1129,7 @@ function SectionView({ heroImage, accent, eyebrow, title, subtitle, heroTitle, h
       <button onClick={goHome} className="mb-8 inline-flex rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold hover:-translate-y-0.5 hover:shadow-md transition-all duration-300">← Torna alla home</button>
       <div className="max-w-5xl mb-12">
         <div className={`inline-flex rounded-full ${style.bg} ${style.text} px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6`}>{eyebrow}</div>
-        <h2 className="text-4xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.95] mb-8">{title}</h2>
+       <h2 className="text-4xl lg:text-[56px] font-semibold tracking-[-0.035em] leading-[1.02] mb-8">{title}</h2>
         <p className="text-xl text-slate-600 leading-relaxed max-w-4xl">{subtitle}</p>
       </div>
       <div className={`relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br ${style.gradient} text-white mb-12 shadow-[0_20px_80px_rgba(15,51,40,0.18)]`}>

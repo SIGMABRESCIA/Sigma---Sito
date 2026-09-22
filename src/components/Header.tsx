@@ -1,6 +1,12 @@
 import { Menu, UserRound, X } from "lucide-react";
 
-type View = "home" | "professionisti" | "aziende" | "privati" | "reclami" | "whistleblowing";
+type View =   | "home"
+  | "professionisti"
+  | "aziende"
+  | "privati"
+  | "automotive"
+  | "reclami"
+  | "whistleblowing";
 
 type HeaderProps = {
   mobileMenuOpen: boolean;
@@ -36,7 +42,7 @@ export default function Header({
 >
   Privati
 </button>
-          <button onClick={() => goToSection("automotive")} className="hover:text-[#008f4c] transition">Automotive</button>
+         <button onClick={() => goTo("automotive")} className="hover:text-[#008f4c] transition">Automotive</button>
           <button onClick={() => goToSection("convenzioni")} className="hover:text-[#9a5b16] transition">Convenzioni</button>
           <button onClick={() => goToSection("contatti")} className="hover:text-[#008f4c] transition">Contatti</button>
           <button onClick={() => goTo("reclami")} className="hover:text-[#008f4c] transition">Reclami</button>
@@ -62,7 +68,8 @@ export default function Header({
           <button onClick={() => goTo("home")} className="block font-semibold">Home</button>
           <button onClick={() => goTo("professionisti")} className="block font-semibold">Professionisti</button>
           <button onClick={() => goTo("aziende")} className="block font-semibold">Aziende</button>
-          <button onClick={() => goToSection("automotive")} className="block font-semibold">Automotive</button>
+          <button onClick={() => goTo("privati")} className="block font-semibold">Privati</button>
+          <button onClick={() => goTo("automotive")} className="block font-semibold">Automotive</button>
           <button onClick={() => goToSection("convenzioni")} className="block font-semibold">Convenzioni</button>
           <button onClick={() => goToSection("contatti")} className="block font-semibold">Contatti</button>
           <button onClick={() => goTo("reclami")} className="block font-semibold">Reclami</button>
