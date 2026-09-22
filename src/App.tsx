@@ -919,7 +919,7 @@ function SolutionCard({
 }
 
 function ProfessionistiView({ activeDetail, setActiveDetail, goHome }: { activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void }) {
-  return <SectionView heroImage="/images/professionisti-hero.png" accent="blue" eyebrow="Soluzioni per Professionisti" title="Protezione dedicata a studi, consulenti e professionisti." subtitle="Coperture costruite intorno all’attività professionale, alla responsabilità e alla continuità dello studio." heroTitle="RC Professionale" heroText="Coperture dedicate a studi e professionisti che desiderano tutelare attività e patrimonio." heroButton="Approfondisci RC Professionale" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey="rc" primaryDetail={<RcProfessionaleDetail />} cards={professionalCards} details={professionalDetails} gridTitle="Altre soluzioni per completare la protezione professionale." />;
+  return <SectionView heroImage="/images/professionisti2.png" accent="blue" eyebrow="Soluzioni per Professionisti" title="Protezione dedicata a studi, consulenti e professionisti." subtitle="Coperture costruite intorno all’attività professionale, alla responsabilità e alla continuità dello studio." heroTitle="RC Professionale" heroText="Coperture dedicate a studi e professionisti che desiderano tutelare attività e patrimonio." heroButton="Approfondisci RC Professionale" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey="rc" primaryDetail={<RcProfessionaleDetail />} cards={professionalCards} details={professionalDetails} gridTitle="Altre soluzioni per completare la protezione professionale." />;
 }
 
 function AziendeView({ activeDetail, setActiveDetail, goHome }: { activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void }) {
@@ -1376,7 +1376,7 @@ function WhySigmaSection() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#eefaf3] rounded-full blur-3xl opacity-60" />
       <div className="relative z-10 max-w-6xl">
         <div className="inline-flex rounded-full bg-[#eefaf3] text-[#0f7a43] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6">Perché Sigma</div>
-        <h2 className="text-4xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.95] mb-8 max-w-5xl">Non ci limitiamo a proporre polizze.<br />Analizziamo rischi, continuità e sostenibilità delle coperture nel tempo.</h2>
+        <h2 className="text-4xl lg:text-6xl text-4xl lg:text-[52px] font-semibold tracking-[-0.045em] leading-[1.02] mb-8 max-w-5xl">Non ci limitiamo a proporre polizze.<br />Analizziamo rischi, continuità e sostenibilità delle coperture nel tempo.</h2>
         <p className="text-xl text-slate-600 leading-relaxed max-w-4xl mb-14">Il nostro approccio parte dall’analisi concreta dell’attività, delle responsabilità e delle esposizioni reali. Costruiamo soluzioni assicurative coordinate, evitando sovrapposizioni, incoerenze e aree scoperte che spesso emergono solo nei momenti più delicati.</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 mb-14 border-y border-[#dce5df]">
 

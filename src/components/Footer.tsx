@@ -1,63 +1,82 @@
 export default function Footer({ goTo, goToSection }: any) {
   return (
-    <footer className="bg-[#06281f] text-white px-8 lg:px-12 py-11">
+    <footer className="bg-[#06281f] text-white px-6 lg:px-10 py-8 lg:py-9">
       <div className="max-w-7xl mx-auto">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-[1.35fr_0.75fr_0.9fr_1.35fr] gap-10 lg:gap-14">
+        {/* CONTENUTO PRINCIPALE */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-[1.45fr_0.7fr_0.85fr_1.3fr] gap-9 lg:gap-12">
 
           {/* SIGMA */}
           <div>
-            <div className="text-[25px] font-bold tracking-[-0.02em] mb-4">
+            <div className="text-[22px] font-bold tracking-[-0.025em] mb-3">
               SIGMA STUDI{" "}
               <span className="text-[#8ff0c5]">Brescia</span>
             </div>
 
-            <p className="text-[16px] text-white/70 leading-[1.6] mb-6 max-w-[330px]">
+            <p className="text-[15px] text-white/70 leading-[1.55] mb-4 max-w-[320px]">
               Broker di Assicurazioni per aziende, professionisti e privati.
             </p>
 
-            <div className="space-y-3.5 text-[16px] text-white/70 leading-[1.45]">
+            <div className="space-y-2.5 text-[14px] lg:text-[15px] text-white/70 leading-[1.4]">
 
               <p>
-                <strong className="block text-white font-semibold mb-0.5">
+                <strong className="block text-white font-semibold">
                   Sede legale
                 </strong>
                 Via Codignole 45, 25124 Brescia
               </p>
 
               <p>
-                <strong className="block text-white font-semibold mb-0.5">
+                <strong className="block text-white font-semibold">
                   Sede operativa
                 </strong>
                 Via Malta 12/N, 25124 Brescia
               </p>
 
               <p>
-                <strong className="block text-white font-semibold mb-0.5">
-                  Telefono
-                </strong>
-                030 2059880 · 030 2059881
+                <strong className="text-white font-semibold">Telefono</strong>
+                <span className="mx-1.5 text-white/30">·</span>
+                <a
+                  href="tel:+390302059880"
+                  className="hover:text-[#8ff0c5] transition"
+                >
+                  030 2059880
+                </a>
+                <span className="mx-1 text-white/30">·</span>
+                <a
+                  href="tel:+390302059881"
+                  className="hover:text-[#8ff0c5] transition"
+                >
+                  030 2059881
+                </a>
               </p>
 
               <p>
-                <strong className="block text-white font-semibold mb-0.5">
-                  Fax
-                </strong>
+                <strong className="text-white font-semibold">Fax</strong>
+                <span className="mx-1.5 text-white/30">·</span>
                 030 221588
               </p>
 
               <p>
-                <strong className="block text-white font-semibold mb-0.5">
-                  Email
-                </strong>
-                info@sigmabrescia.it
+                <strong className="text-white font-semibold">Email</strong>
+                <span className="mx-1.5 text-white/30">·</span>
+                <a
+                  href="mailto:info@sigmabrescia.it"
+                  className="hover:text-[#8ff0c5] transition"
+                >
+                  info@sigmabrescia.it
+                </a>
               </p>
 
               <p>
-                <strong className="block text-white font-semibold mb-0.5">
-                  PEC
-                </strong>
-                sigmabrescia@pec.sigmabrescia.it
+                <strong className="text-white font-semibold">PEC</strong>
+                <span className="mx-1.5 text-white/30">·</span>
+                <a
+                  href="mailto:sigmabrescia@pec.sigmabrescia.it"
+                  className="hover:text-[#8ff0c5] transition"
+                >
+                  sigmabrescia@pec.sigmabrescia.it
+                </a>
               </p>
 
             </div>
@@ -65,11 +84,11 @@ export default function Footer({ goTo, goToSection }: any) {
 
           {/* SOLUZIONI */}
           <div>
-            <h4 className="text-[16px] font-bold text-white mb-5">
+            <h4 className="text-[15px] font-bold text-white mb-4">
               Soluzioni
             </h4>
 
-            <div className="space-y-3 text-[16px] text-white/70">
+            <div className="space-y-2.5 text-[15px] text-white/70">
 
               <button
                 onClick={() => goTo("professionisti")}
@@ -93,7 +112,7 @@ export default function Footer({ goTo, goToSection }: any) {
               </button>
 
               <button
-                onClick={() => goToSection("automotive")}
+                onClick={() => goTo("automotive")}
                 className="block hover:text-[#8ff0c5] transition"
               >
                 Automotive
@@ -104,11 +123,11 @@ export default function Footer({ goTo, goToSection }: any) {
 
           {/* INFORMAZIONI */}
           <div>
-            <h4 className="text-[16px] font-bold text-white mb-5">
+            <h4 className="text-[15px] font-bold text-white mb-4">
               Informazioni
             </h4>
 
-            <div className="space-y-3 text-[16px] text-white/70">
+            <div className="space-y-2.5 text-[15px] text-white/70">
 
               <button
                 onClick={() => goToSection("chi-siamo")}
@@ -145,37 +164,32 @@ export default function Footer({ goTo, goToSection }: any) {
 
           {/* LEGAL */}
           <div>
-            <h4 className="text-[16px] font-bold text-white mb-5">
+            <h4 className="text-[15px] font-bold text-white mb-4">
               Legal
             </h4>
 
-            <div className="text-[16px] text-white/70 leading-[1.55]">
+            <div className="text-[14px] lg:text-[15px] text-white/70 leading-[1.5]">
 
-              <div className="mb-4">
-                <strong className="block text-white font-semibold mb-0.5">
+              <p className="mb-3">
+                <strong className="text-white font-semibold">
                   P. IVA e C.F.
                 </strong>
+                <span className="mx-1.5 text-white/30">·</span>
                 03135470981
-              </div>
-
-              <div className="mb-5">
-                <strong className="block text-white font-semibold mb-0.5">
-                  Iscrizione al RUI
-                </strong>
-                n. B000314208 del 29 luglio 2009
-              </div>
-
-              <p className="mb-4">
-                L’attività svolta da Sigma Studi Brescia S.r.l. è regolamentata
-                dal Codice delle Assicurazioni Private ed è soggetta al controllo
-                dell’Autorità di Vigilanza IVASS.
               </p>
 
-              <p>
-                Gli estremi identificativi e di iscrizione dell’intermediario
-                possono essere verificati consultando il Registro Unico degli
-                intermediari assicurativi e riassicurativi (RUI) sul sito
-                internet dell’IVASS (www.ivass.it).
+              <p className="mb-4">
+                <strong className="text-white font-semibold">
+                  Iscrizione al RUI
+                </strong>
+                <span className="mx-1.5 text-white/30">·</span>
+                n. B000314208 del 29 luglio 2009
+              </p>
+
+              <p className="max-w-[390px]">
+                Sigma Studi Brescia S.r.l. è soggetta al controllo IVASS.
+                L’iscrizione è verificabile nel Registro Unico degli
+                Intermediari (RUI) sul sito IVASS.
               </p>
 
             </div>
@@ -184,7 +198,7 @@ export default function Footer({ goTo, goToSection }: any) {
         </div>
 
         {/* CHIUSURA */}
-        <div className="mt-8 pt-5 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-[13px] text-white/50">
+        <div className="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-[12px] text-white/45">
           <span>© Sigma Studi Brescia S.r.l.</span>
           <span>Broker di Assicurazioni</span>
         </div>
