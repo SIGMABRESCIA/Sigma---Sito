@@ -100,37 +100,42 @@ const professionalDetails: Record<string, DetailData> = {
   patrimoniale: {
     label: "Tutela patrimoniale",
     title: "Protezione coordinata tra attività, famiglia e patrimonio.",
-    text: "Analizziamo le aree di esposizione personale e professionale per costruire un sistema di coperture coerente, evitando sovrapposizioni e lasciando meno aree scoperte.",
+    text: "La tutela del patrimonio richiede una visione che consideri insieme attività professionale, responsabilità personali e situazione familiare. Un evento imprevisto può infatti produrre conseguenze economiche che vanno oltre la sola attività lavorativa. Sigma Studi Brescia analizza le diverse aree di esposizione e le coperture già presenti, con l’obiettivo di individuare eventuali sovrapposizioni o esigenze non adeguatamente tutelate. Le soluzioni vengono valutate in funzione delle caratteristiche del professionista e delle condizioni offerte dalle diverse compagnie.",
     points: ["Patrimonio personale", "Continuità economica", "Coperture coordinate"],
   },
+
   convenzioni: {
     label: "Convenzioni dedicate",
     title: "Condizioni dedicate per categorie professionali e ordini.",
-    text: "Le convenzioni permettono di offrire soluzioni mirate, condizioni dedicate e percorsi più semplici per professionisti appartenenti a specifiche categorie.",
-    points: ["Ordini professionali", "Categorie specialistiche", "Percorsi semplificati"],
+    text: "Le esigenze assicurative possono cambiare sensibilmente in base alla professione esercitata, alle responsabilità assunte e alle caratteristiche dello studio. Per alcune categorie sono inoltre disponibili convenzioni e soluzioni sviluppate in relazione a specifici profili professionali. Sigma Studi Brescia valuta le opportunità disponibili presso le diverse compagnie, confrontandone condizioni, garanzie, limiti ed eventuali esclusioni. L’obiettivo è individuare una soluzione coerente con l’attività effettivamente svolta, senza fermarsi alla sola appartenenza a una categoria.",
+    points: ["Ordini professionali", "Categorie specialistiche", "Analisi delle condizioni"],
   },
+
   "cyber-prof": {
     label: "Cyber Risk",
     title: "Protezione per studi che lavorano con dati e sistemi digitali.",
-    text: "Supportiamo studi e professionisti nella valutazione dei rischi informatici legati a dati sensibili, archivi digitali, email e continuità operativa.",
-    points: ["Dati sensibili", "Blocco operatività", "Responsabilità verso clienti"],
+    text: "Dati dei clienti, documenti riservati, posta elettronica e strumenti informatici sono ormai parte essenziale dell’attività di molti studi professionali. Un incidente informatico può comportare interruzioni operative, perdita o compromissione dei dati e possibili responsabilità verso terzi. L’analisi del rischio cyber parte dall’organizzazione dello studio e dal tipo di informazioni gestite. Sigma Studi Brescia confronta le soluzioni disponibili valutando garanzie, limiti, servizi di assistenza ed esclusioni previsti dalle diverse compagnie.",
+    points: ["Dati sensibili", "Continuità operativa", "Responsabilità verso terzi"],
   },
+
   "legale-prof": {
     label: "Tutela legale",
     title: "Supporto nelle controversie collegate all’attività.",
-    text: "Una tutela legale ben configurata aiuta il professionista ad affrontare spese e assistenza in caso di controversie e contestazioni.",
+    text: "Una controversia professionale può comportare costi legali e necessità di assistenza anche quando il professionista ritiene di avere operato correttamente. Per questo la tutela legale può rappresentare un elemento complementare alla protezione della responsabilità professionale. Sigma Studi Brescia valuta l’ambito delle coperture disponibili e la loro coerenza con l’attività esercitata, considerando le condizioni e i limiti previsti dalle diverse soluzioni assicurative.",
     points: ["Spese legali", "Controversie professionali", "Assistenza specialistica"],
   },
+
   welfare: {
     label: "Welfare e salute",
     title: "Soluzioni per la protezione personale del professionista.",
-    text: "Integrare salute, prevenzione e protezione economica consente di tutelare la persona oltre all’attività professionale.",
+    text: "La continuità di uno studio dipende anche dalla persona che ne sostiene l’attività. Malattia, infortunio o altri eventi legati alla salute possono avere conseguenze personali e incidere sulla capacità di proseguire regolarmente il lavoro. Per questo la protezione può essere costruita considerando insieme esigenze sanitarie, tutela della persona e conseguenze economiche di un’eventuale interruzione dell’attività. Le diverse possibilità vengono valutate in funzione delle necessità individuali e delle condizioni offerte dalle compagnie.",
     points: ["Salute", "Infortuni", "Continuità economica"],
   },
+
   continuita: {
     label: "Continuità dello studio",
     title: "Proteggere operatività, persone e organizzazione.",
-    text: "La continuità dello studio richiede una visione ampia: locali, collaboratori, strumenti, responsabilità e capacità di proseguire l’attività dopo eventi imprevisti.",
+    text: "Uno studio professionale non è composto soltanto dal professionista: locali, collaboratori, strumenti, dati e organizzazione contribuiscono ogni giorno alla sua capacità di operare. Un evento imprevisto può quindi produrre effetti su più aspetti contemporaneamente. Sigma Studi Brescia considera queste esposizioni nel loro insieme, verificando quali rischi possano compromettere maggiormente l’operatività e quali soluzioni assicurative possano contribuire alla continuità dello studio.",
     points: ["Operatività", "Collaboratori", "Strumenti e locali"],
   },
 };
@@ -151,31 +156,31 @@ const businessDetails: Record<string, DetailData> = {
   business: {
     label: "Business Interruption",
     title: "Il vero costo di un danno spesso non è il danno, ma il tempo in cui l’azienda resta ferma.",
-    text: "Un evento critico può interrompere produzione, vendite, consegne o servizi anche per periodi prolungati. La Business Interruption serve a ragionare sull’impatto economico del fermo attività: margini, costi fissi, tempi di ripristino, dipendenza da fornitori, clienti strategici e linee produttive.",
+    text: "Un evento critico può interrompere produzione, vendite, consegne o servizi anche per periodi prolungati. Il danno economico non dipende soltanto dal valore dei beni coinvolti, ma anche dal tempo necessario per riprendere l’attività e dalla capacità dell’impresa di sostenere costi e impegni durante il fermo. La Business Interruption consente di valutare margini, costi fissi, tempi di ripristino e dipendenze critiche da fornitori, clienti o linee produttive. Sigma Studi Brescia analizza questi elementi insieme alle coperture Property, con l’obiettivo di costruire una protezione coerente con la reale capacità dell’azienda di affrontare un’interruzione dell’attività.",
     points: ["Margine operativo", "Tempi di ripristino", "Dipendenze critiche"],
   },
   cyber: {
     label: "Cyber Risk",
     title: "La continuità digitale oggi è parte integrante della continuità aziendale.",
-    text: "Attacchi ransomware, blocchi dei sistemi, violazioni di dati, interruzioni dei servizi informatici e responsabilità verso clienti o partner possono creare danni economici e reputazionali molto rilevanti. La copertura Cyber deve essere valutata rispetto al modo in cui l’azienda lavora davvero.",
-    points: ["Violazione dati", "Blocco sistemi", "Responsabilità verso terzi"],
+    text: "La dipendenza da dati, sistemi informatici e servizi digitali espone oggi le imprese a rischi che possono incidere direttamente sulla continuità operativa. Attacchi ransomware, violazioni di dati, indisponibilità dei sistemi o errori umani possono generare costi di ripristino, interruzioni dell’attività e responsabilità verso clienti e terzi. La copertura Cyber deve quindi essere valutata rispetto al modo in cui l’azienda opera realmente, ai dati trattati e alle proprie dipendenze tecnologiche. Sigma Studi Brescia analizza questi elementi e confronta le condizioni offerte dalle diverse compagnie per individuare una protezione coerente con il profilo di rischio dell’impresa.",
+  points: ["Violazione dati", "Blocco sistemi", "Responsabilità verso terzi"],
   },
   do: {
     label: "D&O",
     title: "Chi prende decisioni per l’impresa ha bisogno di una tutela coerente con il proprio ruolo.",
-    text: "Amministratori, sindaci, dirigenti e figure apicali possono essere chiamati a rispondere per decisioni gestionali, omissioni, contestazioni di soci, creditori, dipendenti o autorità. Una copertura D&O efficace deve tenere conto della struttura societaria, delle deleghe e dei processi decisionali.",
+    text: "Amministratori, sindaci, dirigenti e altre figure con responsabilità decisionali possono essere chiamati a rispondere personalmente per atti, omissioni o contestazioni connesse all’esercizio del proprio ruolo. Le richieste possono provenire dalla società, dai soci, dai creditori, dai dipendenti o da altri soggetti e comportare conseguenze economiche e spese di difesa. Una copertura D&O deve essere valutata considerando struttura societaria, deleghe, ruoli e processi decisionali dell’impresa. Sigma Studi Brescia analizza questi elementi e le condizioni proposte dalle diverse compagnie per individuare una tutela coerente con le responsabilità effettivamente assunte dal management.",
     points: ["Governance", "Responsabilità gestionali", "Tutela del management"],
   },
   logistica: {
     label: "Logistica & Trasporti",
     title: "Merci, flotte e supply chain richiedono una protezione coordinata lungo tutto il percorso.",
-    text: "Le aziende che movimentano merci, gestiscono consegne, utilizzano flotte o dipendono da fornitori logistici hanno esposizioni che cambiano in base a tratte, responsabilità contrattuali, valore delle merci, modalità di trasporto e tempi di consegna.",
-    points: ["Merci trasportate", "Flotte aziendali", "Supply chain"],
+   text: "Le aziende che movimentano merci, gestiscono consegne, utilizzano flotte o dipendono da fornitori logistici sono esposte a rischi che possono coinvolgere più fasi della propria attività. Trasporto, deposito, valore delle merci, responsabilità contrattuali, caratteristiche della flotta e dipendenza dalla supply chain possono incidere in modo diverso sulla continuità operativa. Per questo è importante valutare non soltanto il singolo rischio, ma il percorso complessivo delle merci e le responsabilità dei diversi soggetti coinvolti. Sigma Studi Brescia analizza queste esposizioni e confronta le soluzioni disponibili per costruire una protezione coerente con l’organizzazione e l’operatività dell’impresa.",
+  points: ["Merci trasportate", "Flotte aziendali", "Supply chain"],
   },
   legale: {
     label: "Tutela legale",
     title: "Una controversia può sottrarre tempo, risorse e attenzione alla gestione dell’impresa.",
-    text: "Contratti, fornitori, clienti, dipendenti, immobili, responsabilità operative e rapporti commerciali possono generare contenziosi complessi e costosi. La tutela legale aiuta l’impresa ad affrontare spese, assistenza e gestione delle controversie con maggiore controllo.",
+    text: "Contratti, rapporti con fornitori e clienti, gestione dei dipendenti, immobili e responsabilità operative possono generare controversie che richiedono tempo, competenze e risorse economiche. Una tutela legale adeguata può supportare l’impresa nelle spese di assistenza e difesa connesse alle situazioni previste dalla polizza. La copertura deve però essere valutata considerando ambiti di operatività, esclusioni, limiti e condizioni, che possono differire tra le diverse compagnie. Sigma Studi Brescia analizza questi elementi per individuare una soluzione coerente con le principali aree di esposizione dell’azienda.",
     points: ["Spese legali", "Controversie contrattuali", "Supporto specialistico"],
   },
 };
@@ -184,25 +189,25 @@ const privateDetails: Record<string, DetailData> = {
   casa: {
     label: "Casa e patrimonio",
     title: "Proteggere la casa significa proteggere uno spazio di vita e un valore patrimoniale.",
-    text: "Valutiamo abitazione, contenuto, responsabilità familiare e possibili imprevisti quotidiani per costruire una protezione semplice, chiara e coerente con le esigenze reali della famiglia.",
+   text: "La protezione della casa non riguarda soltanto l’edificio, ma anche ciò che contiene e le responsabilità che possono derivare dalla vita quotidiana. Incendio, danni da acqua, eventi atmosferici, furto o danni involontariamente causati a terzi possono avere conseguenze economiche molto diverse. Per questo è importante valutare caratteristiche dell’abitazione, valore dei beni, composizione del nucleo familiare e coperture già presenti. Sigma Studi Brescia confronta garanzie, limiti, franchigie ed esclusioni delle diverse compagnie per individuare una soluzione coerente con le reali esigenze della famiglia.",
     points: ["Abitazione", "Contenuto", "Responsabilità familiare"],
   },
   salute: {
     label: "Salute",
     title: "Una protezione sanitaria aiuta a gestire gli imprevisti con maggiore serenità.",
-    text: "Le soluzioni salute possono integrare prevenzione, visite, ricoveri e percorsi di cura, riducendo l’impatto economico e organizzativo degli eventi sanitari.",
+    text: "La tutela della salute può aiutare la persona e la famiglia ad affrontare con maggiore serenità le conseguenze organizzative ed economiche legate a malattie, interventi o necessità di cure. Le soluzioni disponibili possono prevedere prestazioni, rimborsi, accesso a strutture sanitarie e servizi di assistenza differenti a seconda della compagnia e della formula scelta. Sigma Studi Brescia analizza le esigenze personali e familiari e confronta garanzie, limiti, franchigie, eventuali periodi di carenza ed esclusioni, con l’obiettivo di individuare una copertura coerente con le necessità del cliente.",
     points: ["Prevenzione", "Cure", "Assistenza"],
   },
   infortuni: {
     label: "Infortuni",
     title: "Tutela della persona e della continuità economica familiare.",
-    text: "Una copertura infortuni ben costruita considera attività quotidiane, lavoro, mobilità, sport e impatti economici che un evento improvviso può generare sulla famiglia.",
+   text: "Un infortunio può avere conseguenze che vanno oltre il momento dell’evento, incidendo sulla capacità di lavorare, sulle attività quotidiane e sull’equilibrio economico della famiglia. La protezione deve essere valutata considerando professione, abitudini, attività sportive, mobilità e possibili effetti di un’invalidità temporanea o permanente. Capitali assicurati, franchigie, indennizzi ed esclusioni possono variare sensibilmente tra le diverse soluzioni. Sigma Studi Brescia analizza questi elementi e confronta le condizioni disponibili per individuare una copertura coerente con le esigenze della persona e del nucleo familiare.",
     points: ["Persona", "Reddito", "Famiglia"],
   },
   "legale-privati": {
     label: "Tutela legale",
     title: "Supporto nelle controversie della vita privata.",
-    text: "La tutela legale può aiutare ad affrontare controversie legate alla casa, alla famiglia, alla mobilità e ai rapporti quotidiani, con maggiore controllo sui costi e sull’assistenza necessaria.",
+    text: "Le controversie della vita privata possono nascere da situazioni molto diverse: rapporti legati alla casa, acquisti e servizi, mobilità, rapporti familiari o richieste di risarcimento. Affrontarle può comportare spese legali, necessità di assistenza specialistica e tempi difficili da prevedere. La tutela legale deve quindi essere valutata considerando gli ambiti effettivamente coperti, i limiti, le esclusioni e le condizioni previste dalle diverse compagnie. Sigma Studi Brescia confronta le soluzioni disponibili per individuare una protezione coerente con le esigenze della persona e della famiglia.",
     points: ["Casa", "Famiglia", "Mobilità"],
   },
 };
@@ -1113,14 +1118,72 @@ function SectionView({ heroImage, accent, eyebrow, title, subtitle, heroTitle, h
     { title: "Avvocati", href: "/documenti/questionario-avvocati.pdf" },
     { title: "Commercialisti", href: "/documenti/questionario-commercialisti.pdf" },
   ];
-
-  const openDetail = (key: string) => {
-    setActiveDetail(activeDetail === key ? null : key);
-    window.setTimeout(() => {
-      document.getElementById(`detail-${key}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 160);
-  };
-
+const rcQuickLinks = [
+  {
+    key: "rc-coperture",
+    title: "Cosa copre",
+    text: "La RC Professionale tutela il professionista dalle richieste di risarcimento connesse a errori, omissioni o negligenze commesse nello svolgimento dell’attività professionale, nei limiti e alle condizioni previste dalla polizza.",
+  },
+  {
+    key: "rc-massimali",
+    title: "Massimali e franchigie",
+    text: "Massimale, franchigia e scoperto incidono concretamente sulla capacità della polizza di proteggere il professionista. La loro adeguatezza va valutata in relazione all’attività svolta e all’esposizione economica.",
+  },
+  {
+    key: "rc-esclusioni",
+    title: "Esclusioni e criticità",
+    text: "Esclusioni, limitazioni e condizioni contrattuali possono determinare differenze importanti al momento del sinistro. Per questo è essenziale verificare non soltanto ciò che la polizza comprende, ma anche ciò che non comprende.",
+  },
+  {
+    key: "rc-rischio",
+    title: "Attività e profilo di rischio",
+    text: "La copertura deve essere coerente con le attività realmente svolte, le responsabilità assunte e l’evoluzione dello studio professionale. Una corretta analisi del rischio consente di individuare eventuali aree non adeguatamente protette.",
+  },
+];
+const aziendeQuickLinks = [
+  {
+    key: "aziende-copertura",
+    title: "Cosa copre",
+    text: "La responsabilità civile aziendale tutela l’impresa rispetto alle richieste di risarcimento derivanti da danni involontariamente causati a terzi nello svolgimento dell’attività, nei limiti e alle condizioni previste dalla polizza.",
+  },
+  {
+    key: "aziende-dipendenti",
+    title: "Responsabilità verso i dipendenti",
+    text: "La copertura può comprendere la responsabilità dell’impresa per gli infortuni subiti dai prestatori di lavoro, secondo le garanzie previste e in relazione alle caratteristiche dell’attività svolta.",
+  },
+  {
+    key: "aziende-massimali",
+    title: "Massimali, limiti ed esclusioni",
+    text: "Massimali, limiti di indennizzo, franchigie, scoperti, estensioni ed esclusioni possono variare in modo significativo tra le diverse soluzioni assicurative. L’analisi consente di confrontare le condizioni e valutarne la coerenza rispetto alle effettive esposizioni dell’impresa.",
+  },
+  {
+    key: "aziende-rischio",
+    title: "Attività e profilo di rischio",
+    text: "Settore, processi produttivi, sedi, numero di addetti, lavorazioni svolte e rapporti con clienti e fornitori incidono sul profilo di rischio. L’analisi serve a individuare eventuali aree non adeguatamente protette.",
+  },
+];
+const privatiQuickLinks = [
+  {
+    key: "privati-casa",
+    title: "Casa e responsabilità",
+    text: "Le soluzioni dedicate alla casa possono proteggere il fabbricato, il contenuto e la responsabilità civile della vita privata, secondo le garanzie e le condizioni previste dalla polizza.",
+  },
+  {
+    key: "privati-persone",
+    title: "Famiglia e persone",
+    text: "La protezione può essere costruita considerando le esigenze della persona e del nucleo familiare, valutando gli eventi che potrebbero incidere sulla stabilità economica e sulla vita quotidiana.",
+  },
+  {
+    key: "privati-limiti",
+    title: "Limiti, franchigie e scoperti",
+    text: "Massimali, limiti di indennizzo, franchigie, scoperti ed esclusioni possono variare tra le diverse soluzioni assicurative. Il confronto delle condizioni permette di valutarne concretamente la portata.",
+  },
+  {
+    key: "privati-esigenze",
+    title: "Analisi delle esigenze",
+    text: "Patrimonio, composizione familiare, abitazione e necessità personali contribuiscono a definire le esigenze di protezione e le coperture da valutare.",
+  },
+];
   return (
    <section
   id={`view-${viewId}`}
@@ -1191,20 +1254,71 @@ function SectionView({ heroImage, accent, eyebrow, title, subtitle, heroTitle, h
           </div>
 
           <div className="space-y-3 max-w-[480px] ml-auto animate-[sigmaFadeUp_1000ms_cubic-bezier(0.22,1,0.36,1)_both]">
-            {cards.slice(0, 4).map((item) => (
-              <button
-                key={item.key}
-                onClick={() => openDetail(item.key)}
-               className={`group w-full text-left rounded-2xl ${accent === "blue" ? "bg-[#20345f]/75" : accent === "green" ? "bg-[#123f32]/75" : "bg-[#5f3718]/78"} border border-white/20 backdrop-blur-md px-6 py-4 text-[17px] font-semibold text-white transition-all duration-300 hover:-translate-x-1 hover:bg-black/25`}
-              >
-                <span className="flex items-center justify-between gap-4">
-                  <span>{item.title}</span>
-                  <span className="text-[15px] text-white/70 transition-all duration-300 group-hover:text-white group-hover:translate-x-1">
-                    Apri →
-                  </span>
-                </span>
-              </button>
-            ))}
+{(
+  viewId === "aziende"
+    ? aziendeQuickLinks
+    : viewId === "privati"
+    ? privatiQuickLinks
+    : rcQuickLinks
+).map((item) => {
+  const isActive = activeDetail === item.key;
+
+  return (
+    <div
+      key={item.key}
+      className={`rounded-2xl border backdrop-blur-md overflow-hidden transition-all duration-300 ${
+        isActive
+          ? "bg-white/95 border-white shadow-lg"
+          : accent === "blue"
+          ? "bg-[#20345f]/75 border-white/20 hover:bg-[#20345f]/45"
+          : accent === "green"
+          ? "bg-[#123f32]/75 border-white/20 hover:bg-[#123f32]/45"
+          : "bg-[#5f3718]/78 border-white/20 hover:bg-[#5f3718]/45"
+      }`}
+    >
+      <button
+        onClick={() => setActiveDetail(isActive ? null : item.key)}
+        className={`group w-full text-left px-6 py-4 text-[17px] font-semibold transition-all duration-300 ${
+          isActive ? "text-[#20345f]" : "text-white"
+        }`}
+      >
+        <span className="flex items-center justify-between gap-4">
+<span
+  className={
+    isActive
+      ? accent === "blue"
+        ? "text-[#243c7b]"
+        : accent === "green"
+        ? "text-[#0f6b46]"
+        : "text-[#8a5418]"
+      : "text-white"
+  }
+>
+  {item.title}
+</span>
+
+          <span
+            className={`text-[15px] transition-all duration-300 ${
+              isActive ? "text-[#20345f]/70" : "text-white/70"
+            }`}
+          >
+            {isActive ? "Chiudi ↑" : "Apri →"}
+          </span>
+        </span>
+      </button>
+
+      {isActive && (
+        <div className="px-6 pb-5">
+          <div className="h-px bg-slate-200 mb-4" />
+
+          <p className="text-[16px] leading-[1.7] text-slate-700">
+            {item.text}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+})}
           </div>
         </div>
       </div>
@@ -1310,50 +1424,145 @@ function RcProfessionaleDetail() {
   );
 }
 
-function DetailGrid({ title, cards, active, setActive, activeBorder, details, accent }: { title: string; cards: CardData[]; active: Detail; setActive: (value: Detail) => void; activeBorder: string; details: Record<string, DetailData>; accent: Accent; }) {
+function DetailGrid({
+  title,
+  cards,
+  active,
+  setActive,
+  activeBorder,
+  details,
+  accent,
+}: {
+  title: string;
+  cards: CardData[];
+  active: Detail;
+  setActive: (value: Detail) => void;
+  activeBorder: string;
+  details: Record<string, DetailData>;
+  accent: Accent;
+}) {
+  const selectedCard = cards.find((card) => card.key === active);
+  const selectedDetail =
+    active && selectedCard && details[active] ? details[active] : null;
+
   return (
     <>
       <div className="mt-12 mb-8">
-<div className={`text-sm font-bold uppercase tracking-[0.2em] mb-4 opacity-80 ${accent === "blue" ? "text-[#304d8c]" : accent === "green" ? "text-[#2f7a57]" : "text-[#a6631b]"}`}>Aree complementari</div>
-        <h3 className="text-3xl lg:text-4xl font-extrabold tracking-tight">{title}</h3>
+        <div
+          className={`text-sm font-bold uppercase tracking-[0.2em] mb-4 opacity-80 ${
+            accent === "blue"
+              ? "text-[#304d8c]"
+              : accent === "green"
+              ? "text-[#2f7a57]"
+              : "text-[#a6631b]"
+          }`}
+        >
+          Aree complementari
+        </div>
+
+        <h3 className="text-3xl lg:text-4xl font-extrabold tracking-tight">
+          {title}
+        </h3>
       </div>
+
+      {/* LE CARD RESTANO SEMPRE FERME */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {cards.map((card) => (
-          <React.Fragment key={card.key}>
-            <button onClick={() => setActive(active === card.key ? null : card.key)} className={`text-left rounded-[2rem] border p-7 transition-all duration-500 ease-out ${active === card.key ? `bg-white ${activeBorder} shadow-xl -translate-y-1` : "border-slate-200 bg-[#f8fafc] hover:bg-white hover:-translate-y-1 hover:shadow-xl"}`}>
-             <h4 className="text-[20px] lg:text-[22px] font-bold tracking-[-0.02em] leading-[1.2] mb-3">
-  {card.title}
-</h4>
-            <p className="text-[16px] lg:text-[17px] text-slate-600 leading-[1.6]">
-  {card.text}
-</p>
+        {cards.map((card) => {
+          const isActive = active === card.key;
+
+          return (
+            <button
+              key={card.key}
+              onClick={() => {
+  if (isActive) {
+    setActive(null);
+    return;
+  }
+
+  setActive(card.key);
+
+  window.setTimeout(() => {
+    document
+      .getElementById(`detail-${card.key}`)
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+  }, 200);
+}}
+              className={`text-left rounded-[2rem] border p-7 transition-all duration-300 ease-out ${
+                isActive
+                  ? `bg-white ${activeBorder} shadow-xl -translate-y-1`
+                  : "bg-slate-50 border-slate-200 hover:bg-white hover:shadow-md hover:-translate-y-0.5"
+              }`}
+            >
+              <h4 className="text-[20px] lg:text-[22px] font-bold tracking-[-0.02em] leading-[1.2] mb-3">
+                {card.title}
+              </h4>
+
+              <p className="text-[16px] lg:text-[17px] text-slate-600 leading-[1.6]">
+                {card.text}
+              </p>
             </button>
-            {active === card.key && details[card.key] && (
-              <div id={`detail-${card.key}`} className="md:col-span-2 lg:col-span-3 sigma-reveal scroll-mt-28">
-                <SimpleDetail data={details[card.key]} compact />
-              </div>
-            )}
-          </React.Fragment>
-        ))}
+          );
+        })}
       </div>
+
+      {/* UN SOLO APPROFONDIMENTO, SEMPRE SOTTO TUTTA LA GRIGLIA */}
+      {selectedDetail && active && (
+        <div
+          id={`detail-${active}`}
+          className="mt-8 sigma-reveal scroll-mt-28"
+        ><SimpleDetail data={selectedDetail} compact accent={accent} />
+        </div>
+      )}
     </>
   );
 }
 
-function SimpleDetail({ data, compact = false }: { data?: DetailData; compact?: boolean }) {
+function SimpleDetail({
+  data,
+  compact = false,
+  accent = "green",
+}: {
+  data?: DetailData;
+  compact?: boolean;
+  accent?: Accent;
+}) {
   if (!data) return null;
+  const accentText =
+  accent === "blue"
+    ? "text-[#304d8c]"
+    : accent === "gold"
+? "text-[#a6631b]"
+   : "text-[#2f7a57]";
+
+const accentDot =
+  accent === "blue"
+   ? "bg-[#304d8c]"
+    : accent === "gold"
+ ? "bg-[#a6631b]"
+   : "bg-[#2f7a57]";
   return (
     <div className={`${compact ? "mt-0" : "mt-10"} rounded-[2.5rem] border border-slate-200 bg-white p-10 lg:p-14 shadow-[0_20px_80px_rgba(15,23,42,0.08)]`}>
-      <div className="text-sm uppercase tracking-[0.2em] font-bold text-[#0f7a43] mb-5">{data.label}</div>
+      <div className={`text-sm uppercase tracking-[0.2em] font-bold ${accentText} mb-5`}>{data.label}</div>
       <h3 className="text-4xl lg:text-5xl font-black tracking-[-0.04em] leading-tight mb-8">{data.title}</h3>
       <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-4xl whitespace-pre-line">{data.text}</p>
-      {data.points && (
-        <div className="grid md:grid-cols-3 gap-5">
-          {data.points.map((item) => (
-            <div key={item} className="rounded-2xl bg-[#f8fafc] border border-slate-200 p-6 font-semibold">{item}</div>
-          ))}
+    {data.points && (
+  <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
+    {data.points.map((item, index) => (
+      <React.Fragment key={item}>
+        {index > 0 && (
+          <span className="hidden md:block h-4 w-px bg-slate-300" />
+        )}
+        <div className="flex items-center gap-2.5 text-[15px] font-semibold text-slate-700">
+      <span className={`h-1.5 w-1.5 rounded-full ${accentDot}`} />
+          <span>{item}</span>
         </div>
-      )}
+      </React.Fragment>
+    ))}
+  </div>
+)}
     </div>
   );
 }
