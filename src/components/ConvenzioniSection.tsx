@@ -34,14 +34,13 @@ export default function ConvenzioniSection({
   return (
     <section
       id="convenzioni"
-      className="relative overflow-hidden rounded-[2.5rem] border border-[#dce5df] bg-[#f7f5f0] text-[#102f2c] p-10 lg:p-14 mb-16 sigma-reveal"
+   className="relative overflow-hidden rounded-[2.5rem] border border-[#dce5df] bg-[#f7f5f0] text-[#102f2c] px-10 py-8 lg:px-14 lg:py-9 mb-16 sigma-reveal"
     >
       {/* Accenti di sfondo */}
       <div className="pointer-events-none absolute -top-28 -right-24 h-[340px] w-[340px] rounded-full bg-[#e6f2eb] blur-3xl opacity-80" />
       <div className="pointer-events-none absolute -bottom-32 -left-20 h-[300px] w-[300px] rounded-full bg-white blur-3xl opacity-90" />
 
       <div className="relative z-10 grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center">
-
         {/* COLONNA SINISTRA */}
         <div>
           <div className="inline-flex items-center gap-3 text-[#16875f] text-xs uppercase tracking-[0.22em] font-semibold mb-7">
@@ -49,10 +48,7 @@ export default function ConvenzioniSection({
             Convenzioni professionali
           </div>
 
-          <h2
-            style={{ fontFamily: '"Inter", sans-serif' }}
-            className="text-3xl lg:text-[38px] font-semibold tracking-[-0.025em] leading-[1.08] max-w-[590px]"
-          >
+          <h2 className="text-3xl lg:text-[38px] font-semibold tracking-[-0.025em] leading-[1.08] max-w-[590px]">
             Convenzioni professionali progettate intorno alle esigenze reali
             degli studi.
           </h2>
@@ -79,10 +75,7 @@ export default function ConvenzioniSection({
                 </div>
 
                 <div>
-                  <h3
-                    style={{ fontFamily: '"Inter", sans-serif' }}
-                    className="text-xl font-semibold tracking-[-0.02em] text-[#102f2c]"
-                  >
+                  <h3 className="text-xl font-semibold tracking-[-0.02em] text-[#102f2c]">
                     {item.label}
                   </h3>
 

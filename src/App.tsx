@@ -430,7 +430,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
         </div>
 
         <h1 className="text-5xl lg:text-7xl font-black tracking-[-0.06em] leading-[0.95] text-[#0b132d] mb-8">
-          Convenzione per la tutela del rischio professionale legale.
+     Convenzione per la tutela del rischio professionale degli avvocati.
         </h1>
 
         <div className="w-20 h-[3px] bg-[#008f4c] mb-8 rounded-full" />
@@ -525,6 +525,19 @@ const [activeView, setActiveView] = React.useState<View>(() => {
 >
   MUP - Modulo Unico Precontrattuale
 </a>
+<button
+  onClick={() => {
+    setActiveView("home");
+    setTimeout(() => {
+      document
+        .getElementById("contatti")
+        ?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  }}
+  className="w-full rounded-2xl bg-[#008f4c] px-5 py-4 font-bold text-white transition-all duration-300 hover:bg-[#007c42]"
+>
+  Richiedi informazioni
+</button>
           </div>
         </div>
       </div>
@@ -548,7 +561,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
         </div>
 
         <h1 className="text-5xl lg:text-7xl font-black tracking-[-0.06em] leading-[0.95] text-[#0b132d] mb-8">
-          Convenzione Tecnici Professionisti.
+       Convenzione per la tutela del rischio professionale dei tecnici.
         </h1>
 
         <div className="w-20 h-[3px] bg-[#008f4c] mb-8 rounded-full" />
