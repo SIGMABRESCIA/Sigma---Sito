@@ -76,7 +76,7 @@ export default function AutomotiveAffinitySection({
             </h2>
 
             {/* TESTO */}
-            <p className="mt-5 text-[16px] lg:text-[17px] text-white/80 leading-[1.6] max-w-[520px]">
+            <p className="mt-5 text-[17px] lg:text-[18px] text-white/80 leading-[1.65] max-w-[540px]">
               Affianchiamo concessionari, dealer e operatori nella costruzione
               di programmi assicurativi integrati nella vendita e nel post
               vendita.
@@ -85,7 +85,7 @@ export default function AutomotiveAffinitySection({
            {/* PULSANTE */}
 <button
 onClick={onOpenAutomotive}
-  className="mt-6 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-[15px] font-semibold text-[#075b4b] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+  className="mt-6 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-[16px] font-semibold text-[#075b4b] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
 >
   Scopri Automotive
   <ArrowRight size={17} strokeWidth={1.8} />
@@ -111,7 +111,7 @@ onClick={onOpenAutomotive}
                   <Icon size={20} strokeWidth={1.8} />
                 </div>
 
-                <h3 className="text-[16px] lg:text-[17px] font-semibold tracking-[-0.02em] leading-[1.2] text-[#102f2c]">
+                <h3 className="text-[17px] lg:text-[18px] font-semibold tracking-[-0.02em] leading-[1.2] text-[#102f2c]">
                   {item.title}
                 </h3>
               </div>

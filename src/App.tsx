@@ -710,7 +710,7 @@ function HomeView({ goTo }: { goTo: (view: View) => void }) {
         <div className="mb-8">
           <div className="text-sm font-bold uppercase tracking-[0.2em] text-[#2f7a57] mb-4 ml-5 opacity-80">Soluzioni dedicate</div>
 <h2
-  style={{ fontFamily: '"Inter", sans-serif' }}
+
   className="text-3xl lg:text-[40px] font-semibold tracking-[-0.025em] leading-[1.08] mb-5"
 >
   Coperture costruite intorno alle esigenze di professionisti, aziende e privati.
@@ -869,9 +869,7 @@ function WhistleblowingSection() {
   );
 }
 
-
 function SolutionCard({
-  
   title,
   text,
   tags,
@@ -879,7 +877,6 @@ function SolutionCard({
   onClick,
   image,
 }: {
-  
   title: string;
   text: string;
   tags: string[];
@@ -891,44 +888,44 @@ function SolutionCard({
 
   return (
     <div className="group relative overflow-hidden rounded-[2.75rem] border border-white/70 bg-gradient-to-br from-white via-white to-slate-50 p-12 lg:p-14 backdrop-blur-2xl shadow-[0_20px_70px_rgba(15,23,42,0.08)] hover:shadow-[0_35px_120px_rgba(15,23,42,0.14)] hover:-translate-y-2 transition-all duration-500 flex flex-col">
+      
       <div className="relative mb-8 h-48 overflow-hidden rounded-[2rem]">
-  <img
-    src={image}
-    alt={title}
-   className="h-full w-full object-cover md:grayscale transition-all duration-700 md:group-hover:grayscale-0 group-hover:scale-110"
-  />
-  <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
-</div>
-    
+        <img
+          src={image}
+          alt={title}
+          className="h-full w-full object-cover md:grayscale transition-all duration-700 md:group-hover:grayscale-0 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
+      </div>
 
       <h3 className="text-[2rem] leading-tight font-black mb-4">
         {title}
       </h3>
 
-      <p className="text-[16px] text-slate-600 leading-[1.65] mb-8 min-h-[88px]">
+      <p className="text-[17px] text-slate-600 leading-[1.7] mb-8 min-h-[96px]">
         {text}
       </p>
 
       <div className="mb-10">
-<div className="text-[12px] uppercase tracking-[0.18em] text-slate-400 mb-3 font-bold">
-    Ambiti principali
-  </div>
+        <div className="text-[13px] uppercase tracking-[0.17em] text-slate-400 mb-3 font-bold">
+          Ambiti principali
+        </div>
 
-  <div className="flex flex-wrap gap-x-3 gap-y-2 text-[16px] font-medium text-slate-600">
-    {tags.map((item, index) => (
-      <span key={item}>
-        {item}
-        {index !== tags.length - 1 && (
-          <span className="ml-3 text-slate-300">•</span>
-        )}
-      </span>
-    ))}
-  </div>
-</div>
+        <div className="flex flex-wrap gap-x-3 gap-y-2 text-[17px] font-medium text-slate-600">
+          {tags.map((item, index) => (
+            <span key={item}>
+              {item}
+              {index !== tags.length - 1 && (
+                <span className="ml-3 text-slate-300">•</span>
+              )}
+            </span>
+          ))}
+        </div>
+      </div>
 
       <button
         onClick={onClick}
-      className={`mt-auto inline-flex items-center gap-2 text-[16px] font-semibold ${style.text} group-hover:gap-3 transition-all duration-300`}
+        className={`mt-auto inline-flex items-center gap-2 text-[17px] font-semibold ${style.text} group-hover:gap-3 transition-all duration-300`}
       >
         Approfondisci →
       </button>

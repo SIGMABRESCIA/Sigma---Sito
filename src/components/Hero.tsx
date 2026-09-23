@@ -1,6 +1,47 @@
+import { useEffect, useState } from "react";
 import { ShieldCheck } from "lucide-react";
 
 export default function Hero() {
+  const [years, setYears] = useState(0);
+  const [vision, setVision] = useState(0);
+  const [showTailor, setShowTailor] = useState(false);
+
+  useEffect(() => {
+    const duration = 1400;
+
+    const animationTimer = window.setTimeout(() => {
+      const startTime = performance.now();
+
+      const animate = (currentTime: number) => {
+        const progress = Math.min(
+          (currentTime - startTime) / duration,
+          1
+        );
+
+        // Movimento morbido: veloce all'inizio, più lento alla fine
+        const eased = 1 - Math.pow(1 - progress, 3);
+
+        setYears(Math.round(15 * eased));
+        setVision(Math.round(360 * eased));
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+
+      requestAnimationFrame(animate);
+    }, 650);
+
+    const tailorTimer = window.setTimeout(() => {
+      setShowTailor(true);
+    }, 1050);
+
+    return () => {
+      window.clearTimeout(animationTimer);
+      window.clearTimeout(tailorTimer);
+    };
+  }, []);
+
   return (
     <>
       <section
@@ -33,10 +74,7 @@ export default function Hero() {
             </div>
 
             {/* TITOLO */}
-            <h1
-              style={{ fontFamily: '"Inter", sans-serif' }}
-              className="hero-enter hero-delay-2 text-5xl sm:text-6xl lg:text-[4.3rem] font-bold tracking-[-0.025em] leading-[0.98] mb-8 max-w-[760px]"
-            >
+            <h1 className="hero-enter hero-delay-2 text-5xl sm:text-6xl lg:text-[4.3rem] font-bold tracking-[-0.025em] leading-[0.98] mb-8 max-w-[760px]">
               Protezione assicurativa progettata intorno ai rischi reali.
             </h1>
 
@@ -59,8 +97,8 @@ export default function Hero() {
 
               {/* 15+ */}
               <div className="hero-enter hero-delay-5 py-5 sm:pr-8 border-b sm:border-b-0 border-[#cfd8d2]">
-                <div className="text-[32px] font-semibold text-[#16875f]">
-                  15+
+                <div className="text-[32px] font-semibold text-[#16875f] tabular-nums">
+                  {years}+
                 </div>
 
                 <div className="mt-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#52615b]">
@@ -75,8 +113,8 @@ export default function Hero() {
 
               {/* 360° */}
               <div className="hero-enter hero-delay-6 py-5 sm:px-8 border-b sm:border-b-0 sm:border-l border-[#cfd8d2]">
-                <div className="text-[32px] font-semibold text-[#16875f]">
-                  360°
+                <div className="text-[32px] font-semibold text-[#16875f] tabular-nums">
+                  {vision}°
                 </div>
 
                 <div className="mt-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#52615b]">
@@ -90,7 +128,13 @@ export default function Hero() {
 
               {/* TAILOR */}
               <div className="hero-enter hero-delay-7 py-5 sm:pl-8 sm:border-l border-[#cfd8d2]">
-                <div className="text-[32px] font-semibold text-[#16875f]">
+                <div
+                  className={`text-[32px] font-semibold text-[#16875f] transition-all duration-700 ${
+                    showTailor
+                      ? "opacity-100 translate-x-0"
+                      : "opacity-0 -translate-x-4"
+                  }`}
+                >
                   Tailor
                 </div>
 
@@ -110,102 +154,102 @@ export default function Hero() {
       </section>
 
       {/* ANIMAZIONI HERO */}
-<style>{`
-  .hero-enter {
-    opacity: 0;
-    transform: translateY(28px);
-    animation: heroReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
+      <style>{`
+        .hero-enter {
+          opacity: 0;
+          transform: translateY(28px);
+          animation: heroReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
 
-  .hero-delay-1 {
-    animation-delay: 0.05s;
-  }
+        .hero-delay-1 {
+          animation-delay: 0.05s;
+        }
 
-  .hero-delay-2 {
-    animation-delay: 0.18s;
-  }
+        .hero-delay-2 {
+          animation-delay: 0.18s;
+        }
 
-  .hero-delay-3 {
-    animation-delay: 0.34s;
-  }
+        .hero-delay-3 {
+          animation-delay: 0.34s;
+        }
 
-  .hero-delay-4 {
-    animation-delay: 0.46s;
-  }
+        .hero-delay-4 {
+          animation-delay: 0.46s;
+        }
 
-  .hero-delay-5 {
-    animation-delay: 0.62s;
-  }
+        .hero-delay-5 {
+          animation-delay: 0.62s;
+        }
 
-  .hero-delay-6 {
-    animation-delay: 0.76s;
-  }
+        .hero-delay-6 {
+          animation-delay: 0.76s;
+        }
 
-  .hero-delay-7 {
-    animation-delay: 0.90s;
-  }
+        .hero-delay-7 {
+          animation-delay: 0.90s;
+        }
 
-  /* Il titolo entra leggermente da sinistra */
-  h1.hero-enter {
-    transform: translateX(-35px);
-    animation-name: heroTitleReveal;
-  }
+        /* Il titolo entra leggermente da sinistra */
+        h1.hero-enter {
+          transform: translateX(-35px);
+          animation-name: heroTitleReveal;
+        }
 
-  @keyframes heroReveal {
-    from {
-      opacity: 0;
-      transform: translateY(28px);
-    }
+        @keyframes heroReveal {
+          from {
+            opacity: 0;
+            transform: translateY(28px);
+          }
 
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
 
-  @keyframes heroTitleReveal {
-    from {
-      opacity: 0;
-      transform: translateX(-35px);
-    }
+        @keyframes heroTitleReveal {
+          from {
+            opacity: 0;
+            transform: translateX(-35px);
+          }
 
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
 
-  /* Movimento editoriale della fotografia */
-  .hero-image-motion {
-    transform: scale(1.02) translateX(0);
-    animation: heroImageMotion 10s ease-in-out infinite alternate;
-    transform-origin: center center;
-  }
+        /* Movimento editoriale della fotografia */
+        .hero-image-motion {
+          transform: scale(1.02) translateX(0);
+          animation: heroImageMotion 10s ease-in-out infinite alternate;
+          transform-origin: center center;
+        }
 
-  @keyframes heroImageMotion {
-    from {
-      transform: scale(1.02) translateX(0);
-    }
+        @keyframes heroImageMotion {
+          from {
+            transform: scale(1.02) translateX(0);
+          }
 
-    to {
-      transform: scale(1.09) translateX(-18px);
-    }
-  }
+          to {
+            transform: scale(1.09) translateX(-18px);
+          }
+        }
 
-  @media (prefers-reduced-motion: reduce) {
-    .hero-enter,
-    h1.hero-enter {
-      opacity: 1;
-      transform: none;
-      animation: none;
-    }
+        @media (prefers-reduced-motion: reduce) {
+          .hero-enter,
+          h1.hero-enter {
+            opacity: 1;
+            transform: none;
+            animation: none;
+          }
 
-    .hero-image-motion {
-      transform: none;
-      animation: none;
-    }
-  }
-`}</style>
+          .hero-image-motion {
+            transform: none;
+            animation: none;
+          }
+        }
+      `}</style>
     </>
   );
 }

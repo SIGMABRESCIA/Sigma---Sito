@@ -55,7 +55,7 @@ export default function ConvenzioniSection({
 
           <div className="w-12 h-[2px] bg-[#16875f] mt-8 mb-7" />
 
-          <p className="text-[#526174] text-base lg:text-[17px] leading-[1.7] max-w-[570px]">
+       <p className="text-[#526174] text-[17px] lg:text-[18px] leading-[1.7] max-w-[590px]">
             Convenzioni dedicate alla tutela del rischio professionale
             sviluppate per ordini, categorie professionali e studi associati.
           </p>
@@ -75,11 +75,11 @@ export default function ConvenzioniSection({
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold tracking-[-0.02em] text-[#102f2c]">
+                  <h3 className="text-[21px] lg:text-[22px] font-bold tracking-[-0.02em] text-[#102f2c]">
                     {item.label}
                   </h3>
 
-                  <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#16875f]">
+                <p className="mt-2 text-[12px] lg:text-[13px] font-bold uppercase tracking-[0.16em] text-[#16875f]">
                     Scopri la convenzione
                   </p>
                 </div>
