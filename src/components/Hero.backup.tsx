@@ -39,7 +39,7 @@ export default function Hero() {
         
           <div className="inline-flex items-center gap-3 rounded-full bg-white/10 backdrop-blur-xl px-5 py-3 text-[16px] font-semibold text-[#23845f] mb-10 border border-[#d9e1dc]">
   <ShieldCheck size={20} />
-  Consulenza assicurativa evoluta per aziende, professionisti e patrimoni
+  Consulenza assicurativa evoluta
 </div>
 
     <h1 className="text-5xl sm:text-6xl lg:text-[4.7rem] font-medium tracking-[-0.035em] leading-[1.02] mb-10 max-w-[820px] ...">

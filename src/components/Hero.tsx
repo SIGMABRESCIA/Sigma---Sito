@@ -70,7 +70,7 @@ export default function Hero() {
             {/* BADGE */}
             <div className="hero-enter hero-delay-1 inline-flex items-center gap-3 rounded-full bg-[#edf1eb]/90 px-5 py-3 text-[15px] font-semibold text-[#23845f] mb-10 border border-[#d9e1dc]">
               <ShieldCheck size={19} strokeWidth={1.8} />
-              Consulenza assicurativa evoluta per aziende, professionisti e patrimoni
+              Consulenza assicurativa evoluta
             </div>
 
             {/* TITOLO */}

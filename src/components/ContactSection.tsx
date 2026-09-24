@@ -4,7 +4,7 @@ export default function ContactSection() {
   return (
     <section
       id="contatti"
-      className="relative overflow-hidden rounded-[2.5rem] border border-[#dce5df] bg-[#f8f7f2] p-10 lg:p-14 mb-16 scroll-mt-28 shadow-sm sigma-reveal"
+      className="relative overflow-hidden rounded-[2.5rem] border border-[#dce5df] bg-[#f8f7f2] p-10 lg:p-14 mb-0 scroll-mt-28 shadow-sm sigma-reveal"
     >
       {/* SFUMATURA DI SFONDO */}
       <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-[#e8f5ef] blur-3xl opacity-90" />

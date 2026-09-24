@@ -1582,7 +1582,9 @@ function CallToAction({ title, text }: { title: string; text: string }) {
     <div className="rounded-[2rem] bg-[#0f172a] text-white p-8 lg:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
       <div className="max-w-3xl">
         <div className="text-sm uppercase tracking-[0.2em] text-slate-400 font-bold mb-4">Consulenza dedicata</div>
-        <h4 className="text-3xl lg:text-4xl font-extrabold leading-tight mb-4">{title}</h4>
+       <h4 className="text-3xl lg:text-4xl font-semibold tracking-[-0.025em] leading-[1.08] mb-4">
+  {title}
+</h4>
         <p className="text-slate-300 leading-relaxed text-lg">{text}</p>
       </div>
     </div>
@@ -1595,7 +1597,7 @@ function WhySigmaSection() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#eefaf3] rounded-full blur-3xl opacity-60" />
       <div className="relative z-10 max-w-6xl">
         <div className="inline-flex rounded-full bg-[#eefaf3] text-[#0f7a43] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6">Perché Sigma</div>
-        <h2 className="text-4xl lg:text-6xl text-4xl lg:text-[52px] font-semibold tracking-[-0.045em] leading-[1.02] mb-8 max-w-5xl">Non ci limitiamo a proporre polizze.<br />Analizziamo rischi, continuità e sostenibilità delle coperture nel tempo.</h2>
+        <h2 className="text-4xl lg:text-[52px] font-semibold tracking-[-0.045em] leading-[1.02] mb-8 max-w-5xl">Non ci limitiamo a proporre polizze.<br />Analizziamo rischi, continuità e sostenibilità delle coperture nel tempo.</h2>
         <p className="text-xl text-slate-600 leading-relaxed max-w-4xl mb-14">Il nostro approccio parte dall’analisi concreta dell’attività, delle responsabilità e delle esposizioni reali. Costruiamo soluzioni assicurative coordinate, evitando sovrapposizioni, incoerenze e aree scoperte che spesso emergono solo nei momenti più delicati.</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 mb-14 border-y border-[#dce5df]">
 
