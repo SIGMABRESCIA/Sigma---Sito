@@ -28,7 +28,7 @@ export default function Header({
   <img
     src="/logo-sigma-originale.png"
     alt="Sigma Studi Brescia"
-    className="w-[250px] h-auto object-contain"
+   className="w-[210px] sm:w-[230px] lg:w-[250px] h-auto object-contain"
   />
 </div>
 

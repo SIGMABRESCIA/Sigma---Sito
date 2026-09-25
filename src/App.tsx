@@ -12,6 +12,7 @@ import ContactSection from "./components/ContactSection";
 import AboutSection from "./components/AboutSection";
 import ConvenzioniSection from "./components/ConvenzioniSection";
 import AutomotiveAffinitySection from "./components/AutomotiveAffinity";
+import SigmaWidget from "./components/SigmaWidget";
 
 type View =
   | "home"
@@ -678,6 +679,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
 )}
       </main>
       <Footer goTo={goTo} goToSection={goToSection} />
+      <SigmaWidget />
     </div>
   );
 }

@@ -47,7 +47,18 @@ export default function Hero() {
       <section
         id="home"
         className="relative overflow-hidden bg-[#f7f5f0] text-[#102f2c]"
-      >
+      >{/* IMMAGINE EDITORIALE - MOBILE */}
+<div className="absolute inset-0 lg:hidden pointer-events-none overflow-hidden">
+  <img
+    src="/images/hero-editorial.png"
+    alt=""
+    className="absolute right-[-35%] bottom-0 h-[58%] w-[90%] object-cover object-center opacity-30"
+  />
+
+  {/* Dissolvenza nel fondo della Hero */}
+  <div className="absolute inset-0 bg-gradient-to-b from-[#f7f5f0] via-[#f7f5f0]/95 to-transparent" />
+  <div className="absolute inset-0 bg-gradient-to-r from-[#f7f5f0] via-[#f7f5f0]/85 to-transparent" />
+</div>
         {/* IMMAGINE EDITORIALE - SOLO DESKTOP */}
         <div className="absolute inset-y-0 right-0 hidden lg:block w-[54%] pointer-events-none overflow-hidden">
           <img
@@ -68,13 +79,13 @@ export default function Hero() {
           <div className="max-w-[790px]">
 
             {/* BADGE */}
-            <div className="hero-enter hero-delay-1 inline-flex items-center gap-3 rounded-full bg-[#edf1eb]/90 px-5 py-3 text-[15px] font-semibold text-[#23845f] mb-10 border border-[#d9e1dc]">
+         <div className="hero-enter hero-delay-1 inline-flex items-center gap-2 sm:gap-3 rounded-full bg-[#edf1eb]/90 px-4 sm:px-5 py-2 sm:py-3 text-[13px] sm:text-[15px] font-semibold text-[#23845f] mb-8 sm:mb-10 border border-[#d9e1dc]">
               <ShieldCheck size={19} strokeWidth={1.8} />
               Consulenza assicurativa evoluta
             </div>
 
             {/* TITOLO */}
-            <h1 className="hero-enter hero-delay-2 text-5xl sm:text-6xl lg:text-[4.3rem] font-bold tracking-[-0.025em] leading-[0.98] mb-8 max-w-[760px]">
+           <h1 className="hero-enter hero-delay-2 text-[40px] sm:text-6xl lg:text-[4.3rem] font-bold tracking-[-0.025em] leading-[1.02] sm:leading-[0.98] mb-7 sm:mb-8 max-w-[760px]">
               Protezione assicurativa progettata intorno ai rischi reali.
             </h1>
 
@@ -92,20 +103,20 @@ export default function Hero() {
           </div>
 
           {/* DATI */}
-          <div className="mt-10 lg:mt-11 max-w-[900px]">
-            <div className="grid sm:grid-cols-3">
+         <div className="mt-7 sm:mt-10 lg:mt-11 max-w-[900px]">
+           <div className="grid grid-cols-3">
 
               {/* 15+ */}
               <div className="hero-enter hero-delay-5 py-5 sm:pr-8 border-b sm:border-b-0 border-[#cfd8d2]">
-                <div className="text-[32px] font-semibold text-[#16875f] tabular-nums">
+                <div className="text-[22px] sm:text-[25px] font-semibold text-[#16875f] tabular-nums">
                   {years}+
                 </div>
 
-                <div className="mt-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#52615b]">
+                <div className="mt-2 text-[10px] sm:text-[13px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.18em] text-[#52615b]">
                   Esperienza
                 </div>
 
-                <p className="mt-3 text-[17px] leading-[1.6] text-[#42514c] max-w-[270px]">
+                <p className="hidden sm:block mt-3 text-[17px] leading-[1.6] text-[#42514c] max-w-[270px]">
                   Oltre quindici anni di affiancamento a imprese, studi
                   professionali e famiglie.
                 </p>
@@ -113,15 +124,16 @@ export default function Hero() {
 
               {/* 360° */}
               <div className="hero-enter hero-delay-6 py-5 sm:px-8 border-b sm:border-b-0 sm:border-l border-[#cfd8d2]">
-                <div className="text-[32px] font-semibold text-[#16875f] tabular-nums">
+                <div className="text-[22px] sm:text-[25px] font-semibold text-[#16875f] tabular-nums">
                   {vision}°
                 </div>
 
-                <div className="mt-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#52615b]">
-                  Visione integrata
+              <div className="mt-2 text-[10px] sm:text-[13px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.18em] text-[#52615b]">
+                <span className="sm:hidden">Visione</span>
+<span className="hidden sm:inline">Visione integrata</span>
                 </div>
 
-                <p className="mt-3 text-[17px] leading-[1.6] text-[#42514c] max-w-[270px]">
+                <p className="hidden sm:block mt-3 text-[17px] leading-[1.6] text-[#42514c] max-w-[270px]">
                   Analisi coordinata di responsabilità, continuità e patrimonio.
                 </p>
               </div>
@@ -129,7 +141,7 @@ export default function Hero() {
               {/* TAILOR */}
               <div className="hero-enter hero-delay-7 py-5 sm:pl-8 sm:border-l border-[#cfd8d2]">
                 <div
-                  className={`text-[32px] font-semibold text-[#16875f] transition-all duration-700 ${
+                  className={`text-[22px] sm:text-[25px] font-semibold text-[#16875f] transition-all duration-700 ${
                     showTailor
                       ? "opacity-100 translate-x-0"
                       : "opacity-0 -translate-x-4"
@@ -138,11 +150,12 @@ export default function Hero() {
                   Tailor
                 </div>
 
-                <div className="mt-2 text-[13px] font-semibold uppercase tracking-[0.18em] text-[#52615b]">
-                  Approccio consulenziale
+                <div className="mt-2 text-[10px] sm:text-[13px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.18em] text-[#52615b]">
+               <span className="sm:hidden">Su misura</span>
+<span className="hidden sm:inline">Approccio consulenziale</span>
                 </div>
 
-                <p className="mt-3 text-[17px] leading-[1.6] text-[#42514c] max-w-[290px]">
+                <p className="hidden sm:block mt-3 text-[17px] leading-[1.6] text-[#42514c] max-w-[270px]">
                   Nessuna soluzione standardizzata: ogni copertura nasce
                   dall’analisi reale del rischio.
                 </p>
@@ -151,6 +164,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
+        
       </section>
 
       {/* ANIMAZIONI HERO */}
