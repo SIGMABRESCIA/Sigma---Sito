@@ -1,13 +1,13 @@
 export default function Footer({ goTo, goToSection }: any) {
   return (
-    <footer className="bg-[#06281f] text-white px-6 lg:px-10 py-8 lg:py-9">
+   <footer className="bg-[#06281f] text-white px-6 lg:px-10 py-6 lg:py-9">
       <div className="max-w-7xl mx-auto">
 
         {/* CONTENUTO PRINCIPALE */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-[1.45fr_0.7fr_0.85fr_1.3fr] gap-9 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-[1.45fr_0.7fr_0.85fr_1.3fr] gap-x-6 gap-y-7 lg:gap-12">
 
           {/* SIGMA */}
-          <div>
+<div className="col-span-2 lg:col-span-1">
             <div className="text-[22px] font-bold tracking-[-0.025em] mb-3">
               SIGMA STUDI{" "}
               <span className="text-[#8ff0c5]">Brescia</span>
@@ -162,8 +162,8 @@ export default function Footer({ goTo, goToSection }: any) {
             </div>
           </div>
 
-          {/* LEGAL */}
-          <div>
+{/* LEGAL */}
+<div className="col-span-2 lg:col-span-1 border-t border-white/10 pt-6 lg:border-t-0 lg:pt-0">
             <h4 className="text-[15px] font-bold text-white mb-4">
               Legal
             </h4>
@@ -186,7 +186,7 @@ export default function Footer({ goTo, goToSection }: any) {
                 n. B000314208 del 29 luglio 2009
               </p>
 
-              <p className="max-w-[390px]">
+              <p className="max-w-[390px] text-[13px] lg:text-[15px] leading-[1.55] text-white/60">
                 Sigma Studi Brescia S.r.l. è soggetta al controllo IVASS.
                 L’iscrizione è verificabile nel Registro Unico degli
                 Intermediari (RUI) sul sito IVASS.

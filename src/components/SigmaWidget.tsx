@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { FormEvent, ReactNode } from "react";
 
 import {
@@ -45,9 +45,52 @@ type ContactPreference = "telefono" | "email";
 
 export default function SigmaWidget() {
   const [isOpen, setIsOpen] = useState(false);
+  const [footerVisible, setFooterVisible] = useState(false);
+
+useEffect(() => {
+  const footer = document.querySelector("footer");
+
+  if (!footer) return;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      setFooterVisible(entry.isIntersecting);
+    },
+    {
+      threshold: 0.05,
+    }
+  );
+
+  observer.observe(footer);
+
+  return () => {
+    observer.disconnect();
+  };
+}, []);
 
   const [step, setStep] =
     useState<Step>("menu");
+
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setFooterVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.05,
+      }
+    );
+
+    observer.observe(footer);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   const [path, setPath] =
     useState<MainPath | null>(null);
@@ -1019,7 +1062,7 @@ export default function SigmaWidget() {
             ? "Chiudi Parla con Sigma"
             : "Parla con Sigma"
         }
-        className="
+  className={`
           fixed
           z-[101]
 
@@ -1028,6 +1071,7 @@ export default function SigmaWidget() {
 
           flex
           sm:hidden
+          ${footerVisible ? "opacity-0 pointer-events-none" : "opacity-100"}
 
           h-12
           w-12
@@ -1047,7 +1091,7 @@ export default function SigmaWidget() {
           duration-200
 
           hover:bg-[#005f43]
-        "
+        `}
       >
         {isOpen ? (
           <X
@@ -1081,12 +1125,13 @@ export default function SigmaWidget() {
             ? "Chiudi Parla con Sigma"
             : "Parla con Sigma"
         }
-        className="
+        className={`
           fixed
           z-[101]
 
           hidden
           sm:inline-flex
+          ${footerVisible ? "opacity-0 pointer-events-none" : "opacity-100"}
 right-120
 bottom-5
 
@@ -1111,7 +1156,7 @@ bottom-5
 
           hover:bg-[#005f43]
           hover:-translate-y-0.5
-        "
+        `}
       >
         {isOpen ? (
           <X

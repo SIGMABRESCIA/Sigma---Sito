@@ -43,7 +43,7 @@ export default function AutomotiveAffinitySection({
   return (
     <section
       id="automotive"
-      className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white mb-14 shadow-sm sigma-reveal scroll-mt-28"
+      className="relative overflow-hidden rounded-[1.75rem] lg:rounded-[2rem] border border-slate-200 bg-white mb-10 lg:mb-14 shadow-sm sigma-reveal scroll-mt-28"
     >
       {/* PARTE SUPERIORE */}
       <div className="relative overflow-hidden bg-[#073f35]">
@@ -61,7 +61,7 @@ export default function AutomotiveAffinitySection({
         </div>
 
         {/* CONTENUTO */}
-        <div className="relative z-10 px-8 py-9 lg:px-12 lg:py-10">
+        <div className="relative z-10 px-6 py-7 lg:px-12 lg:py-10">
           <div className="max-w-[560px]">
             
             {/* BADGE */}
@@ -70,10 +70,10 @@ export default function AutomotiveAffinitySection({
               Affinity & Automotive
             </div>
 
-            {/* TITOLO */}
-            <h2 className="text-[30px] lg:text-[38px] font-semibold tracking-[-0.035em] leading-[1.05] text-white max-w-[530px]">
-              Soluzioni assicurative per il settore automotive.
-            </h2>
+           {/* TITOLO */}
+<h2 className="text-[27px] sm:text-[30px] lg:text-[38px] font-semibold tracking-[-0.035em] leading-[1.07] text-white max-w-[530px]">
+  Soluzioni assicurative per il settore automotive.
+</h2>
 
             {/* TESTO */}
             <p className="mt-5 text-[17px] lg:text-[18px] text-white/80 leading-[1.65] max-w-[540px]">
@@ -93,32 +93,74 @@ onClick={onOpenAutomotive}
           </div>
         </div>
       </div>
+{/* FASCIA COMPETENZE */}
+<div className="px-6 lg:px-12">
+  <div className="grid grid-cols-2 lg:grid-cols-4">
+    {items.map((item) => {
+      const Icon = item.icon;
 
-      {/* FASCIA COMPETENZE */}
-      <div className="px-8 lg:px-12">
-        <div className="grid grid-cols-2 lg:grid-cols-4">
-          {items.map((item) => {
-            const Icon = item.icon;
+      return (
+        <div
+          key={item.title}
+          className="
+            flex
+            items-center
+            gap-3
+            min-w-0
+            py-5
 
-            return (
-              <div
-                key={item.title}
-                className="flex items-center gap-4 py-6 lg:px-7 first:pl-0 border-b lg:border-b-0 lg:border-l first:border-l-0 border-slate-200"
-              >
-                <div
-                  className={`shrink-0 flex h-11 w-11 items-center justify-center rounded-full ${item.iconBg} ${item.iconColor}`}
-                >
-                  <Icon size={20} strokeWidth={1.8} />
-                </div>
+            odd:pr-3
+            even:pl-3
 
-                <h3 className="text-[17px] lg:text-[18px] font-semibold tracking-[-0.02em] leading-[1.2] text-[#102f2c]">
-                  {item.title}
-                </h3>
-              </div>
-            );
-          })}
+            border-b
+            border-slate-200
+
+            lg:gap-4
+            lg:py-6
+            lg:px-7
+            lg:border-b-0
+            lg:border-l
+            lg:first:border-l-0
+            lg:first:pl-0
+          "
+        >
+          <div
+            className={`
+              shrink-0
+              flex
+              h-10
+              w-10
+              lg:h-11
+              lg:w-11
+              items-center
+              justify-center
+              rounded-full
+              ${item.iconBg}
+              ${item.iconColor}
+            `}
+          >
+            <Icon size={19} strokeWidth={1.8} />
+          </div>
+
+          <h3
+            className="
+              min-w-0
+              text-[15px]
+              sm:text-[16px]
+              lg:text-[18px]
+              font-semibold
+              tracking-[-0.02em]
+              leading-[1.15]
+              text-[#102f2c]
+            "
+          >
+            {item.title}
+          </h3>
         </div>
-      </div>
+      );
+    })}
+  </div>
+</div>
     </section>
   );
 }

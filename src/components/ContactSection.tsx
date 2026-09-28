@@ -4,12 +4,11 @@ export default function ContactSection() {
   return (
     <section
       id="contatti"
-      className="relative overflow-hidden rounded-[2.5rem] border border-[#dce5df] bg-[#f8f7f2] p-10 lg:p-14 mb-0 scroll-mt-28 shadow-sm sigma-reveal"
+      className="relative overflow-hidden rounded-[2.5rem] border border-[#dce5df] bg-[#f8f7f2] p-7 lg:p-14 mb-0 scroll-mt-28 shadow-sm sigma-reveal"
     >
       {/* SFUMATURA DI SFONDO */}
       <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-[#e8f5ef] blur-3xl opacity-90" />
-
-      <div className="relative z-10 grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center">
+<div className="relative z-10 grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-16 items-center">
 
         {/* SINISTRA */}
         <div>
@@ -17,11 +16,11 @@ export default function ContactSection() {
             Parliamone
           </div>
 
-          <h2 className="text-3xl lg:text-[44px] font-semibold tracking-[-0.025em] leading-[1.08] mb-6 max-w-[620px] text-[#102f2c]">
+          <h2 className="text-[28px] sm:text-3xl lg:text-[44px] font-semibold tracking-[-0.025em] leading-[1.08] mb-4 lg:mb-6 max-w-[620px] text-[#102f2c]">
             Costruiamo una consulenza assicurativa realmente coerente con la tua attività.
           </h2>
 
-          <p className="text-[18px] text-[#526174] leading-[1.7] max-w-[620px] mb-8">
+          <p className="text-[16px] sm:text-[17px] lg:text-[18px] text-[#526174] leading-[1.65] lg:leading-[1.7] max-w-[620px] mb-7 lg:mb-8">
             Analizziamo rischi, responsabilità e continuità operativa per aiutarti
             a valutare coperture più sostenibili, coordinate e costruite sulle
             esigenze reali della tua attività.

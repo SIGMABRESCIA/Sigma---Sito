@@ -301,13 +301,13 @@ const [activeView, setActiveView] = React.useState<View>(() => {
           Convenzione dedicata
         </div>
 
-        <h1 className="text-5xl lg:text-7xl font-black tracking-[-0.06em] leading-[0.95] text-[#0b132d] mb-8">
+        <h1 className="text-[30px] sm:text-[34px] lg:text-7xl font-black tracking-[-0.04em] lg:tracking-[-0.06em] leading-[1.05] lg:leading-[0.95] text-[#0b132d] mb-6 lg:mb-8">
           Convenzione per la tutela del rischio professionale.
         </h1>
 
         <div className="w-20 h-[3px] bg-[#008f4c] mb-8 rounded-full" />
 
-        <p className="text-slate-600 text-xl leading-relaxed max-w-3xl">
+        <p className="text-slate-600 text-[16px] sm:text-[17px] lg:text-xl leading-[1.65] lg:leading-relaxed max-w-3xl">
           Soluzioni assicurative dedicate agli iscritti all’Ordine dei Dottori Commercialisti ed Esperti Contabili di Brescia e Provincia.
         </p>
       </div>
@@ -317,7 +317,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
       <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
 
         <div>
-          <h2 className="text-3xl lg:text-4xl font-black tracking-[-0.04em] text-[#0b132d] mb-8">
+        <h2 className="text-[26px] sm:text-[28px] lg:text-4xl font-black tracking-[-0.035em] lg:tracking-[-0.04em] leading-[1.08] text-[#0b132d] mb-6 lg:mb-8">
             Un supporto costruito intorno alla professione.
           </h2>
 
@@ -417,7 +417,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
 {activeView === "convenzioni-avvocati" && (
   <section className="rounded-[2.5rem] border border-slate-200 bg-white overflow-hidden shadow-sm sigma-reveal">
 
-    <div className="border-b border-slate-200 bg-[#f8fafc] px-10 lg:px-14 py-12">
+    <div className="border-b border-slate-200 bg-[#f8fafc] px-6 py-8 sm:px-8 sm:py-10 lg:px-14 lg:py-12">
       <button
         onClick={() => goToSection("convenzioni")}
         className="text-[#008f4c] text-sm font-semibold mb-8 hover:opacity-70 transition-opacity"
@@ -430,27 +430,26 @@ const [activeView, setActiveView] = React.useState<View>(() => {
           Convenzione dedicata
         </div>
 
-        <h1 className="text-5xl lg:text-7xl font-black tracking-[-0.06em] leading-[0.95] text-[#0b132d] mb-8">
+        <h1 className="text-[30px] sm:text-[34px] lg:text-7xl font-black tracking-[-0.04em] lg:tracking-[-0.06em] leading-[1.05] lg:leading-[0.95] text-[#0b132d] mb-6 lg:mb-8">
      Convenzione per la tutela del rischio professionale degli avvocati.
         </h1>
+<div className="w-14 lg:w-20 h-[3px] bg-[#008f4c] mb-5 lg:mb-8 rounded-full" />
 
-        <div className="w-20 h-[3px] bg-[#008f4c] mb-8 rounded-full" />
-
-        <p className="text-slate-600 text-xl leading-relaxed max-w-3xl">
+        <p className="text-slate-600 text-[16px] sm:text-[17px] lg:text-xl leading-[1.65] lg:leading-relaxed max-w-3xl">
           Soluzioni assicurative dedicate ad avvocati e studi legali, con particolare attenzione alla responsabilità professionale e alla continuità dell’attività.
         </p>
       </div>
     </div>
 
-    <div className="px-10 lg:px-14 py-14">
+    <div className="px-6 py-8 sm:px-8 sm:py-10 lg:px-14 lg:py-14">
       <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
 
         <div>
-          <h2 className="text-3xl lg:text-4xl font-black tracking-[-0.04em] text-[#0b132d] mb-8">
+          <h2 className="text-[26px] sm:text-[28px] lg:text-4xl font-black tracking-[-0.035em] lg:tracking-[-0.04em] leading-[1.08] text-[#0b132d] mb-6 lg:mb-8">
             Un riferimento dedicato per studi legali e professionisti.
           </h2>
 
-          <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
+          <div className="space-y-5 lg:space-y-6 text-slate-600 text-[16px] sm:text-[17px] lg:text-lg leading-[1.65] lg:leading-relaxed">
             <p>
               Sigma Studi Brescia affianca avvocati e studi legali nella valutazione delle coperture assicurative dedicate alla responsabilità professionale.
             </p>
@@ -548,7 +547,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
 {activeView === "convenzioni-tecnici" && (
   <section className="rounded-[2.5rem] border border-slate-200 bg-white overflow-hidden shadow-sm sigma-reveal">
 
-    <div className="border-b border-slate-200 bg-[#f8fafc] px-10 lg:px-14 py-12">
+    <div className="border-b border-slate-200 bg-[#f8fafc] px-6 py-8 sm:px-8 sm:py-10 lg:px-14 lg:py-12">
       <button
         onClick={() => goToSection("convenzioni")}
         className="text-[#008f4c] text-sm font-semibold mb-8 hover:opacity-70 transition-opacity"
@@ -561,27 +560,27 @@ const [activeView, setActiveView] = React.useState<View>(() => {
           Convenzione dedicata
         </div>
 
-        <h1 className="text-5xl lg:text-7xl font-black tracking-[-0.06em] leading-[0.95] text-[#0b132d] mb-8">
+       <h1 className="text-[30px] sm:text-[34px] lg:text-7xl font-black tracking-[-0.04em] lg:tracking-[-0.06em] leading-[1.05] lg:leading-[0.95] text-[#0b132d] mb-6 lg:mb-8">
        Convenzione per la tutela del rischio professionale dei tecnici.
         </h1>
 
-        <div className="w-20 h-[3px] bg-[#008f4c] mb-8 rounded-full" />
+       <div className="w-14 lg:w-20 h-[3px] bg-[#008f4c] mb-5 lg:mb-8 rounded-full" />
 
-        <p className="text-slate-600 text-xl leading-relaxed max-w-3xl">
+        <p className="text-slate-600 text-[16px] sm:text-[17px] lg:text-xl leading-[1.65] lg:leading-relaxed max-w-3xl">
           Soluzioni dedicate ad architetti, ingegneri e geometri per la tutela del rischio professionale e la protezione dell'attività tecnica.
         </p>
       </div>
     </div>
 
-    <div className="px-10 lg:px-14 py-14">
+    <div className="px-6 py-8 sm:px-8 sm:py-10 lg:px-14 lg:py-14">
       <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
 
         <div>
-          <h2 className="text-3xl lg:text-4xl font-black tracking-[-0.04em] text-[#0b132d] mb-8">
+          <h2 className="text-[26px] sm:text-[28px] lg:text-4xl font-black tracking-[-0.035em] lg:tracking-[-0.04em] leading-[1.08] text-[#0b132d] mb-6 lg:mb-8">
             Una convenzione costruita per le professioni tecniche.
           </h2>
 
-          <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
+          <div className="space-y-5 lg:space-y-6 text-slate-600 text-[16px] sm:text-[17px] lg:text-lg leading-[1.65] lg:leading-relaxed">
             <p>
               Sigma Studi Brescia affianca professionisti tecnici e studi associati nell’analisi delle responsabilità professionali e delle esposizioni connesse all’attività progettuale e consulenziale.
             </p>
@@ -708,58 +707,64 @@ function HomeView({ goTo }: { goTo: (view: View) => void }) {
   return (
     <>
       <AboutSection />
-      <section id="professionisti" className="mb-16 sigma-reveal sigma-delay-1 px-6 lg:px-16">
-        <div className="mb-8">
-          <div className="text-sm font-bold uppercase tracking-[0.2em] text-[#2f7a57] mb-4 ml-5 opacity-80">Soluzioni dedicate</div>
-<h2
 
-  className="text-3xl lg:text-[40px] font-semibold tracking-[-0.025em] leading-[1.08] mb-5"
->
-  Coperture costruite intorno alle esigenze di professionisti, aziende e privati.
-</h2>
+      <section
+        id="professionisti"
+        className="mb-10 sm:mb-12 lg:mb-16 sigma-reveal sigma-delay-1 px-3 sm:px-6 lg:px-16"
+      >
+        <div className="mb-8">
+          <div className="text-sm font-bold uppercase tracking-[0.2em] text-[#2f7a57] mb-4 ml-5 opacity-80">
+            Soluzioni dedicate
+          </div>
+
+          <h2 className="text-3xl lg:text-[40px] font-semibold tracking-[-0.025em] leading-[1.08] mb-5">
+            Coperture costruite intorno alle esigenze di professionisti, aziende
+            e privati.
+          </h2>
         </div>
+
         <div className="grid lg:grid-cols-3 gap-8 items-stretch mt-10">
           <SolutionCard
- 
-  title="Soluzioni per Professionisti"
-  text="Coperture dedicate a studi professionali, consulenti e professionisti iscritti ad albi."
-  tags={professionalCategories}
-  color="blue"
-  onClick={() => goTo("professionisti")}
-  image="/images/professionisti.png"
-/>
+            title="Soluzioni per Professionisti"
+            text="Coperture dedicate a studi professionali, consulenti e professionisti iscritti ad albi."
+            tags={professionalCategories}
+            color="blue"
+            onClick={() => goTo("professionisti")}
+            image="/images/professionisti.png"
+          />
 
-<SolutionCard
- 
-  title="Soluzioni per Aziende"
-  text="Programmi assicurativi dedicati alla continuità operativa."
-  tags={["RC Aziendale", "Property", "D&O", "Cyber Risk"]}
-  color="green"
-  onClick={() => goTo("aziende")}
-  image="/images/aziende.png"
-/>
+          <SolutionCard
+            title="Soluzioni per Aziende"
+            text="Programmi assicurativi dedicati alla continuità operativa."
+            tags={["RC Aziendale", "Property", "D&O", "Cyber Risk"]}
+            color="green"
+            onClick={() => goTo("aziende")}
+            image="/images/aziende.png"
+          />
 
-<SolutionCard
-
-  title="Soluzioni per Privati"
-  text="Soluzioni pensate per la tutela della persona e della famiglia."
-  tags={privateSolutions}
-  color="gold"
-  onClick={() => goTo("privati")}
-  image="/images/privati.png"
-/>
+          <SolutionCard
+            title="Soluzioni per Privati"
+            text="Soluzioni pensate per la tutela della persona e della famiglia."
+            tags={privateSolutions}
+            color="gold"
+            onClick={() => goTo("privati")}
+            image="/images/privati.png"
+          />
         </div>
       </section>
+
       <ConvenzioniSection goTo={goTo} />
-<AutomotiveAffinitySection
-   onOpenAutomotive={() => goTo("automotive")}
-/>
+
+      <AutomotiveAffinitySection
+        onOpenAutomotive={() => goTo("automotive")}
+      />
+
       <WhySigmaSection />
+
       <ContactSection />
     </>
   );
 }
-
 
 function ReclamiSection() {
   const requiredInfo = ["Estremi del ricorrente", "Data e luogo di presentazione del reclamo", "Motivi del reclamo", "Documentazione eventualmente utile"];
@@ -870,7 +875,6 @@ function WhistleblowingSection() {
     </section>
   );
 }
-
 function SolutionCard({
   title,
   text,
@@ -889,47 +893,238 @@ function SolutionCard({
   const style = accents[color];
 
   return (
-    <div className="group relative overflow-hidden rounded-[2.75rem] border border-white/70 bg-gradient-to-br from-white via-white to-slate-50 p-12 lg:p-14 backdrop-blur-2xl shadow-[0_20px_70px_rgba(15,23,42,0.08)] hover:shadow-[0_35px_120px_rgba(15,23,42,0.14)] hover:-translate-y-2 transition-all duration-500 flex flex-col">
-      
-      <div className="relative mb-8 h-48 overflow-hidden rounded-[2rem]">
+    <div
+      className="
+        group
+        relative
+        overflow-hidden
+
+        flex
+        flex-col
+
+        rounded-[1.75rem]
+        lg:rounded-[2.75rem]
+
+        border
+        border-slate-200/70
+        lg:border-white/70
+
+        bg-white
+        lg:bg-gradient-to-br
+        lg:from-white
+        lg:via-white
+        lg:to-slate-50
+
+        p-5
+        lg:p-14
+
+        shadow-[0_12px_35px_rgba(15,23,42,0.06)]
+        lg:shadow-[0_20px_70px_rgba(15,23,42,0.08)]
+
+        transition-all
+        duration-500
+
+        lg:hover:-translate-y-2
+        lg:hover:shadow-[0_35px_120px_rgba(15,23,42,0.14)]
+      "
+    >
+      {/* IMMAGINE */}
+      <div
+        className="
+          relative
+          mb-5
+          lg:mb-8
+
+          h-40
+          lg:h-48
+
+          overflow-hidden
+
+          rounded-[1.25rem]
+          lg:rounded-[2rem]
+        "
+      >
         <img
           src={image}
           alt={title}
-          className="h-full w-full object-cover md:grayscale transition-all duration-700 md:group-hover:grayscale-0 group-hover:scale-110"
+          className="
+            h-full
+            w-full
+            object-cover
+
+            lg:grayscale
+
+            transition-all
+            duration-700
+
+            lg:group-hover:grayscale-0
+            lg:group-hover:scale-110
+          "
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
+
+        <div
+          className="
+            absolute
+            inset-0
+
+            bg-gradient-to-t
+            from-black/10
+            to-transparent
+
+            lg:from-black/25
+          "
+        />
       </div>
 
-      <h3 className="text-[2rem] leading-tight font-black mb-4">
+      {/* TITOLO */}
+      <h3
+        className="
+          text-[23px]
+          lg:text-[2rem]
+
+          leading-[1.08]
+
+          font-bold
+          lg:font-black
+
+          tracking-[-0.025em]
+
+          text-slate-950
+
+          mb-3
+          lg:mb-4
+        "
+      >
         {title}
       </h3>
 
-      <p className="text-[17px] text-slate-600 leading-[1.7] mb-8 min-h-[96px]">
+      {/* DESCRIZIONE */}
+      <p
+        className="
+          text-[15px]
+          lg:text-[17px]
+
+          text-slate-600
+
+          leading-[1.6]
+          lg:leading-[1.7]
+
+          mb-5
+          lg:mb-8
+
+          lg:min-h-[96px]
+        "
+      >
         {text}
       </p>
 
-      <div className="mb-10">
-        <div className="text-[13px] uppercase tracking-[0.17em] text-slate-400 mb-3 font-bold">
+      {/* AMBITI */}
+      <div className="mb-6 lg:mb-10">
+        <div
+          className="
+            text-[11px]
+            lg:text-[13px]
+
+            uppercase
+
+            tracking-[0.17em]
+
+            text-slate-400
+
+            mb-3
+
+            font-bold
+          "
+        >
           Ambiti principali
         </div>
 
-        <div className="flex flex-wrap gap-x-3 gap-y-2 text-[17px] font-medium text-slate-600">
+        {/* MOBILE: PILL */}
+        <div className="flex flex-wrap gap-2 lg:hidden">
+          {tags.map((item) => (
+            <span
+              key={item}
+              className="
+                inline-flex
+                items-center
+
+                rounded-full
+
+                border
+                border-slate-200
+
+                bg-slate-50
+
+                px-3
+                py-1.5
+
+                text-[12px]
+                font-medium
+                text-slate-600
+              "
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+
+        {/* DESKTOP: VERSIONE ORIGINALE */}
+        <div
+          className="
+            hidden
+            lg:flex
+
+            flex-wrap
+            gap-x-3
+            gap-y-2
+
+            text-[17px]
+            font-medium
+            text-slate-600
+          "
+        >
           {tags.map((item, index) => (
             <span key={item}>
               {item}
+
               {index !== tags.length - 1 && (
-                <span className="ml-3 text-slate-300">•</span>
+                <span className="ml-3 text-slate-300">
+                  •
+                </span>
               )}
             </span>
           ))}
         </div>
       </div>
 
+      {/* CTA */}
       <button
+        type="button"
         onClick={onClick}
-        className={`mt-auto inline-flex items-center gap-2 text-[17px] font-semibold ${style.text} group-hover:gap-3 transition-all duration-300`}
+        className={`
+          mt-auto
+
+          inline-flex
+          items-center
+          gap-2
+
+          self-start
+
+          text-[14px]
+          lg:text-[17px]
+
+          font-semibold
+
+          ${style.text}
+
+          transition-all
+          duration-300
+
+          lg:group-hover:gap-3
+        `}
       >
-        Approfondisci →
+        Approfondisci
+        <span aria-hidden="true">→</span>
       </button>
     </div>
   );
@@ -1207,7 +1402,7 @@ const privatiQuickLinks = [
        <h2 className="text-4xl lg:text-[56px] font-semibold tracking-[-0.035em] leading-[1.02] mb-8">{title}</h2>
         <p className="text-xl text-slate-600 leading-relaxed max-w-4xl">{subtitle}</p>
       </div>
-      <div className={`relative rounded-[2.5rem] overflow-hidden bg-gradient-to-br ${style.gradient} text-white mb-12 shadow-[0_20px_80px_rgba(15,51,40,0.18)]`}>
+      <div className={`relative rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden bg-gradient-to-br ${style.gradient} text-white mb-10 lg:mb-12 shadow-[0_20px_80px_rgba(15,51,40,0.18)]`}>
         {/* Fotografia dedicata, visibile sul lato destro e sfumata verso il colore */}
         {/* Immagine editoriale della sezione */}
 <div className="absolute inset-0 hidden lg:block pointer-events-none">
@@ -1230,25 +1425,44 @@ const privatiQuickLinks = [
 )}
 </div>
 
-        <div className="relative z-10 p-10 lg:p-14 grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
+      <div
+  id="primary-card"
+  className="relative z-10 px-6 py-8 sm:p-8 lg:p-14 grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-center"
+>
           <div>
             <div className="inline-flex rounded-full bg-white/10 backdrop-blur-md px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6 border border-white/15">
               In primo piano
             </div>
 
-            <h3 className="text-4xl lg:text-5xl font-black tracking-[-0.04em] leading-[0.95] mb-8 max-w-3xl">
+            <h3 className="text-[30px] sm:text-[34px] lg:text-5xl font-semibold lg:font-black tracking-[-0.035em] lg:tracking-[-0.04em] leading-[1.02] lg:leading-[0.95] mb-5 lg:mb-8 max-w-3xl">
               {heroTitle}
             </h3>
 
-            <p className="text-[18px] lg:text-[20px] text-white/90 leading-[1.65] mb-8 max-w-3xl">
+           <p className="text-[16px] sm:text-[17px] lg:text-[20px] text-white/85 lg:text-white/90 leading-[1.6] lg:leading-[1.65] mb-6 lg:mb-8 max-w-3xl">
               {heroText}
             </p>
 
             {primaryKey && (
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
                 <button
-                  onClick={() => setActiveDetail(activeDetail === primaryKey ? null : primaryKey)}
-                  className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-white text-[#0f172a] px-8 py-4 font-bold hover:bg-slate-100 transition-all duration-300"
+                  onClick={() => {
+  if (activeDetail === primaryKey) {
+    setActiveDetail(null);
+    return;
+  }
+
+  setActiveDetail(primaryKey);
+
+  window.setTimeout(() => {
+    document
+      .getElementById("primary-detail")
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+  }, 200);
+}}
+                  className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-white text-[#0f172a] px-6 py-3.5 lg:px-8 lg:py-4 text-[15px] lg:text-base font-semibold lg:font-bold hover:bg-slate-100 transition-all duration-300"
                 >
                   {activeDetail === primaryKey ? "Chiudi approfondimento" : heroButton}
                 </button>
@@ -1256,7 +1470,7 @@ const privatiQuickLinks = [
                 {viewId === "professionisti" && (
                   <button
                     onClick={() => setQuestionariOpen(!questionariOpen)}
-                    className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-8 py-4 font-bold text-white hover:bg-white/15 transition-all duration-300"
+                   className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-6 py-3.5 lg:px-8 lg:py-4 text-[15px] lg:text-base font-semibold lg:font-bold text-white hover:bg-white/15 transition-all duration-300"
                   >
                     Scarica questionario
                   </button>
@@ -1349,7 +1563,29 @@ const privatiQuickLinks = [
           </div>
         </div>
       )}
-      {primaryKey && activeDetail === primaryKey && primaryDetail}
+    {primaryKey && activeDetail === primaryKey && (
+  <div id="primary-detail" className="scroll-mt-24">
+    {primaryDetail}
+
+    <div className="flex justify-center mt-6 mb-4">
+      <button
+        onClick={() => {
+          setActiveDetail(null);
+
+          setTimeout(() => {
+            document.getElementById("primary-card")?.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          }, 100);
+        }}
+        className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-[15px] font-semibold text-[#102f2c] hover:shadow-md transition-all"
+      >
+        ↑ Chiudi approfondimento
+      </button>
+    </div>
+  </div>
+)}
       <DetailGrid title={gridTitle} cards={cards} active={activeDetail} setActive={setActiveDetail} activeBorder={style.border} details={details} accent={accent} />
     </section>
   );
@@ -1358,7 +1594,7 @@ const privatiQuickLinks = [
 function RcProfessionaleDetail() {
   return (
     <div className="mt-10 rounded-[2.5rem] border border-slate-200 bg-white overflow-hidden shadow-[0_20px_80px_rgba(15,23,42,0.08)] sigma-reveal">
-      <section className="rounded-t-[2.5rem] bg-gradient-to-br from-[#1c3563] via-[#25457d] to-[#31589c] text-white p-10 lg:p-16 overflow-hidden relative">
+      <section className="rounded-t-[2.5rem] bg-gradient-to-br from-[#1c3563] via-[#25457d] to-[#31589c] text-white p-6 sm:p-8 lg:p-16 overflow-hidden relative">
         <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-white/10 rounded-full blur-3xl" />
 
         <div className="relative z-10">
@@ -1366,13 +1602,13 @@ function RcProfessionaleDetail() {
             RC Professionale
           </div>
 
-          <h3 className="text-4xl lg:text-6xl font-black tracking-[-0.05em] leading-[0.95] mb-8 max-w-5xl">
+          <h3 className="text-[30px] sm:text-[34px] lg:text-6xl font-black tracking-[-0.035em] lg:tracking-[-0.05em] leading-[1.02] lg:leading-[0.95] mb-6 lg:mb-8 max-w-5xl">
             Una polizza può sembrare corretta.
             <br />
             Finché non arriva una contestazione.
           </h3>
 
-          <div className="space-y-5 text-white/78 text-lg lg:text-xl leading-relaxed max-w-5xl">
+          <div className="space-y-4 lg:space-y-5 text-white/78 text-[16px] sm:text-[17px] lg:text-xl leading-[1.65] lg:leading-relaxed max-w-5xl">
             <p>
               Molti professionisti verificano il premio, il massimale o la presenza delle garanzie obbligatorie, ma raramente analizzano gli elementi che possono fare la differenza nel momento del sinistro.
             </p>
@@ -1390,42 +1626,42 @@ function RcProfessionaleDetail() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5 mt-12">
-           <div className="rounded-[1.75rem] bg-white/8 border border-white/20 p-6 backdrop-blur-xl">
-             <div className="text-white/40 text-4xl font-black mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5 mt-8 lg:mt-12">
+           <div className="rounded-[1.5rem] lg:rounded-[1.75rem] bg-white/8 border border-white/20 p-5 lg:p-6 backdrop-blur-xl">
+             <div className="text-white/40 text-2xl lg:text-4xl font-black mb-1 lg:mb-2">
   01
 </div>
 
-<div className="text-white font-bold text-xl mb-3">
+<div className="text-white font-bold text-[17px] lg:text-xl mb-2 lg:mb-3">
   Analisi attività
 </div>
-              <p className="text-white/70 leading-relaxed">
+              <p className="text-white/70 text-[15px] lg:text-base leading-[1.55] lg:leading-relaxed">
                 Verifica delle attività realmente svolte e delle responsabilità professionali assunte.
               </p>
             </div>
 
-            <div className="rounded-[1.75rem] bg-white/8 border border-white/20 p-6 backdrop-blur-xl">
-          <div className="text-white/40 text-4xl font-black mb-2">
+            <div className="rounded-[1.5rem] lg:rounded-[1.75rem] bg-white/8 border border-white/20 p-5 lg:p-6 backdrop-blur-xl">
+          <div className="text-white/40 text-2xl lg:text-4xl font-black mb-1 lg:mb-2">
   02
 </div>
 
-<div className="text-white font-bold text-xl mb-3">
+<div className="text-white font-bold text-[17px] lg:text-xl mb-2 lg:mb-3">
   Verifica coperture
 </div>
-              <p className="text-white/70 leading-relaxed">
+              <p className="text-white/70 text-[15px] lg:text-base leading-[1.55] lg:leading-relaxed">
                 Controllo delle garanzie esistenti, delle esclusioni e delle eventuali aree scoperte.
               </p>
             </div>
 
-            <div className="rounded-[1.75rem] bg-white/8 border border-white/20 p-6 backdrop-blur-xl">
-          <div className="text-white/40 text-4xl font-black mb-2">
+            <div className="rounded-[1.5rem] lg:rounded-[1.75rem] bg-white/8 border border-white/20 p-5 lg:p-6 backdrop-blur-xl">
+          <div className="text-white/40 text-2xl lg:text-4xl font-black mb-1 lg:mb-2">
   03
 </div>
 
-<div className="text-white font-bold text-xl mb-3">
+<div className="text-white font-bold text-[17px] lg:text-xl mb-2 lg:mb-3">
   Supporto sinistri
 </div>
-              <p className="text-white/70 leading-relaxed">
+              <p className="text-white/70 text-[15px] lg:text-base leading-[1.55] lg:leading-relaxed">
                 Supporto consulenziale dedicato e affiancamento nella gestione di eventuali sinistri.
               </p>
             </div>
@@ -1556,12 +1792,18 @@ const accentDot =
  ? "bg-[#a6631b]"
    : "bg-[#2f7a57]";
   return (
-    <div className={`${compact ? "mt-0" : "mt-10"} rounded-[2.5rem] border border-slate-200 bg-white p-10 lg:p-14 shadow-[0_20px_80px_rgba(15,23,42,0.08)]`}>
-      <div className={`text-sm uppercase tracking-[0.2em] font-bold ${accentText} mb-5`}>{data.label}</div>
-      <h3 className="text-4xl lg:text-5xl font-black tracking-[-0.04em] leading-tight mb-8">{data.title}</h3>
-      <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-4xl whitespace-pre-line">{data.text}</p>
+   <div className={`${compact ? "mt-0" : "mt-6 lg:mt-10"} rounded-[1.75rem] lg:rounded-[2.5rem] border border-slate-200 bg-white p-6 sm:p-8 lg:p-14 shadow-[0_20px_80px_rgba(15,23,42,0.08)]`}>
+      <div className={`text-[12px] sm:text-sm uppercase tracking-[0.18em] lg:tracking-[0.2em] font-bold ${accentText} mb-4 lg:mb-5`}>
+  {data.label}
+</div>
+    <h3 className="text-[28px] sm:text-[32px] lg:text-5xl font-black tracking-[-0.035em] lg:tracking-[-0.04em] leading-[1.08] lg:leading-tight mb-5 lg:mb-8">
+  {data.title}
+</h3>
+    <p className="text-[16px] sm:text-[17px] lg:text-xl text-slate-600 leading-[1.65] lg:leading-relaxed mb-7 lg:mb-10 max-w-4xl whitespace-pre-line">
+  {data.text}
+</p>
     {data.points && (
-  <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
+ <div className="mt-6 lg:mt-8 flex flex-wrap items-center gap-x-5 lg:gap-x-8 gap-y-3">
     {data.points.map((item, index) => (
       <React.Fragment key={item}>
         {index > 0 && (
@@ -1581,13 +1823,64 @@ const accentDot =
 
 function CallToAction({ title, text }: { title: string; text: string }) {
   return (
-    <div className="rounded-[2rem] bg-[#0f172a] text-white p-8 lg:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+    <div
+      className="
+        rounded-[1.75rem]
+        lg:rounded-[2rem]
+        bg-[#0f172a]
+        text-white
+        px-6
+        py-7
+        lg:p-10
+        flex
+        flex-col
+        lg:flex-row
+        lg:items-center
+        lg:justify-between
+        gap-6
+        lg:gap-8
+      "
+    >
       <div className="max-w-3xl">
-        <div className="text-sm uppercase tracking-[0.2em] text-slate-400 font-bold mb-4">Consulenza dedicata</div>
-       <h4 className="text-3xl lg:text-4xl font-semibold tracking-[-0.025em] leading-[1.08] mb-4">
-  {title}
-</h4>
-        <p className="text-slate-300 leading-relaxed text-lg">{text}</p>
+        <div
+          className="
+            text-[12px]
+            lg:text-sm
+            uppercase
+            tracking-[0.2em]
+            text-slate-400
+            font-bold
+            mb-4
+          "
+        >
+          Consulenza dedicata
+        </div>
+
+        <h4
+          className="
+            text-[25px]
+            sm:text-[28px]
+            lg:text-4xl
+            font-semibold
+            tracking-[-0.025em]
+            leading-[1.08]
+            mb-4
+          "
+        >
+          {title}
+        </h4>
+
+        <p
+          className="
+            text-[16px]
+            lg:text-lg
+            text-slate-300
+            leading-[1.65]
+            lg:leading-relaxed
+          "
+        >
+          {text}
+        </p>
       </div>
     </div>
   );
@@ -1595,72 +1888,90 @@ function CallToAction({ title, text }: { title: string; text: string }) {
 
 function WhySigmaSection() {
   return (
-    <section className="bg-white rounded-[2.5rem] border border-slate-200 p-10 lg:p-16 mb-16 overflow-hidden relative shadow-sm sigma-reveal sigma-delay-2">
+    <section className="bg-white rounded-[2rem] lg:rounded-[2.5rem] border border-slate-200 px-6 py-8 sm:p-10 lg:p-16 mb-12 lg:mb-16 overflow-hidden relative shadow-sm sigma-reveal sigma-delay-2">
+      
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#eefaf3] rounded-full blur-3xl opacity-60" />
+
       <div className="relative z-10 max-w-6xl">
-        <div className="inline-flex rounded-full bg-[#eefaf3] text-[#0f7a43] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6">Perché Sigma</div>
-        <h2 className="text-4xl lg:text-[52px] font-semibold tracking-[-0.045em] leading-[1.02] mb-8 max-w-5xl">Non ci limitiamo a proporre polizze.<br />Analizziamo rischi, continuità e sostenibilità delle coperture nel tempo.</h2>
-        <p className="text-xl text-slate-600 leading-relaxed max-w-4xl mb-14">Il nostro approccio parte dall’analisi concreta dell’attività, delle responsabilità e delle esposizioni reali. Costruiamo soluzioni assicurative coordinate, evitando sovrapposizioni, incoerenze e aree scoperte che spesso emergono solo nei momenti più delicati.</p>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 mb-14 border-y border-[#dce5df]">
+        
+        <div className="inline-flex rounded-full bg-[#eefaf3] text-[#0f7a43] px-4 py-2 text-[12px] sm:text-sm font-bold uppercase tracking-[0.2em] mb-5 lg:mb-6">
+          Perché Sigma
+        </div>
 
-  <div className="py-7 lg:pr-7">
-    <div className="text-3xl font-bold tracking-[-0.03em] text-[#0f7a43] mb-3">
-      Free
-    </div>
-    <h3 className="text-[18px] font-semibold mb-2">
-      Indipendenza
-    </h3>
-    <p className="text-[17px] text-slate-600 leading-[1.6]">
-      Selezioniamo soluzioni senza vincoli verso singole compagnie.
-    </p>
-  </div>
+        <h2 className="text-[29px] sm:text-[34px] lg:text-[52px] font-semibold tracking-[-0.04em] lg:tracking-[-0.045em] leading-[1.06] lg:leading-[1.02] mb-6 lg:mb-8 max-w-5xl">
+          Non ci limitiamo a proporre polizze.
+          <br className="hidden lg:block" />
+          <span className="lg:hidden"> </span>
+          Analizziamo rischi, continuità e sostenibilità delle coperture nel tempo.
+        </h2>
 
-  <div className="py-7 lg:px-7 lg:border-l border-[#dce5df]">
-    <div className="text-3xl font-bold tracking-[-0.03em] text-[#243c7b] mb-3">
-      Focus
-    </div>
-    <h3 className="text-[18px] font-semibold mb-2">
-      Analisi prima della proposta
-    </h3>
-    <p className="text-[17px] text-slate-600 leading-[1.6]">
-      Ascoltiamo esigenze, responsabilità ed esposizioni prima di proporre coperture.
-    </p>
-  </div>
+        <p className="text-[16px] sm:text-[17px] lg:text-xl text-slate-600 leading-[1.7] lg:leading-relaxed max-w-4xl mb-5 lg:mb-14">
+          Il nostro approccio parte dall’analisi concreta dell’attività, delle
+          responsabilità e delle esposizioni reali. Costruiamo soluzioni
+          assicurative coordinate, evitando sovrapposizioni, incoerenze e aree
+          scoperte che spesso emergono solo nei momenti più delicati.
+        </p>
 
-  <div className="py-7 lg:px-7 lg:border-l border-[#dce5df]">
-    <div className="text-3xl font-bold tracking-[-0.03em] text-[#9a5b16] mb-3">
-      Tailor
-    </div>
-    <h3 className="text-[18px] font-semibold mb-2">
-      Approccio consulenziale
-    </h3>
-    <p className="text-[17px] text-slate-600 leading-[1.6]">
-      Ogni attività richiede valutazioni specifiche e soluzioni coerenti con il rischio.
-    </p>
-  </div>
+  <div className="grid sm:grid-cols-2 lg:grid-cols-4 mb-3 lg:mb-14 border-y border-[#dce5df]">
 
-  <div className="py-7 lg:pl-7 lg:border-l border-[#dce5df]">
-    <div className="text-3xl font-bold tracking-[-0.03em] text-[#102f2c] mb-3">
-      Care
-    </div>
-    <h3 className="text-[18px] font-semibold mb-2">
-      Assistenza continua
-    </h3>
-    <p className="text-[17px] text-slate-600 leading-[1.6]">
-      Affianchiamo il cliente nel tempo, anche nella gestione dei sinistri.
-    </p>
-  </div>
+          <div className="py-5 lg:py-7 lg:pr-7 border-b sm:border-b lg:border-b-0 border-[#dce5df]">
+            <div className="text-[25px] lg:text-3xl font-bold tracking-[-0.03em] text-[#0f7a43] mb-2 lg:mb-3">
+              Free
+            </div>
+            <h3 className="text-[17px] lg:text-[18px] font-semibold mb-2">
+              Indipendenza
+            </h3>
+            <p className="text-[15px] lg:text-[17px] text-slate-600 leading-[1.6]">
+              Selezioniamo soluzioni senza vincoli verso singole compagnie.
+            </p>
+          </div>
 
-</div>
-        <CallToAction title="Hai già una polizza? Possiamo aiutarti a capire se è davvero coerente con la tua attività." text="Verifichiamo struttura delle coperture, massimali, esclusioni, continuità assicurativa e possibili aree di criticità." />
+          <div className="py-5 lg:py-7 sm:pl-6 lg:px-7 lg:border-l border-b lg:border-b-0 border-[#dce5df]">
+            <div className="text-[25px] lg:text-3xl font-bold tracking-[-0.03em] text-[#243c7b] mb-2 lg:mb-3">
+              Focus
+            </div>
+            <h3 className="text-[17px] lg:text-[18px] font-semibold mb-2">
+              Analisi prima della proposta
+            </h3>
+            <p className="text-[15px] lg:text-[17px] text-slate-600 leading-[1.6]">
+              Ascoltiamo esigenze, responsabilità ed esposizioni prima di
+              proporre coperture.
+            </p>
+          </div>
+
+          <div className="py-5 lg:py-7 lg:px-7 lg:border-l border-b sm:border-b-0 border-[#dce5df]">
+            <div className="text-[25px] lg:text-3xl font-bold tracking-[-0.03em] text-[#9a5b16] mb-2 lg:mb-3">
+              Tailor
+            </div>
+            <h3 className="text-[17px] lg:text-[18px] font-semibold mb-2">
+              Approccio consulenziale
+            </h3>
+            <p className="text-[15px] lg:text-[17px] text-slate-600 leading-[1.6]">
+              Ogni attività richiede valutazioni specifiche e soluzioni
+              coerenti con il rischio.
+            </p>
+          </div>
+
+          <div className="py-6 lg:py-7 sm:pl-6 lg:pl-7 lg:border-l border-[#dce5df]">
+            <div className="text-[25px] lg:text-3xl font-bold tracking-[-0.03em] text-[#102f2c] mb-2 lg:mb-3">
+              Care
+            </div>
+            <h3 className="text-[17px] lg:text-[18px] font-semibold mb-2">
+              Assistenza continua
+            </h3>
+            <p className="text-[15px] lg:text-[17px] text-slate-600 leading-[1.6]">
+              Affianchiamo il cliente nel tempo, anche nella gestione dei
+              sinistri.
+            </p>
+          </div>
+
+        </div>
+
+        <CallToAction
+          title="Hai già una polizza? Possiamo aiutarti a capire se è davvero coerente con la tua attività."
+          text="Verifichiamo struttura delle coperture, massimali, esclusioni, continuità assicurativa e possibili aree di criticità."
+        />
       </div>
     </section>
   );
 }
-
-
-
-
-
-
-

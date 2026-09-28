@@ -97,10 +97,9 @@ export default function AboutSection() {
         </div>
 
         {/* PRINCIPI */}
-        <div className="relative z-10 mt-7 sm:mt-10 lg:mt-12 border-t border-slate-200/70 pt-6 sm:pt-8">
+        <div className="relative z-10 mt-5 sm:mt-8 lg:mt-12 border-t border-slate-200/70 pt-5 sm:pt-7 lg:pt-8">
 
-          <div className="grid md:grid-cols-3 md:divide-x divide-slate-200/70">
-
+<div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-0 md:divide-x divide-slate-200/70">
             <PrincipleItem
               number="01"
               title="Indipendenza"
@@ -176,24 +175,37 @@ function PrincipleItem({
   title: string;
   text: string;
 }) {
-  return (
-    <div className="group relative py-5 first:pt-0 last:pb-0 md:py-2 md:px-8 first:md:pl-0 last:md:pr-0 border-b md:border-b-0 border-slate-200/70 last:border-b-0">
+return (
+  <>
+{/* MOBILE */}
+<div
+  className={`md:hidden ${
+    number === "03" ? "col-span-2 flex justify-center" : ""
+  }`}
+>
+  <div
+    className={`flex min-h-[44px] items-center justify-center rounded-full border border-[#dce9e2] bg-white/80 px-4 text-[13px] font-semibold tracking-[-0.015em] text-[#163b32] text-center ${
+      number === "03" ? "w-[50%]" : "w-full"
+    }`}
+  >
+    {title}
+  </div>
+</div>
 
-      {/* NUMERO */}
-      <div className="text-[11px] sm:text-xs font-bold tracking-[0.18em] text-[#008f4c] mb-2">
+    {/* DESKTOP */}
+    <div className="hidden md:block md:py-2 md:px-8 first:md:pl-0 last:md:pr-0">
+      <div className="text-[11px] font-bold tracking-[0.18em] text-[#008f4c] mb-2">
         {number}
       </div>
 
-      {/* TITOLO */}
-      <div className="text-[18px] sm:text-[19px] lg:text-[20px] font-medium text-slate-900 mb-2">
+      <div className="text-[20px] font-medium text-slate-900 mb-2">
         {title}
       </div>
 
-      {/* TESTO */}
-      <p className="text-[14px] sm:text-[16px] lg:text-[17px] text-slate-600 leading-[1.5] sm:leading-[1.55] max-w-[360px]">
+      <p className="text-[17px] text-slate-600 leading-[1.55] max-w-[360px]">
         {text}
       </p>
-
     </div>
-  );
+  </>
+);
 }
