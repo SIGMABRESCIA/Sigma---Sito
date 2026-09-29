@@ -46,6 +46,7 @@ type ContactPreference = "telefono" | "email";
 export default function SigmaWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
+  const [heroVisible, setHeroVisible] = useState(true);
 
 useEffect(() => {
   const footer = document.querySelector("footer");
@@ -67,30 +68,22 @@ useEffect(() => {
     observer.disconnect();
   };
 }, []);
+useEffect(() => {
+  const handleScroll = () => {
+    setHeroVisible(window.scrollY < 250);
+  };
+
+  handleScroll();
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
 
   const [step, setStep] =
     useState<Step>("menu");
-
-  useEffect(() => {
-    const footer = document.querySelector("footer");
-
-    if (!footer) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setFooterVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 0.05,
-      }
-    );
-
-    observer.observe(footer);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
 
   const [path, setPath] =
     useState<MainPath | null>(null);
@@ -1071,7 +1064,7 @@ useEffect(() => {
 
           flex
           sm:hidden
-          ${footerVisible ? "opacity-0 pointer-events-none" : "opacity-100"}
+      ${footerVisible || heroVisible ? "opacity-0 pointer-events-none" : "opacity-100"}
 
           h-12
           w-12
@@ -1131,8 +1124,8 @@ useEffect(() => {
 
           hidden
           sm:inline-flex
-          ${footerVisible ? "opacity-0 pointer-events-none" : "opacity-100"}
-right-120
+          ${footerVisible || heroVisible ? "opacity-0 pointer-events-none" : "opacity-100"}
+right-5
 bottom-5
 
           items-center

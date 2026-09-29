@@ -23,16 +23,16 @@ export default function Header({
 }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-white/60 shadow-[0_8px_30px_rgba(15,23,42,0.04)] transition-all duration-500">
-     <div className="w-full max-w-[1500px] mx-auto px-8 lg:px-12 h-20 grid grid-cols-[260px_1fr_180px] items-center">
+     <div className="w-full max-w-[1500px] mx-auto px-5 sm:px-8 lg:px-12 h-20 grid grid-cols-[1fr_auto] 2xl:grid-cols-[260px_1fr_180px] items-center gap-3">
       <div className="flex items-center shrink-0">
   <img
-    src="/logo-sigma-originale.png"
+    src="/logo-sigma-trasparente.png"
     alt="Sigma Studi Brescia"
    className="w-[210px] sm:w-[230px] lg:w-[250px] h-auto object-contain"
   />
 </div>
 
-      <nav className="hidden xl:flex items-center justify-center gap-8 text-[16px] font-medium">
+      <nav className="hidden 2xl:flex items-center justify-center gap-8 text-[16px] font-medium">
           <button onClick={() => goTo("home")} className="hover:text-[#008f4c] transition">Home</button>
           <button onClick={() => goTo("professionisti")} className="hover:text-[#243c7b] transition">Professionisti</button>
           <button onClick={() => goTo("aziende")} className="hover:text-[#0f7a43] transition">Aziende</button>
@@ -48,23 +48,24 @@ export default function Header({
           <button onClick={() => goTo("reclami")} className="hover:text-[#008f4c] transition">Reclami</button>
           <button onClick={() => goTo("whistleblowing")} className="hover:text-[#243c7b] transition">Segnalazione illeciti</button>
         </nav>
-<div className="flex justify-end">
-        <button className="hidden md:flex items-center gap-2 rounded-full border border-[#008f4c] px-5 py-2 text-sm font-semibold text-[#008f4c] hover:bg-[#e8f5ef] transition whitespace-nowrap">
-          <UserRound size={18} /> Area riservata
-        </button>
-        </div>
+<div className="flex items-center justify-end gap-3">
+  <button className="hidden md:flex items-center gap-2 rounded-full border border-[#008f4c] px-5 py-2 text-sm font-semibold text-[#008f4c] hover:bg-[#e8f5ef] transition whitespace-nowrap">
+    <UserRound size={18} />
+    Area riservata
+  </button>
 
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="xl:hidden flex items-center justify-center w-11 h-11 rounded-full border border-slate-200 bg-white"
-          aria-label="Apri menu"
-        >
-          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
-      </div>
+<button
+  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+  className="flex 2xl:hidden items-center justify-center w-11 h-11 rounded-full border border-slate-200 bg-white"
+  aria-label="Apri menu"
+>
+  {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+</button>
+</div>
+</div>
 
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-white border-t border-slate-200 px-6 py-5 space-y-4 shadow-lg">
+        <div className="2xl:hidden bg-white border-t border-slate-200 px-6 py-5 space-y-4 shadow-lg">
           <button onClick={() => goTo("home")} className="block font-semibold">Home</button>
           <button onClick={() => goTo("professionisti")} className="block font-semibold">Professionisti</button>
           <button onClick={() => goTo("aziende")} className="block font-semibold">Aziende</button>

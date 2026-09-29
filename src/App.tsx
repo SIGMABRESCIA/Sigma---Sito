@@ -1219,10 +1219,10 @@ const automotiveAreas = [
   />
 
   {/* SFUMATURA CHIARA PER LEGGIBILITÀ */}
-<div className="absolute inset-0 bg-gradient-to-r from-white from-[0%] via-white via-[48%] to-white/20 to-[78%]" />
+<div className="absolute inset-0 bg-white/80 lg:bg-gradient-to-r lg:from-white lg:from-[0%] lg:via-white lg:via-[48%] lg:to-white/20 lg:to-[78%]" />
 
   {/* CONTENUTO */}
-  <div className="relative z-10 px-8 py-10 lg:px-12 lg:py-12 max-w-[720px]">
+ <div className="relative z-10 px-5 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12 max-w-[720px]">
     
     <div className="inline-flex rounded-full bg-[#eaf5ef] text-[#08754b] px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] mb-6">
       Affinity & Automotive
@@ -1231,8 +1231,7 @@ const automotiveAreas = [
     <h1 className="text-4xl lg:text-[52px] font-semibold tracking-[-0.045em] leading-[1.02] text-[#101828]">
       Programmi assicurativi per il settore automotive.
     </h1>
-
-    <p className="mt-6 text-[18px] lg:text-[19px] text-[#526174] leading-[1.7] max-w-[680px]">
+<p className="mt-5 text-[16px] sm:text-[17px] lg:mt-6 lg:text-[19px] text-[#526174] leading-[1.65] lg:leading-[1.7] max-w-[680px]">
       Affianchiamo concessionari, dealer, gruppi automotive e operatori del
       settore nella progettazione di programmi assicurativi integrati nei
       processi di vendita e post vendita. Costruiamo soluzioni dedicate,
@@ -1251,19 +1250,19 @@ const automotiveAreas = [
       return (
         <div
           key={area.title}
-          className="py-9 lg:px-7 first:pl-0 lg:border-l first:border-l-0 border-[#dce5df]"
+       className="py-3 lg:py-9 lg:px-7 first:pl-0 lg:border-l first:border-l-0 border-[#dce5df]"
         >
           <div
-            className={`flex h-12 w-12 items-center justify-center rounded-full ${area.iconBg} ${area.iconColor} mb-5`}
+            className={`flex h-12 w-12 items-center justify-center rounded-full ${area.iconBg} ${area.iconColor} mb-3`}
           >
             <Icon size={22} strokeWidth={1.8} />
           </div>
 
-          <h2 className="text-[21px] font-semibold tracking-[-0.02em] text-[#102f2c] mb-3">
+          <h2 className="text-[23px] lg:text-[21px] font-semibold tracking-[-0.02em] text-[#102f2c] mb-3">
             {area.title}
           </h2>
 
-         <p className="text-[17px] text-[#526174] leading-[1.7]">
+         <p className="text-[16px] sm:text-[17px] text-[#526174] leading-[1.6] lg:leading-[1.7]">
   {area.text}
           </p>
         </div>
@@ -1273,7 +1272,7 @@ const automotiveAreas = [
 </div>
 
       {/* METODO */}
-      <div className="mt-16 lg:mt-20">
+    <div className="mt-10 lg:mt-20">
         <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-20 mb-12">
           <div>
             <div className="text-sm font-bold uppercase tracking-[0.18em] text-[#008f4c] mb-4">
@@ -1285,7 +1284,7 @@ const automotiveAreas = [
             </h2>
           </div>
 
-        <p className="text-[19px] text-[#526174] leading-[1.7] max-w-[680px] lg:self-end lg:pb-1">
+        <p className="text-[16px] sm:text-[17px] lg:text-[19px] text-[#526174] leading-[1.6] lg:leading-[1.7] max-w-[680px] lg:self-end lg:pb-1">
             Non un prodotto standard, ma un progetto assicurativo sviluppato
             considerando modello distributivo, tipologia di clientela, volumi
             e obiettivi commerciali.
@@ -1296,16 +1295,16 @@ const automotiveAreas = [
           {automotiveMethod.map((item) => (
             <div
               key={item.step}
-              className="p-7 lg:p-8 lg:border-l first:border-l-0 border-slate-200"
+              className="p-5 sm:p-6 lg:p-8 lg:border-l first:border-l-0 border-slate-200"
             >
-              <div className="text-sm font-bold text-[#008f4c] mb-6">
+              <div className="text-sm font-bold text-[#008f4c] mb-3 lg:mb-6">
                 {item.step}
               </div>
 
-              <h3 className="text-xl font-semibold text-[#102f2c] mb-3">
+             <h3 className="text-[20px] lg:text-xl font-semibold tracking-[-0.02em] text-[#102f2c] mb-3">
                 {item.title}
               </h3>
-<p className="text-[17px] text-[#526174] leading-[1.7]">
+<p className="text-[16px] sm:text-[17px] text-[#526174] leading-[1.6] lg:leading-[1.7]">
   {item.text}
 </p>
             </div>
