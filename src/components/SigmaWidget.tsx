@@ -1074,7 +1074,7 @@ useEffect(() => {
 
           rounded-full
 
-          bg-[#006f4e]
+          bg-[#245A8D]
 
           text-white
 
@@ -1133,22 +1133,23 @@ bottom-5
           gap-2.5
 
           rounded-full
-          bg-[#006f4e]
+        bg-[#245A8D]
 
-          px-5
-          py-3.5
+          px-6
+py-4
 
-          text-[15px]
-          font-semibold
+text-[16px]
+font-bold
           text-white
 
-          shadow-[0_10px_30px_rgba(0,75,52,0.25)]
+        shadow-[0_10px_30px_rgba(36,90,141,0.25)]
 
-          transition-all
-          duration-200
+transition-all
+duration-200
 
-          hover:bg-[#005f43]
-          hover:-translate-y-0.5
+hover:bg-[#173A63]
+hover:shadow-[0_12px_34px_rgba(28,54,91,0.30)]
+hover:-translate-y-0.5
         `}
       >
         {isOpen ? (
@@ -1300,7 +1301,7 @@ function MenuOption({
         py-4
         text-left
         transition
-        hover:bg-[#edf6f1]
+        hover:bg-[#f0f5f9]
       "
     >
       <div
@@ -1312,8 +1313,8 @@ function MenuOption({
           items-center
           justify-center
           rounded-full
-          bg-[#e9f6ef]
-          text-[#008f4c]
+          bg-[#eaf3f9]
+text-[#245A8D]
         "
       >
         {icon}

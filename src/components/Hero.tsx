@@ -18,7 +18,6 @@ export default function Hero() {
           1
         );
 
-        // Movimento morbido: veloce all'inizio, più lento alla fine
         const eased = 1 - Math.pow(1 - progress, 3);
 
         setYears(Math.round(15 * eased));
@@ -46,23 +45,25 @@ export default function Hero() {
     <>
       <section
         id="home"
-        className="relative overflow-hidden bg-[#f7f5f0] text-[#102f2c]"
-      >{/* IMMAGINE EDITORIALE - MOBILE */}
-<div className="absolute inset-0 lg:hidden pointer-events-none overflow-hidden">
-  <img
-    src="/images/hero-editorial.png"
-    alt=""
-    className="absolute right-[-35%] bottom-0 h-[58%] w-[90%] object-cover object-center opacity-30"
-  />
-
-  {/* Dissolvenza nel fondo della Hero */}
-  <div className="absolute inset-0 bg-gradient-to-b from-[#f7f5f0] via-[#f7f5f0]/95 to-transparent" />
-  <div className="absolute inset-0 bg-gradient-to-r from-[#f7f5f0] via-[#f7f5f0]/85 to-transparent" />
-</div>
-        {/* IMMAGINE EDITORIALE - SOLO DESKTOP */}
-        <div className="absolute inset-y-0 right-0 hidden lg:block w-[54%] pointer-events-none overflow-hidden">
+        className="relative overflow-hidden bg-[#f7f5f0] text-[#1C365B]"
+      >
+        {/* IMMAGINE EDITORIALE - MOBILE */}
+        <div className="absolute inset-0 lg:hidden pointer-events-none overflow-hidden">
           <img
-            src="/images/hero-editorial.png"
+           src="/images/hero-01-vetro-riflessi-blu.png"
+            alt=""
+            className="absolute right-[-35%] bottom-0 h-[58%] w-[90%] object-cover object-center opacity-30"
+          />
+
+          {/* Dissolvenza nel fondo della Hero */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f7f5f0] via-[#f7f5f0]/95 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#f7f5f0] via-[#f7f5f0]/85 to-transparent" />
+        </div>
+
+        {/* IMMAGINE EDITORIALE - SOLO DESKTOP */}
+        <div className="absolute inset-y-0 right-0 hidden lg:block w-[64%] pointer-events-none overflow-hidden">
+          <img
+           src="/images/hero-01-vetro-riflessi-blu.png"
             alt=""
             className="hero-image-motion absolute inset-0 h-full w-full object-cover object-center"
           />
@@ -79,23 +80,27 @@ export default function Hero() {
           <div className="max-w-[790px]">
 
             {/* BADGE */}
-         <div className="hero-enter hero-delay-1 inline-flex items-center gap-2 sm:gap-3 rounded-full bg-[#edf1eb]/90 px-4 sm:px-5 py-2 sm:py-3 text-[13px] sm:text-[15px] font-semibold text-[#23845f] mb-8 sm:mb-10 border border-[#d9e1dc]">
-              <ShieldCheck size={19} strokeWidth={1.8} />
+            <div className="hero-enter hero-delay-1 inline-flex items-center gap-2 sm:gap-3 rounded-full bg-[#61B3E8]/10 px-4 sm:px-5 py-2 sm:py-3 text-[13px] sm:text-[15px] font-semibold text-[#24476B] mb-8 sm:mb-10 border border-[#61B3E8]/35">
+              <ShieldCheck
+                size={19}
+                strokeWidth={1.8}
+                className="text-[#245A8D]"
+              />
               Consulenza assicurativa evoluta
             </div>
 
             {/* TITOLO */}
-           <h1 className="hero-enter hero-delay-2 text-[40px] sm:text-6xl lg:text-[4.3rem] font-bold tracking-[-0.025em] leading-[1.02] sm:leading-[0.98] mb-7 sm:mb-8 max-w-[760px]">
+            <h1 className="hero-enter hero-delay-2 text-[40px] sm:text-6xl lg:text-[4.3rem] font-bold tracking-[-0.025em] leading-[1.02] sm:leading-[0.98] mb-7 sm:mb-8 max-w-[760px] text-[#1C365B]">
               Protezione assicurativa progettata intorno ai rischi reali.
             </h1>
 
             {/* TARGET */}
-            <div className="hero-enter hero-delay-3 mb-8 text-[18px] lg:text-[21px] font-medium text-[#16875f]">
+            <div className="hero-enter hero-delay-3 mb-8 text-[18px] lg:text-[21px] font-semibold text-[#24476B]">
               Per professionisti, aziende e famiglie.
             </div>
 
             {/* DESCRIZIONE */}
-            <p className="hero-enter hero-delay-4 text-lg lg:text-[20px] text-[#526174] leading-[1.65] max-w-[680px]">
+            <p className="hero-enter hero-delay-4 text-lg lg:text-[20px] text-[#3F5063] leading-[1.65] max-w-[680px]">
               Analizziamo responsabilità, continuità operativa, patrimonio ed
               esposizioni concrete per costruire coperture più coerenti,
               sostenibili e realmente utili nel momento in cui servono.
@@ -103,45 +108,47 @@ export default function Hero() {
           </div>
 
           {/* DATI */}
-         <div className="mt-7 sm:mt-10 lg:mt-11 max-w-[900px]">
-           <div className="grid grid-cols-3">
+          <div className="mt-7 sm:mt-10 lg:mt-11 max-w-[900px]">
+            <div className="grid grid-cols-3">
 
               {/* 15+ */}
-              <div className="hero-enter hero-delay-5 py-5 sm:pr-8 border-b sm:border-b-0 border-[#cfd8d2]">
-                <div className="text-[22px] sm:text-[25px] font-semibold text-[#16875f] tabular-nums">
+              <div className="hero-enter hero-delay-5 py-5 sm:pr-8 border-b sm:border-b-0 border-[#cbd5dc]">
+                <div className="text-[22px] sm:text-[25px] font-semibold text-[#24476B] tabular-nums">
                   {years}+
                 </div>
 
-                <div className="mt-2 text-[10px] sm:text-[13px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.18em] text-[#52615b]">
+                <div className="mt-2 text-[10px] sm:text-[13px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.18em] text-[#53616f]">
                   Esperienza
                 </div>
 
-                <p className="hidden sm:block mt-3 text-[17px] leading-[1.6] text-[#42514c] max-w-[270px]">
+                <p className="hidden sm:block mt-3 text-[17px] leading-[1.6] text-[#465666] max-w-[270px]">
                   Oltre quindici anni di affiancamento a imprese, studi
                   professionali e famiglie.
                 </p>
               </div>
 
               {/* 360° */}
-              <div className="hero-enter hero-delay-6 py-5 sm:px-8 border-b sm:border-b-0 sm:border-l border-[#cfd8d2]">
-                <div className="text-[22px] sm:text-[25px] font-semibold text-[#16875f] tabular-nums">
+              <div className="hero-enter hero-delay-6 py-5 sm:px-8 border-b sm:border-b-0 sm:border-l border-[#cbd5dc]">
+                <div className="text-[22px] sm:text-[25px] font-semibold text-[#24476B] tabular-nums">
                   {vision}°
                 </div>
 
-              <div className="mt-2 text-[10px] sm:text-[13px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.18em] text-[#52615b]">
-                <span className="sm:hidden">Visione</span>
-<span className="hidden sm:inline">Visione integrata</span>
+                <div className="mt-2 text-[10px] sm:text-[13px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.18em] text-[#53616f]">
+                  <span className="sm:hidden">Visione</span>
+                  <span className="hidden sm:inline">
+                    Visione integrata
+                  </span>
                 </div>
 
-                <p className="hidden sm:block mt-3 text-[17px] leading-[1.6] text-[#42514c] max-w-[270px]">
+                <p className="hidden sm:block mt-3 text-[17px] leading-[1.6] text-[#465666] max-w-[270px]">
                   Analisi coordinata di responsabilità, continuità e patrimonio.
                 </p>
               </div>
 
               {/* TAILOR */}
-              <div className="hero-enter hero-delay-7 py-5 sm:pl-8 sm:border-l border-[#cfd8d2]">
+              <div className="hero-enter hero-delay-7 py-5 sm:pl-8 sm:border-l border-[#cbd5dc]">
                 <div
-                  className={`text-[22px] sm:text-[25px] font-semibold text-[#16875f] transition-all duration-700 ${
+                  className={`text-[22px] sm:text-[25px] font-semibold text-[#24476B] transition-all duration-700 ${
                     showTailor
                       ? "opacity-100 translate-x-0"
                       : "opacity-0 -translate-x-4"
@@ -150,12 +157,14 @@ export default function Hero() {
                   Tailor
                 </div>
 
-                <div className="mt-2 text-[10px] sm:text-[13px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.18em] text-[#52615b]">
-               <span className="sm:hidden">Su misura</span>
-<span className="hidden sm:inline">Approccio consulenziale</span>
+                <div className="mt-2 text-[10px] sm:text-[13px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.18em] text-[#53616f]">
+                  <span className="sm:hidden">Su misura</span>
+                  <span className="hidden sm:inline">
+                    Approccio consulenziale
+                  </span>
                 </div>
 
-                <p className="hidden sm:block mt-3 text-[17px] leading-[1.6] text-[#42514c] max-w-[270px]">
+                <p className="hidden sm:block mt-3 text-[17px] leading-[1.6] text-[#465666] max-w-[270px]">
                   Nessuna soluzione standardizzata: ogni copertura nasce
                   dall’analisi reale del rischio.
                 </p>
@@ -164,7 +173,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        
       </section>
 
       {/* ANIMAZIONI HERO */}
@@ -233,22 +241,37 @@ export default function Hero() {
           }
         }
 
-        /* Movimento editoriale della fotografia */
-        .hero-image-motion {
-          transform: scale(1.02) translateX(0);
-          animation: heroImageMotion 10s ease-in-out infinite alternate;
-          transform-origin: center center;
-        }
+   /* Movimento editoriale della fotografia */
+.hero-image-motion {
+  opacity: 0;
+  transform: scale(1.04) translateX(8px);
+  transform-origin: center center;
+  animation:
+    heroImageFadeIn 1.6s ease-out forwards,
+    heroImageMotion 9s ease-in-out 1.6s infinite alternate;
+}
 
-        @keyframes heroImageMotion {
-          from {
-            transform: scale(1.02) translateX(0);
-          }
+@keyframes heroImageFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.04) translateX(8px);
+  }
 
-          to {
-            transform: scale(1.09) translateX(-18px);
-          }
-        }
+  to {
+    opacity: 1;
+    transform: scale(1.02) translateX(0);
+  }
+}
+
+@keyframes heroImageMotion {
+  from {
+    transform: scale(1.02) translateX(0);
+  }
+
+  to {
+    transform: scale(1.14) translateX(-28px);
+  }
+}
 
         @media (prefers-reduced-motion: reduce) {
           .hero-enter,

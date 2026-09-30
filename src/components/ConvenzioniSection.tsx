@@ -42,10 +42,10 @@ export default function ConvenzioniSection({
         lg:rounded-[2.5rem]
 
         border
-        border-[#dce5df]
+        border-[#d7e2ec]
 
         bg-[#f7f5f0]
-        text-[#102f2c]
+        text-[#1C365B]
 
         px-6
         py-8
@@ -68,7 +68,7 @@ export default function ConvenzioniSection({
           h-[340px]
           w-[340px]
           rounded-full
-          bg-[#e6f2eb]
+          bg-[#e8f2f8]
           blur-3xl
           opacity-80
         "
@@ -95,7 +95,6 @@ export default function ConvenzioniSection({
           z-10
 
           grid
-
           gap-8
 
           lg:grid-cols-[1.05fr_0.95fr]
@@ -112,25 +111,22 @@ export default function ConvenzioniSection({
               items-center
               gap-2.5
 
-              text-[#16875f]
+              text-[#245A8D]
 
-              text-[11px]
-              lg:text-xs
+          text-[13px]
+lg:text-[14px]
 
-              uppercase
-              tracking-[0.2em]
-              lg:tracking-[0.22em]
+uppercase
+tracking-[0.14em]
+lg:tracking-[0.16em]
 
-              font-semibold
+font-bold
 
               mb-5
               lg:mb-7
             "
           >
-            <Handshake
-              size={17}
-              strokeWidth={1.8}
-            />
+            <Handshake size={17} strokeWidth={1.8} />
 
             Convenzioni professionali
           </div>
@@ -147,6 +143,8 @@ export default function ConvenzioniSection({
               leading-[1.08]
 
               max-w-[590px]
+
+              text-[#1C365B]
             "
           >
             Convenzioni professionali progettate intorno alle esigenze reali
@@ -160,7 +158,7 @@ export default function ConvenzioniSection({
 
               h-[2px]
 
-              bg-[#16875f]
+              bg-[#245A8D]
 
               mt-6
               mb-5
@@ -208,7 +206,7 @@ export default function ConvenzioniSection({
                 lg:rounded-[1.5rem]
 
                 border
-                border-[#d8e3dc]
+                border-[#d7e2ec]
 
                 bg-white/85
 
@@ -228,8 +226,8 @@ export default function ConvenzioniSection({
                 duration-300
 
                 lg:hover:-translate-y-1
-                lg:hover:border-[#a9cbbb]
-                lg:hover:shadow-[0_18px_45px_rgba(16,47,44,0.08)]
+                lg:hover:border-[#9fc5df]
+                lg:hover:shadow-[0_18px_45px_rgba(36,90,141,0.10)]
               "
             >
               <div
@@ -261,9 +259,9 @@ export default function ConvenzioniSection({
 
                     rounded-full
 
-                    bg-[#eaf4ee]
+                    bg-[#eaf3f9]
 
-                    text-[#16875f]
+                    text-[#245A8D]
 
                     text-[12px]
                     lg:text-sm
@@ -287,7 +285,7 @@ export default function ConvenzioniSection({
 
                       leading-[1.15]
 
-                      text-[#102f2c]
+                      text-[#1C365B]
                     "
                   >
                     {item.label}
@@ -308,7 +306,7 @@ export default function ConvenzioniSection({
                       tracking-[0.14em]
                       lg:tracking-[0.16em]
 
-                      text-[#16875f]
+                      text-[#245A8D]
                     "
                   >
                     Scopri la convenzione
@@ -324,7 +322,7 @@ export default function ConvenzioniSection({
                   ml-3
                   shrink-0
 
-                  text-[#16875f]
+                  text-[#245A8D]
 
                   transition-transform
                   duration-300

@@ -713,11 +713,11 @@ function HomeView({ goTo }: { goTo: (view: View) => void }) {
         className="mb-10 sm:mb-12 lg:mb-16 sigma-reveal sigma-delay-1 px-3 sm:px-6 lg:px-16"
       >
         <div className="mb-8">
-          <div className="text-sm font-bold uppercase tracking-[0.2em] text-[#2f7a57] mb-4 ml-5 opacity-80">
+          <div className="text-sm font-bold uppercase tracking-[0.2em] text-[#245A8D] mb-4 ml-5 opacity-90">
             Soluzioni dedicate
           </div>
 
-          <h2 className="text-3xl lg:text-[40px] font-semibold tracking-[-0.025em] leading-[1.08] mb-5">
+          <h2 className="text-3xl lg:text-[40px] font-bold tracking-[-0.025em] leading-[1.08] mb-5 text-[#172B45]">
             Coperture costruite intorno alle esigenze di professionisti, aziende
             e privati.
           </h2>
@@ -770,12 +770,12 @@ function ReclamiSection() {
   const requiredInfo = ["Estremi del ricorrente", "Data e luogo di presentazione del reclamo", "Motivi del reclamo", "Documentazione eventualmente utile"];
 
   return (
-    <section id="reclami" className="bg-white rounded-[2.5rem] border border-slate-200 p-10 lg:p-14 mb-16 shadow-sm scroll-mt-28 sigma-reveal overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-[#eefaf3] rounded-full blur-3xl opacity-60" />
+   <section id="reclami" className="bg-[#f7f5f0] rounded-[2.8rem] border border-[#d9e2ea] p-10 lg:p-14 mb-16 shadow-[0_18px_50px_rgba(28,54,91,0.07)] scroll-mt-28 sigma-reveal overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-[#eaf3f9] rounded-full blur-3xl opacity-70" />
       <div className="relative z-10 max-w-6xl">
-        <div className="inline-flex rounded-full bg-[#eefaf3] text-[#0f7a43] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6">Reclami</div>
+        <div className="inline-flex rounded-full bg-[#eaf3f9] text-[#245A8D] px-4 py-2 text-[14px] font-bold uppercase tracking-[0.16em] mb-6">Reclami</div>
         <h2 className="text-4xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.95] mb-8">Gestione reclami e tutela degli utenti.</h2>
-        <div className="max-w-5xl space-y-6 text-slate-600 leading-relaxed text-lg mb-14">
+       <div className="max-w-5xl space-y-6 text-slate-600 leading-[1.7] text-[17px] lg:text-[18px] xl:text-[19px] mb-14">
           <p>La soddisfazione dei propri clienti e collaboratori è al centro delle priorità di Sigma Studi Brescia Srl.</p>
           <p>A seguito del Provvedimento IVASS n. 46 del 3 maggio 2016 Sigma Studi Brescia Srl ha istituito una funzione e una procedura specifica di gestione degli eventuali reclami da parte degli utenti, secondo gli standard di qualità previsti per il settore assicurativo.</p>
           <p>Per reclamo si intende una dichiarazione di insoddisfazione presentata in forma scritta nei confronti di un’impresa di assicurazione o di un intermediario assicurativo relativamente a un contratto o a un servizio assicurativo.</p>
@@ -783,9 +783,9 @@ function ReclamiSection() {
         </div>
         <div className="grid lg:grid-cols-2 gap-6 mb-10">
           <div className="rounded-[2rem] bg-[#f8fafc] border border-slate-200 p-8">
-            <div className="text-sm uppercase tracking-[0.2em] font-bold text-[#0f7a43] mb-5">Come presentare un reclamo</div>
-            <p className="text-slate-600 leading-relaxed mb-6">Eventuali reclami inerenti il rapporto contrattuale o la gestione dei sinistri dovranno essere inoltrati in forma scritta utilizzando uno dei seguenti canali.</p>
-            <div className="space-y-5 text-slate-700">
+            <div className="text-sm uppercase tracking-[0.2em] font-bold text-[#245A8D] mb-5">Come presentare un reclamo</div>
+            <p className="text-[16px] lg:text-[17px] leading-[1.7] text-slate-600 mb-6">Eventuali reclami inerenti il rapporto contrattuale o la gestione dei sinistri dovranno essere inoltrati in forma scritta utilizzando uno dei seguenti canali.</p>
+            <div className="space-y-5 text-[16px] lg:text-[17px] leading-[1.65] text-slate-700">
               <div>
                 <div className="font-bold mb-2">E-mail</div>
                 <div className="space-y-1 text-slate-600">
@@ -802,7 +802,7 @@ function ReclamiSection() {
           <div className="rounded-[2rem] bg-[#0f172a] text-white p-8 overflow-hidden relative">
             <div className="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-white/10 blur-3xl" />
             <div className="relative z-10">
-              <div className="text-sm uppercase tracking-[0.2em] font-bold text-[#8ee0b5] mb-5">Informazioni richieste</div>
+              <div className="text-sm uppercase tracking-[0.2em] font-bold text-[#8FC5E8] mb-5">Informazioni richieste</div>
               <p className="text-white/75 leading-relaxed mb-6">I reclami dovranno contenere le seguenti informazioni oppure essere presentati tramite il modulo dedicato.</p>
               <div className="space-y-3">
                 {requiredInfo.map((item) => (
@@ -818,11 +818,11 @@ function ReclamiSection() {
         </div>
         <div className="rounded-[2rem] border border-slate-200 bg-white p-8 lg:p-10 shadow-sm mb-10">
           <div className="text-sm uppercase tracking-[0.2em] font-bold text-[#243c7b] mb-5">Tutela dell’utente</div>
-          <div className="space-y-5 text-slate-600 leading-relaxed">
+          <div className="space-y-5 text-[16px] lg:text-[17px] leading-[1.7] text-slate-600">
             <p>Qualora il reclamante non dovesse ritenersi soddisfatto dell’esito del reclamo oppure in caso di mancato riscontro entro 45 giorni, potrà rivolgersi a:</p>
             <div className="rounded-2xl bg-[#f8fafc] border border-slate-200 p-6">
               <div className="font-bold text-slate-900 mb-3">IVASS - Servizio Vigilanza Intermediari</div>
-              <div className="space-y-1 text-slate-600">
+              <div className="space-y-1.5 text-[15px] lg:text-[16px] leading-[1.65] text-slate-600">
                 <div>Via del Quirinale 21 - 00187 Roma</div>
                 <div>PEC: ivass@pec.ivass.it</div>
                 <div>Fax: 06 42133206</div>
@@ -833,7 +833,7 @@ function ReclamiSection() {
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-4">
-          <a href="/documenti/procedura-reclami.pdf" target="_blank" rel="noopener noreferrer" className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-[#0f3328] text-white px-8 py-4 font-bold hover:bg-[#154737] transition-all duration-300">Scarica procedura reclami</a>
+          <a href="/documenti/procedura-reclami.pdf" target="_blank" rel="noopener noreferrer" className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-[#245A8D] text-white px-8 py-4 text-[15px] font-bold hover:bg-[#1C4770] transition-all duration-300">Scarica procedura reclami</a>
           <a href="/documenti/modulo-reclamo.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-8 py-4 font-bold text-slate-700 hover:bg-slate-50 transition-all duration-300">Scarica modulo reclamo</a>
         </div>
       </div>
@@ -867,7 +867,7 @@ function WhistleblowingSection() {
           </a>
         </div>
         <div className="rounded-[2rem] bg-[#0f172a] text-white p-8">
-          <div className="text-sm uppercase tracking-[0.2em] text-[#8ee0b5] font-bold mb-4">Normativa di riferimento</div>
+          <div className="text-sm uppercase tracking-[0.2em] text-[#8FC5E8font-bold mb-4">Normativa di riferimento</div>
           <h3 className="text-2xl font-extrabold mb-3">D.lgs. 242023</h3>
           <p className="text-white/75 leading-relaxed">Disciplina della protezione delle persone che segnalano violazioni del diritto dell’Unione e disposizioni riguardanti la protezione dei segnalanti.</p>
         </div>
@@ -1826,7 +1826,7 @@ function CallToAction({ title, text }: { title: string; text: string }) {
       className="
         rounded-[1.75rem]
         lg:rounded-[2rem]
-        bg-[#0f172a]
+       bg-[#173A63]
         text-white
         px-6
         py-7
@@ -1847,7 +1847,7 @@ function CallToAction({ title, text }: { title: string; text: string }) {
             lg:text-sm
             uppercase
             tracking-[0.2em]
-            text-slate-400
+            text-[#BFD3E6]
             font-bold
             mb-4
           "
@@ -1869,17 +1869,17 @@ function CallToAction({ title, text }: { title: string; text: string }) {
           {title}
         </h4>
 
-        <p
-          className="
-            text-[16px]
-            lg:text-lg
-            text-slate-300
-            leading-[1.65]
-            lg:leading-relaxed
-          "
-        >
-          {text}
-        </p>
+   <p
+  className="
+    text-[16px]
+    sm:text-[17px]
+    lg:text-[18px]
+    text-white/90
+    leading-[1.75]
+  "
+>
+  {text}
+</p>
       </div>
     </div>
   );
@@ -1889,11 +1889,11 @@ function WhySigmaSection() {
   return (
     <section className="bg-white rounded-[2rem] lg:rounded-[2.5rem] border border-slate-200 px-6 py-8 sm:p-10 lg:p-16 mb-12 lg:mb-16 overflow-hidden relative shadow-sm sigma-reveal sigma-delay-2">
       
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#eefaf3] rounded-full blur-3xl opacity-60" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#eaf3f9] rounded-full blur-3xl opacity-60" />
 
       <div className="relative z-10 max-w-6xl">
         
-        <div className="inline-flex rounded-full bg-[#eefaf3] text-[#0f7a43] px-4 py-2 text-[12px] sm:text-sm font-bold uppercase tracking-[0.2em] mb-5 lg:mb-6">
+      <div className="inline-flex rounded-full bg-[#eaf3f9] text-[#245A8D] px-4 py-2 text-[12px] sm:text-sm font-bold uppercase tracking-[0.16em] mb-5 lg:mb-6">
           Perché Sigma
         </div>
 
@@ -1914,7 +1914,7 @@ function WhySigmaSection() {
   <div className="grid sm:grid-cols-2 lg:grid-cols-4 mb-3 lg:mb-14 border-y border-[#dce5df]">
 
           <div className="py-5 lg:py-7 lg:pr-7 border-b sm:border-b lg:border-b-0 border-[#dce5df]">
-            <div className="text-[25px] lg:text-3xl font-bold tracking-[-0.03em] text-[#0f7a43] mb-2 lg:mb-3">
+       <div className="text-[25px] lg:text-3xl font-bold tracking-[-0.03em] text-[#16875f] mb-2 lg:mb-3">
               Free
             </div>
             <h3 className="text-[17px] lg:text-[18px] font-semibold mb-2">
@@ -1926,7 +1926,7 @@ function WhySigmaSection() {
           </div>
 
           <div className="py-5 lg:py-7 sm:pl-6 lg:px-7 lg:border-l border-b lg:border-b-0 border-[#dce5df]">
-            <div className="text-[25px] lg:text-3xl font-bold tracking-[-0.03em] text-[#243c7b] mb-2 lg:mb-3">
+            <div className="text-[25px] lg:text-3xl font-bold tracking-[-0.03em] text-[#245A8D] mb-2 lg:mb-3">
               Focus
             </div>
             <h3 className="text-[17px] lg:text-[18px] font-semibold mb-2">
@@ -1939,7 +1939,7 @@ function WhySigmaSection() {
           </div>
 
           <div className="py-5 lg:py-7 lg:px-7 lg:border-l border-b sm:border-b-0 border-[#dce5df]">
-            <div className="text-[25px] lg:text-3xl font-bold tracking-[-0.03em] text-[#9a5b16] mb-2 lg:mb-3">
+            <div className="text-[25px] lg:text-3xl font-bold tracking-[-0.03em] text-[#B06A22] mb-2 lg:mb-3">
               Tailor
             </div>
             <h3 className="text-[17px] lg:text-[18px] font-semibold mb-2">
@@ -1952,7 +1952,7 @@ function WhySigmaSection() {
           </div>
 
           <div className="py-6 lg:py-7 sm:pl-6 lg:pl-7 lg:border-l border-[#dce5df]">
-            <div className="text-[25px] lg:text-3xl font-bold tracking-[-0.03em] text-[#102f2c] mb-2 lg:mb-3">
+            <div className="text-[25px] lg:text-3xl font-bold tracking-[-0.03em] text-[#7A5A9E] mb-2 lg:mb-3">
               Care
             </div>
             <h3 className="text-[17px] lg:text-[18px] font-semibold mb-2">
