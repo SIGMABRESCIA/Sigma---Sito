@@ -26,13 +26,13 @@ export default function Header({
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-[0_8px_30px_rgba(15,23,42,0.04)] transition-all duration-500">
 
       {/* HEADER PRINCIPALE */}
-      <div className="w-full px-5 sm:px-8 lg:px-10 h-20 flex items-center">
+     <div className="w-full px-5 sm:px-8 lg:px-10 h-20 flex items-center">
 
         {/* BLOCCO DESKTOP LEGGERMENTE SPOSTATO A SINISTRA */}
-        <div className="w-full flex items-center justify-between gap-6">
+        <div className="w-full grid grid-cols-[190px_minmax(0,1fr)_190px] items-center gap-8">
 
           {/* LOGO */}
-          <div className="flex items-center shrink-0">
+          <div className="flex items-center justify-start">
             <img
               src="/logo-sigma-new.png"
               alt="Sigma Insurance Broker"
@@ -41,8 +41,7 @@ export default function Header({
           </div>
 
           {/* NAVIGAZIONE DESKTOP */}
-        <nav className="hidden 2xl:flex flex-1 items-center justify-start gap-8 2xl:ml-[220px] text-[15px] font-medium text-[#172033] whitespace-nowrap">
-
+    <nav className="hidden 2xl:flex w-full items-center justify-between text-[14px] font-medium text-[#172033] whitespace-nowrap">
             <button
               onClick={() => goTo("home")}
               className="hover:text-[#245A8D] transition-colors"
@@ -101,21 +100,18 @@ export default function Header({
 
             <button
               onClick={() => goTo("whistleblowing")}
-              className="hover:text-[#245A8D] transition-colors text-center leading-tight"
+           className="hover:text-[#245A8D] transition-colors whitespace-nowrap"
             >
-              Segnalazione
-              <br />
-              illeciti
+           Segnalazione illeciti
             </button>
 
           </nav>
 
           {/* AREA RISERVATA + MENU MOBILE */}
-          <div className="flex items-center justify-end gap-3 shrink-0">
-
-            <button className="hidden md:flex items-center gap-2 rounded-full border border-[#245A8D] px-5 py-2 text-sm font-semibold text-[#245A8D] hover:bg-[#eef6fb] transition whitespace-nowrap">
-              <UserRound size={18} />
-              Area riservata
+         <div className="flex items-center justify-end gap-3 shrink-0 ml-auto pl-5 sm:pl-0">
+<button className="flex items-center gap-2 rounded-full border border-[#245A8D] px-3 sm:px-4 lg:px-5 py-2 text-[13px] sm:text-sm font-semibold text-[#245A8D] hover:bg-[#eef6fb] transition whitespace-nowrap">
+           <UserRound size={18} className="shrink-0" />
+<span className="hidden sm:inline">Area riservata</span>
             </button>
 
             <button
@@ -123,7 +119,7 @@ export default function Header({
               className="flex 2xl:hidden items-center justify-center w-11 h-11 rounded-full border border-slate-200 bg-white text-[#17324D] hover:border-[#9fc5df] hover:bg-[#eef6fb] transition"
               aria-label={mobileMenuOpen ? "Chiudi menu" : "Apri menu"}
             >
-              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileMenuOpen ? <X size={24} strokeWidth={2} /> : <Menu size={24} strokeWidth={2} />}
             </button>
 
           </div>

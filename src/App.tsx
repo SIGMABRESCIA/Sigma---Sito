@@ -216,11 +216,24 @@ const privateDetails: Record<string, DetailData> = {
 export default function SigmaWebsiteMockup() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 const [activeView, setActiveView] = React.useState<View>(() => {
-  const hash = window.location.hash;
+  const hash = window.location.hash.replace("#", "");
 
-  if (hash === "#professionisti") return "professionisti";
-  if (hash === "#aziende") return "aziende";
-  if (hash === "#privati") return "privati";
+  const validViews: View[] = [
+    "home",
+    "professionisti",
+    "aziende",
+    "privati",
+    "automotive",
+    "reclami",
+    "whistleblowing",
+    "convenzioni-commercialisti",
+    "convenzioni-avvocati",
+    "convenzioni-tecnici",
+  ];
+
+  if (validViews.includes(hash as View)) {
+    return hash as View;
+  }
 
   return "home";
 });
@@ -237,6 +250,11 @@ const [activeView, setActiveView] = React.useState<View>(() => {
   const goTo = (view: View) => {
     setActiveView(view);
     setMobileMenuOpen(false);
+    if (view === "home") {
+  window.history.pushState(null, "", window.location.pathname);
+} else {
+  window.history.pushState(null, "", `#${view}`);
+}
     if (view.startsWith("convenzioni-")) {
   window.setTimeout(() => {
     document.getElementById("main-content")?.scrollIntoView({
@@ -268,7 +286,18 @@ const [activeView, setActiveView] = React.useState<View>(() => {
     window.history.replaceState(null, "", `${window.location.pathname}#${sectionId}`);
 
     window.setTimeout(() => {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      const element = document.getElementById(sectionId);
+
+if (element) {
+  const headerOffset = 100;
+  const elementPosition = element.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth",
+  });
+}
     }, 300);
   };
 
@@ -277,7 +306,14 @@ const [activeView, setActiveView] = React.useState<View>(() => {
       <MotionStyles />
       <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} goTo={goTo} goToSection={goToSection} />
       {activeView === "home" && <Hero />}
-     <main id="main-content" className="max-w-[1440px] mx-auto px-6 lg:px-10 py-14 lg:py-20">
+  <main
+  id="main-content"
+  className={`max-w-[1440px] mx-auto px-6 lg:px-10 ${
+    activeView === "home"
+      ? "py-14 lg:py-20"
+      : "py-3 lg:py-4"
+  }`}
+>
         {activeView === "home" && <HomeView goTo={goTo} />}
         {activeView === "professionisti" && <ProfessionistiView activeDetail={activeProfessionalDetail} setActiveDetail={setActiveProfessionalDetail} goHome={() => goTo("home")} />}
         {activeView === "aziende" && <AziendeView activeDetail={activeBusinessDetail} setActiveDetail={setActiveBusinessDetail} goHome={() => goTo("home")} />}
@@ -291,13 +327,13 @@ const [activeView, setActiveView] = React.useState<View>(() => {
     <div className="border-b border-slate-200 bg-[#f8fafc] px-10 lg:px-14 py-12">
       <button
        onClick={() => goToSection("convenzioni")}
-        className="text-[#008f4c] text-sm font-semibold mb-8 hover:opacity-70 transition-opacity"
+      className="text-[#245A8D] text-sm font-semibold mb-8 hover:opacity-70 transition-opacity"
       >
         ← Torna alle convenzioni
       </button>
 
       <div className="max-w-4xl">
-        <div className="inline-flex items-center rounded-full bg-[#e9f7f0] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#008f4c] mb-6">
+      <div className="inline-flex items-center rounded-full bg-[#eaf3f9] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#245A8D] mb-6">
           Convenzione dedicata
         </div>
 
@@ -305,7 +341,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
           Convenzione per la tutela del rischio professionale.
         </h1>
 
-        <div className="w-20 h-[3px] bg-[#008f4c] mb-8 rounded-full" />
+        <div className="w-20 h-[3px] bg-[#245A8D] mb-8 rounded-full" />
 
         <p className="text-slate-600 text-[16px] sm:text-[17px] lg:text-xl leading-[1.65] lg:leading-relaxed max-w-3xl">
           Soluzioni assicurative dedicate agli iscritti all’Ordine dei Dottori Commercialisti ed Esperti Contabili di Brescia e Provincia.
@@ -335,9 +371,9 @@ const [activeView, setActiveView] = React.useState<View>(() => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5 mt-12">
+          <div className="grid grid-cols-1 2xl:grid-cols-3 gap-5 mt-12">
             <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+              <div className="text-[#245A8D] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
                 Responsabilità professionale
               </div>
 
@@ -347,7 +383,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
             </div>
 
             <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+              <div className="text-[#245A8D] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
                 Verifica coperture
               </div>
 
@@ -357,7 +393,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
             </div>
 
             <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+              <div className="text-[#245A8D] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
                 Assistenza sinistri
               </div>
 
@@ -369,7 +405,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
         </div>
 
         <div className="rounded-[2rem] border border-slate-200 bg-[#f8fafc] p-8 sticky top-10">
-          <div className="text-[#008f4c] text-sm uppercase tracking-[0.2em] font-bold mb-6">
+          <div className="text-[#245A8D] text-sm uppercase tracking-[0.2em] font-bold mb-6">
             Documentazione
           </div>
 
@@ -378,7 +414,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
   href="/documenti/questionario-commercialisti.pdf"
   target="_blank"
   rel="noopener noreferrer"
-  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors"
+  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#245A8D] transition-colors"
 >
   Questionario professionale
 </a>
@@ -387,7 +423,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
   href="/documenti/privacy.pdf"
   target="_blank"
   rel="noopener noreferrer"
-  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors"
+  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#245A8D] transition-colors"
 >
   Informativa Privacy
 </a>
@@ -396,7 +432,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
   href="/documenti/mup.pdf"
   target="_blank"
   rel="noopener noreferrer"
-  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors"
+  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#245A8D] transition-colors"
 >
   MUP - Modulo Unico Precontrattuale
 </a>
@@ -404,7 +440,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
 
           <a
             href="mailto:info@sigmabrescia.it"
-            className="mt-8 inline-flex w-full justify-center rounded-full bg-[#008f4c] px-6 py-4 font-semibold text-white hover:bg-[#007642] transition-colors"
+           className="mt-8 inline-flex w-full justify-center rounded-full bg-[#245A8D] px-6 py-4 font-semibold text-white hover:bg-[#173A63] transition-colors"
           >
             Richiedi informazioni
           </a>
@@ -417,23 +453,24 @@ const [activeView, setActiveView] = React.useState<View>(() => {
 {activeView === "convenzioni-avvocati" && (
   <section className="rounded-[2.5rem] border border-slate-200 bg-white overflow-hidden shadow-sm sigma-reveal">
 
-    <div className="border-b border-slate-200 bg-[#f8fafc] px-6 py-8 sm:px-8 sm:py-10 lg:px-14 lg:py-12">
+    <div className="border-b border-slate-200 bg-[#f8fafc] px-10 lg:px-14 py-12">
       <button
-        onClick={() => goToSection("convenzioni")}
-        className="text-[#008f4c] text-sm font-semibold mb-8 hover:opacity-70 transition-opacity"
-      >
-        ← Torna alle convenzioni
-      </button>
+  onClick={() => goToSection("convenzioni")}
+  className="text-sm font-semibold mb-8 hover:opacity-70 transition-opacity"
+  style={{ color: "#245A8D" }}
+>
+  ← Torna alle convenzioni
+</button>
 
       <div className="max-w-4xl">
-        <div className="inline-flex items-center rounded-full bg-[#e9f7f0] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#008f4c] mb-6">
+        <div className="inline-flex items-center rounded-full bg-[#eaf3f9] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#245A8D] mb-6">
           Convenzione dedicata
         </div>
 
         <h1 className="text-[30px] sm:text-[34px] lg:text-7xl font-black tracking-[-0.04em] lg:tracking-[-0.06em] leading-[1.05] lg:leading-[0.95] text-[#0b132d] mb-6 lg:mb-8">
      Convenzione per la tutela del rischio professionale degli avvocati.
         </h1>
-<div className="w-14 lg:w-20 h-[3px] bg-[#008f4c] mb-5 lg:mb-8 rounded-full" />
+<div className="w-14 lg:w-20 h-[3px] bg-[#245A8D] mb-5 lg:mb-8 rounded-full" />
 
         <p className="text-slate-600 text-[16px] sm:text-[17px] lg:text-xl leading-[1.65] lg:leading-relaxed max-w-3xl">
           Soluzioni assicurative dedicate ad avvocati e studi legali, con particolare attenzione alla responsabilità professionale e alla continuità dell’attività.
@@ -463,9 +500,9 @@ const [activeView, setActiveView] = React.useState<View>(() => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5 mt-12">
+          <div className="ggrid grid-cols-1 2xl:grid-cols-3 gap-5 mt-12">
             <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+              <div className="text-[#245A8D] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
                 Responsabilità professionale
               </div>
               <p className="text-slate-600 leading-relaxed">
@@ -474,7 +511,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
             </div>
 
             <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+              <div className="text-[#245A8D] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
                 Verifica garanzie
               </div>
               <p className="text-slate-600 leading-relaxed">
@@ -483,7 +520,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
             </div>
 
             <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+              <div className="text-[#245A8D] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
                 Gestione sinistri
               </div>
               <p className="text-slate-600 leading-relaxed">
@@ -494,16 +531,16 @@ const [activeView, setActiveView] = React.useState<View>(() => {
         </div>
 
         <div className="rounded-[2rem] border border-slate-200 bg-[#f8fafc] p-8">
-          <div className="text-[#008f4c] text-sm uppercase tracking-[0.2em] font-bold mb-6">
-            Documentazione
-          </div>
+     <div className="text-[#245A8D] text-sm uppercase tracking-[0.2em] font-bold mb-6">
+  Documentazione
+</div>
 
           <div className="space-y-4">
             <a
   href="/documenti/questionario-avvocati.pdf"
   target="_blank"
   rel="noopener noreferrer"
-  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#008f4c] transition-colors"
+  className="block w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-left font-medium hover:border-[#245A8D] transition-colors"
 >
   Questionario professionale
 </a>
@@ -534,7 +571,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
         ?.scrollIntoView({ behavior: "smooth" });
     }, 100);
   }}
-  className="w-full rounded-2xl bg-[#008f4c] px-5 py-4 font-bold text-white transition-all duration-300 hover:bg-[#007c42]"
+ className="w-full rounded-2xl bg-[#245A8D] px-5 py-4 font-bold text-white transition-all duration-300 hover:bg-[#173A63]"
 >
   Richiedi informazioni
 </button>
@@ -548,15 +585,16 @@ const [activeView, setActiveView] = React.useState<View>(() => {
   <section className="rounded-[2.5rem] border border-slate-200 bg-white overflow-hidden shadow-sm sigma-reveal">
 
     <div className="border-b border-slate-200 bg-[#f8fafc] px-6 py-8 sm:px-8 sm:py-10 lg:px-14 lg:py-12">
-      <button
-        onClick={() => goToSection("convenzioni")}
-        className="text-[#008f4c] text-sm font-semibold mb-8 hover:opacity-70 transition-opacity"
-      >
-        ← Torna alle convenzioni
-      </button>
+<button
+  onClick={() => goToSection("convenzioni")}
+  className="text-[#245A8D] text-sm font-semibold mb-8 hover:opacity-70 transition-opacity"
+  style={{ color: "#245A8D" }}
+>
+  ← Torna alle convenzioni
+</button>
 
       <div className="max-w-4xl">
-        <div className="inline-flex items-center rounded-full bg-[#e9f7f0] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#008f4c] mb-6">
+       <div className="inline-flex items-center rounded-full bg-[#eaf3f9] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#245A8D] mb-6">
           Convenzione dedicata
         </div>
 
@@ -564,7 +602,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
        Convenzione per la tutela del rischio professionale dei tecnici.
         </h1>
 
-       <div className="w-14 lg:w-20 h-[3px] bg-[#008f4c] mb-5 lg:mb-8 rounded-full" />
+      <div className="w-14 lg:w-20 h-[3px] bg-[#245A8D] mb-5 lg:mb-8 rounded-full" />
 
         <p className="text-slate-600 text-[16px] sm:text-[17px] lg:text-xl leading-[1.65] lg:leading-relaxed max-w-3xl">
           Soluzioni dedicate ad architetti, ingegneri e geometri per la tutela del rischio professionale e la protezione dell'attività tecnica.
@@ -594,10 +632,10 @@ const [activeView, setActiveView] = React.useState<View>(() => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5 mt-12">
+          <div className="grid grid-cols-1 2xl:grid-cols-3 gap-5 mt-12">
 
             <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+              <div className="text-[#245A8D] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
                 Responsabilità professionale
               </div>
 
@@ -607,7 +645,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
             </div>
 
             <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+              <div className="text-[#245A8D] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
                 Tutela patrimoniale
               </div>
 
@@ -617,7 +655,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
             </div>
 
             <div className="rounded-[1.75rem] border border-slate-200 bg-[#f8fafc] p-6">
-              <div className="text-[#008f4c] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
+              <div className="text-[#245A8D] text-sm uppercase tracking-[0.18em] font-semibold mb-3">
                 Assistenza specialistica
               </div>
 
@@ -630,7 +668,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
         </div>
 
         <div className="rounded-[2rem] border border-slate-200 bg-[#f8fafc] p-8">
-          <div className="text-[#008f4c] text-sm uppercase tracking-[0.2em] font-bold mb-6">
+        <div className="text-[#245A8D] text-sm uppercase tracking-[0.2em] font-bold mb-6">
             Documentazione
           </div>
 
@@ -665,7 +703,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
 
           <a
             href="mailto:info@sigmabrescia.it"
-            className="mt-8 inline-flex w-full justify-center rounded-full bg-[#008f4c] px-6 py-4 font-semibold text-white hover:bg-[#007642] transition-colors"
+          className="mt-8 inline-flex w-full justify-center rounded-full bg-[#245A8D] px-6 py-4 font-semibold text-white hover:bg-[#173A63] transition-colors"
           >
             Richiedi informazioni
           </a>
@@ -723,7 +761,7 @@ function HomeView({ goTo }: { goTo: (view: View) => void }) {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 items-stretch mt-10">
+        <div className="grid grid-cols-1 2xl:grid-cols-3 gap-8 items-stretch mt-10">
           <SolutionCard
             title="Soluzioni per Professionisti"
             text="Coperture dedicate a studi professionali, consulenti e professionisti iscritti ad albi."
@@ -1012,7 +1050,7 @@ function SolutionCard({
           mb-5
           lg:mb-8
 
-          lg:min-h-[96px]
+          2xl:min-h-[96px]
         "
       >
         {text}
@@ -1199,46 +1237,71 @@ const automotiveAreas = [
   return (
     <section
       id="view-automotive"
-      className="w-full max-w-[1380px] mx-auto bg-white rounded-[2rem] border border-slate-200 p-10 lg:p-16 shadow-sm mb-10 sigma-reveal scroll-mt-28"
+      className="w-full max-w-[1380px] mx-auto bg-white rounded-[2rem] border border-slate-200 px-10 pb-10 pt-6 lg:px-16 lg:pb-16 lg:pt-8 shadow-sm mb-10 sigma-reveal scroll-mt-28"
     >
       <button
         onClick={goHome}
-        className="mb-10 inline-flex rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold hover:-translate-y-0.5 hover:shadow-md transition-all duration-300"
+        className="mb-6 inline-flex rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold hover:-translate-y-0.5 hover:shadow-md transition-all duration-300"
       >
         ← Torna alla home
       </button>
 
 {/* INTRODUZIONE */}
-<div className="relative overflow-hidden rounded-[2rem] min-h-[390px] mb-14 border border-slate-200">
-  
-  {/* IMMAGINE */}
-  <img
-    src="/images/automotive-showroom-hero.png"
-    alt=""
-    className="absolute inset-0 h-full w-full object-cover object-center"
-  />
+<div className="relative overflow-hidden rounded-[2rem] mb-14 border border-slate-200 bg-white">
 
-  {/* SFUMATURA CHIARA PER LEGGIBILITÀ */}
-<div className="absolute inset-0 bg-white/80 lg:bg-gradient-to-r lg:from-white lg:from-[0%] lg:via-white lg:via-[48%] lg:to-white/20 lg:to-[78%]" />
+  <div className="grid lg:grid-cols-[0.9fr_1.1fr] min-h-[390px]">
 
-  {/* CONTENUTO */}
- <div className="relative z-10 px-5 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12 max-w-[720px]">
-    
-    <div className="inline-flex rounded-full bg-[#eaf5ef] text-[#08754b] px-4 py-2 text-sm font-bold uppercase tracking-[0.18em] mb-6">
-      Affinity & Automotive
+    {/* SINISTRA */}
+    <div className="relative z-10 px-7 py-10 sm:p-10 lg:px-12 lg:py-12 flex flex-col justify-center">
+
+      <div className="inline-flex self-start rounded-full bg-[#eaf5ef] text-[#08754b] px-4 py-2 text-[12px] font-bold uppercase tracking-[0.22em] mb-7">
+        Affinity & Automotive
+      </div>
+
+      <h1 className="text-[38px] sm:text-[46px] lg:text-[54px] font-semibold tracking-[-0.045em] leading-[1.02] text-[#101828] max-w-[620px]">
+        Programmi assicurativi per il settore automotive.
+      </h1>
+
+      <div className="mt-8 flex items-center gap-3">
+        <div className="w-12 h-[2px] bg-[#08754b]" />
+        <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#08754b]">
+          Soluzioni dedicate
+        </span>
+      </div>
+
     </div>
 
-    <h1 className="text-4xl lg:text-[52px] font-semibold tracking-[-0.045em] leading-[1.02] text-[#101828]">
-      Programmi assicurativi per il settore automotive.
-    </h1>
-<p className="mt-5 text-[16px] sm:text-[17px] lg:mt-6 lg:text-[19px] text-[#526174] leading-[1.65] lg:leading-[1.7] max-w-[680px]">
-      Affianchiamo concessionari, dealer, gruppi automotive e operatori del
-      settore nella progettazione di programmi assicurativi integrati nei
-      processi di vendita e post vendita. Costruiamo soluzioni dedicate,
-      sviluppate in collaborazione con primarie compagnie assicurative e
-      calibrate sulle esigenze della rete e del cliente finale.
-    </p>
+    {/* DESTRA - FOTO */}
+    <div className="relative min-h-[330px] lg:min-h-full overflow-hidden">
+
+      <img
+        src="/images/automotive-showroom-hero.png"
+        alt=""
+        className="automotive-image-motion absolute inset-0 h-full w-full object-cover object-center"
+      />
+
+      {/* raccordo leggero tra bianco e fotografia */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-transparent" />
+
+      {/* CARD CONSULENZA */}
+      
+      <div className="automotive-card-reveal absolute right-6 bottom-6 lg:right-8 lg:bottom-8 w-[calc(100%-3rem)] lg:w-[340px] rounded-[1.5rem] bg-[#102A4A]/90 backdrop-blur-md border border-white/15 px-6 py-6 text-white shadow-[0_18px_50px_rgba(15,23,42,0.25)]">
+
+        <div className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#9FD6BE] mb-3">
+          Consulenza Sigma
+        </div>
+
+        <p className="text-[16px] leading-[1.65] text-white/90">
+          Affianchiamo concessionari, dealer e operatori nella progettazione
+          di programmi assicurativi integrati nella vendita e nel post vendita.
+        </p>
+
+      </div>
+
+    </div>
+
   </div>
+
 </div>
 
 {/* 4 AREE */}
@@ -1391,16 +1454,47 @@ const privatiQuickLinks = [
   },
 ];
   return (
-   <section
+ <section
   id={`view-${viewId}`}
-  className="w-full max-w-[1380px] mx-auto bg-white rounded-[2rem] border border-slate-200 p-10 lg:p-16 shadow-sm mb-10 sigma-reveal scroll-mt-28"
+  className={`w-full max-w-[1380px] mx-auto rounded-[2rem] border border-slate-200 px-10 lg:px-16 py-3 lg:py-4 shadow-sm mb-10 sigma-reveal scroll-mt-28
+    ${
+      accent === "blue"
+        ? "bg-gradient-to-br from-white via-white to-[#eef4ff]"
+        : accent === "green"
+        ? "bg-gradient-to-br from-white via-white to-[#edf7f2]"
+        : "bg-gradient-to-br from-white via-white to-[#fff6e8]"
+    }
+  `}
+
 >
-      <button onClick={goHome} className="mb-8 inline-flex rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold hover:-translate-y-0.5 hover:shadow-md transition-all duration-300">← Torna alla home</button>
-      <div className="max-w-5xl mb-12">
-        <div className={`inline-flex rounded-full ${style.bg} ${style.text} px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6`}>{eyebrow}</div>
-       <h2 className="text-4xl lg:text-[56px] font-semibold tracking-[-0.035em] leading-[1.02] mb-8">{title}</h2>
-        <p className="text-xl text-slate-600 leading-relaxed max-w-4xl">{subtitle}</p>
+      <button onClick={goHome} className="mb-6 inline-flex rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold hover:-translate-y-0.5 hover:shadow-md transition-all duration-300">← Torna alla home</button>
+<div className="mb-6 lg:mb-8 border-b border-slate-200 pb-6 lg:pb-7">
+  <div className="grid lg:grid-cols-[1fr_300px] gap-8 lg:gap-14 items-end">
+
+    <div className="max-w-5xl">
+      <div
+        className={`inline-flex rounded-full ${style.bg} ${style.text} px-4 py-2 text-[12px] font-bold uppercase tracking-[0.22em] mb-6`}
+      >
+        {eyebrow}
       </div>
+
+      <h2 className="text-[38px] sm:text-[46px] lg:text-[54px] font-semibold text-[#101828] tracking-[-0.045em] leading-[1.02] max-w-4xl">
+        {title}
+      </h2>
+    </div>
+
+    <div className="lg:border-l lg:border-slate-200 lg:pl-8">
+      <div className={`text-[11px] font-bold uppercase tracking-[0.2em] ${style.text} mb-3`}>
+        Consulenza Sigma
+      </div>
+
+      <p className="text-[16px] lg:text-[17px] text-slate-600 leading-[1.65]">
+        {subtitle}
+      </p>
+    </div>
+
+  </div>
+</div>
       <div className={`relative rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden bg-gradient-to-br ${style.gradient} text-white mb-10 lg:mb-12 shadow-[0_20px_80px_rgba(15,51,40,0.18)]`}>
         {/* Fotografia dedicata, visibile sul lato destro e sfumata verso il colore */}
         {/* Immagine editoriale della sezione */}
@@ -1897,7 +1991,7 @@ function WhySigmaSection() {
           Perché Sigma
         </div>
 
-        <h2 className="text-[29px] sm:text-[34px] lg:text-[52px] font-semibold tracking-[-0.04em] lg:tracking-[-0.045em] leading-[1.06] lg:leading-[1.02] mb-6 lg:mb-8 max-w-5xl">
+        <h2 className="text-[29px] sm:text-[34px] lg:text-[52px] font-semibold tracking-[-0.04em] lg:tracking-[-0.045em] leading-[1.06] lg:leading-[1.02] mb-6 lg:mb-8 max-w-5xl text-[#1C365B]">
           Non ci limitiamo a proporre polizze.
           <br className="hidden lg:block" />
           <span className="lg:hidden"> </span>

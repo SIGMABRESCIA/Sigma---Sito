@@ -65,14 +65,14 @@ export default function Hero() {
           <img
            src="/images/hero-01-vetro-riflessi-blu.png"
             alt=""
-            className="hero-image-motion absolute inset-0 h-full w-full object-cover object-center"
+           className="hero-image-motion absolute inset-0 h-full w-full object-cover object-[55%_center]"
           />
 
           {/* Dissolvenza verso il testo */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f7f5f0] via-[#f7f5f0]/90 via-[20%] to-transparent" />
+       <div className="absolute inset-0 bg-gradient-to-r from-[#f7f5f0] via-[#f7f5f0]/72 via-[18%] to-transparent" />
 
           {/* Leggera dissolvenza inferiore */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#f7f5f0]/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#f7f5f0]/20" />
         </div>
 
         {/* CONTENUTO */}

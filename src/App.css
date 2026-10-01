@@ -1,0 +1,64 @@
+/* Automotive - movimento editoriale immagine */
+.automotive-image-motion {
+  opacity: 0;
+  transform: scale(1.04) translateX(10px);
+  transform-origin: center center;
+  animation:
+    automotiveImageFadeIn 1.5s ease-out forwards,
+    automotiveImageMotion 9s ease-in-out 1.5s infinite alternate;
+}
+
+@keyframes automotiveImageFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.04) translateX(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.02) translateX(0);
+  }
+}
+
+@keyframes automotiveImageMotion {
+  from {
+    transform: scale(1.02) translateX(0);
+  }
+
+  to {
+    transform: scale(1.12) translateX(-24px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .automotive-image-motion {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}
+/* Automotive - comparsa card consulenza */
+.automotive-card-reveal {
+  opacity: 0;
+  animation: automotiveCardReveal 1s ease-out 0.45s forwards;
+}
+
+@keyframes automotiveCardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .automotive-card-reveal {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}

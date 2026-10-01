@@ -16,7 +16,7 @@ export default function ContactSection() {
             Parliamone
           </div>
 
-          <h2 className="text-[28px] sm:text-3xl lg:text-[44px] font-semibold tracking-[-0.025em] leading-[1.08] mb-4 lg:mb-6 max-w-[620px] text-[#102f2c]">
+          <h2 className="text-[28px] sm:text-3xl lg:text-[44px] font-semibold tracking-[-0.025em] leading-[1.08] mb-4 lg:mb-6 max-w-[620px] text-[#1C365B]">
             Costruiamo una consulenza assicurativa realmente coerente con la tua attività.
           </h2>
 
