@@ -7,7 +7,7 @@ export default function Hero() {
   const [showTailor, setShowTailor] = useState(false);
 
   useEffect(() => {
-    const duration = 1400;
+    const duration = 1800;
 
     const animationTimer = window.setTimeout(() => {
       const startTime = performance.now();
@@ -18,7 +18,7 @@ export default function Hero() {
           1
         );
 
-        const eased = 1 - Math.pow(1 - progress, 3);
+        const eased = progress;
 
         setYears(Math.round(15 * eased));
         setVision(Math.round(360 * eased));
@@ -76,7 +76,7 @@ export default function Hero() {
         </div>
 
         {/* CONTENUTO */}
-        <div className="relative z-10 max-w-[1280px] mx-auto px-8 lg:px-12 pt-10 lg:pt-12 pb-10 lg:pb-12">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-8 lg:px-12 pt-10 lg:pt-12 pb-4 sm:pb-6 lg:pb-12">
           <div className="max-w-[790px]">
 
             {/* BADGE */}
@@ -90,8 +90,14 @@ export default function Hero() {
             </div>
 
             {/* TITOLO */}
-            <h1 className="hero-enter hero-delay-2 text-[40px] sm:text-6xl lg:text-[4.3rem] font-bold tracking-[-0.025em] leading-[1.02] sm:leading-[0.98] mb-7 sm:mb-8 max-w-[760px] text-[#1C365B]">
-              Protezione assicurativa progettata intorno ai rischi reali.
+            <h1 className="hero-enter hero-delay-2 text-[40px] sm:text-6xl lg:text-[4.3rem] font-bold tracking-[-0.025em] leading-[1.02] sm:leading-[0.98] mb-7 sm:mb-8 max-w-[760px] text-[#1C365B] uppercase">
+              <span className="hero-title-word">Protezione</span>{" "}
+<span className="hero-title-word">assicurativa</span>{" "}
+<span className="hero-title-word">progettata</span>{" "}
+<span className="hero-title-word">intorno</span>{" "}
+<span className="hero-title-word">ai</span>{" "}
+<span className="hero-title-word">rischi</span>{" "}
+<span className="hero-title-word">reali.</span>
             </h1>
 
             {/* TARGET */}
@@ -154,7 +160,12 @@ export default function Hero() {
                       : "opacity-0 -translate-x-4"
                   }`}
                 >
-                  Tailor
+               <span className="tailor-letter" style={{ animationDelay: "0.75s" }}>T</span>
+<span className="tailor-letter" style={{ animationDelay: "1.05s" }}>a</span>
+<span className="tailor-letter" style={{ animationDelay: "1.35s" }}>i</span>
+<span className="tailor-letter" style={{ animationDelay: "1.65s" }}>l</span>
+<span className="tailor-letter" style={{ animationDelay: "1.95s" }}>o</span>
+<span className="tailor-letter" style={{ animationDelay: "2.25s" }}>r</span>
                 </div>
 
                 <div className="mt-2 text-[10px] sm:text-[13px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.18em] text-[#53616f]">
@@ -200,15 +211,15 @@ export default function Hero() {
         }
 
         .hero-delay-5 {
-          animation-delay: 0.62s;
+          animation-delay: 1.35s;
         }
 
         .hero-delay-6 {
-          animation-delay: 0.76s;
+          animation-delay: 1.55s;
         }
 
         .hero-delay-7 {
-          animation-delay: 0.90s;
+          animation-delay: 1.75s;
         }
 
         /* Il titolo entra leggermente da sinistra */
@@ -240,7 +251,23 @@ export default function Hero() {
             transform: translateX(0);
           }
         }
+.hero-stat-enter {
+  opacity: 0;
+  transform: translateY(38px);
+  animation: heroStatReveal 1.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
 
+@keyframes heroStatReveal {
+  from {
+    opacity: 0;
+    transform: translateY(38px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
    /* Movimento editoriale della fotografia */
 .hero-image-motion {
   opacity: 0;
@@ -262,7 +289,44 @@ export default function Hero() {
     transform: scale(1.02) translateX(0);
   }
 }
+.hero-title-word {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(18px);
+  animation: heroTitleWordIn 0.65s ease-out forwards;
+}
 
+.hero-title-word:nth-child(1) { animation-delay: 0.15s; }
+.hero-title-word:nth-child(2) { animation-delay: 0.28s; }
+.hero-title-word:nth-child(3) { animation-delay: 0.41s; }
+.hero-title-word:nth-child(4) { animation-delay: 0.54s; }
+.hero-title-word:nth-child(5) { animation-delay: 0.67s; }
+.hero-title-word:nth-child(6) { animation-delay: 0.80s; }
+.hero-title-word:nth-child(7) { animation-delay: 0.93s; }
+
+@keyframes heroTitleWordIn {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+  .tailor-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(12px) scale(0.9);
+  filter: blur(4px);
+  animation: tailorLetterIn 0.55s ease-out forwards;
+}
+
+@keyframes tailorLetterIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
 @keyframes heroImageMotion {
   from {
     transform: scale(1.02) translateX(0);

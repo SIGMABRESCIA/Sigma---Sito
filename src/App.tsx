@@ -929,7 +929,12 @@ function SolutionCard({
   image: string;
 }) {
   const style = accents[color];
-
+const titleHover =
+  color === "blue"
+    ? "lg:group-hover:text-[#243c7b]"
+    : color === "green"
+    ? "lg:group-hover:text-[#0f7a43]"
+    : "lg:group-hover:text-[#9a5b16]";
   return (
     <div
       className="
@@ -1016,25 +1021,25 @@ function SolutionCard({
 
       {/* TITOLO */}
       <h3
-        className="
-          text-[23px]
-          lg:text-[2rem]
+  className={`
+  text-[23px]
+  lg:text-[2rem]
 
-          leading-[1.08]
+  leading-[1.08]
 
-          font-bold
-          lg:font-black
+  font-bold
+  lg:font-black
 
-          tracking-[-0.025em]
+  tracking-[-0.025em]
 
-          text-slate-950
+  text-slate-950
+  transition-colors
+  duration-500
+  ${titleHover}
 
-          mb-3
-          lg:mb-4
-        "
-      >
-        {title}
-      </h3>
+`}>
+  {title}
+</h3>
 
       {/* DESCRIZIONE */}
       <p
