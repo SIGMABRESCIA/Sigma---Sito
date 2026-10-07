@@ -24,7 +24,8 @@ type View =
   | "whistleblowing"
   | "convenzioni-commercialisti"
   | "convenzioni-avvocati"
-  | "convenzioni-tecnici";
+  | "convenzioni-tecnici"
+  | "documenti";
 type Detail = string | null;
 type Accent = "blue" | "green" | "gold";
 
@@ -229,6 +230,7 @@ const [activeView, setActiveView] = React.useState<View>(() => {
     "convenzioni-commercialisti",
     "convenzioni-avvocati",
     "convenzioni-tecnici",
+    "documenti",
   ];
 
   if (validViews.includes(hash as View)) {
@@ -321,6 +323,217 @@ if (element) {
           {activeView === "automotive" && <AutomotiveView goHome={() => goTo("home")} />}
         {activeView === "reclami" && <ReclamiSection />}
         {activeView === "whistleblowing" && <WhistleblowingSection />}
+        {activeView === "documenti" && (
+<section className="rounded-[2.5rem] border border-slate-200 bg-white overflow-hidden shadow-sm sigma-reveal">
+<div className="px-8 sm:px-10 lg:px-14 pt-12 lg:pt-16 pb-4 lg:pb-5">
+    <div className="inline-flex items-center rounded-full bg-[#eaf3f9] px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#245A8D] mb-6">
+      Documenti
+    </div>
+
+    <div className="max-w-[900px]">
+      <h1 className="text-[38px] sm:text-[46px] lg:text-[54px] font-bold tracking-[-0.035em] leading-[1.02] text-[#172B45]">
+        Documenti, informative e modulistica.
+      </h1>
+
+      <p className="mt-6 max-w-[760px] text-[16px] sm:text-[17px] leading-7 text-slate-600">
+        Consulta e scarica la documentazione messa a disposizione da Sigma
+        Insurance Broker
+      </p>
+    </div>
+  </div>
+  <div className="border-t border-slate-200 px-6 sm:px-10 lg:px-14 py-7 lg:py-9">
+<div className="grid lg:grid-cols-[320px_1fr] gap-7 lg:gap-12">
+
+    <div>
+      <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#245A8D] mb-3">
+        01
+      </div>
+
+      <h2 className="text-[24px] font-bold tracking-[-0.02em] text-[#172B45]">
+        Questionari e modulistica
+      </h2>
+
+      <p className="mt-3 text-[14px] leading-6 text-slate-500">
+        Documenti e questionari disponibili per la consultazione e la
+        compilazione.
+      </p>
+    </div>
+
+    <div className="border-t border-slate-200">
+
+      <a
+        href="/documenti/questionario-commercialisti.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+       className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-6 py-5 border-b border-slate-200"
+      >
+        <span className="font-semibold text-[#172B45]">
+          Questionario Commercialisti
+        </span>
+
+        <span className="text-sm font-semibold text-[#245A8D] whitespace-nowrap self-start sm:self-auto group-hover:translate-x-1 transition-transform">
+          Apri documento →
+        </span>
+      </a>
+
+      <a
+        href="/documenti/questionario-avvocati.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-6 py-5 border-b border-slate-200"
+      >
+        <span className="font-semibold text-[#172B45]">
+          Questionario Avvocati
+        </span>
+
+        <span className="text-sm font-semibold text-[#245A8D] whitespace-nowrap self-start sm:self-auto group-hover:translate-x-1 transition-transform">
+          Apri documento →
+        </span>
+      </a>
+
+      <a
+        href="/documenti/questionario-architetti-ingegneri-geometri.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-6 py-5 border-b border-slate-200"
+      >
+        <span className="font-semibold text-[#172B45]">
+          Questionario Architetti, Ingegneri e Geometri
+        </span>
+
+        <span className="text-sm font-semibold text-[#245A8D] whitespace-nowrap self-start sm:self-auto group-hover:translate-x-1 transition-transform">
+          Apri documento →
+        </span>
+      </a>
+
+    </div>
+    
+</div>
+<div className="border-t border-slate-200 py-7 lg:py-9">
+  <div className="grid lg:grid-cols-[320px_1fr] gap-7 lg:gap-12">
+
+    <div>
+      <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#245A8D] mb-3">
+        02
+      </div>
+
+      <h2 className="text-[24px] font-bold tracking-[-0.02em] text-[#172B45]">
+        Informative e trasparenza
+      </h2>
+
+      <p className="mt-3 text-[14px] leading-6 text-slate-500">
+        Informative e documentazione a disposizione per una consultazione
+        chiara e immediata.
+      </p>
+    </div>
+
+    <div className="border-t border-slate-200">
+
+      <a
+        href="/documenti/privacy.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-6 py-5 border-b border-slate-200"
+      >
+        <span className="font-semibold text-[#172B45]">
+          Informativa Privacy
+        </span>
+
+        <span className="text-sm font-semibold text-[#245A8D] whitespace-nowrap self-start sm:self-auto group-hover:translate-x-1 transition-transform">
+          Apri documento →
+        </span>
+      </a>
+
+      <a
+        href="/documenti/mup.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-6 py-5 border-b border-slate-200"
+      >
+        <span className="font-semibold text-[#172B45]">
+          MUP
+        </span>
+
+        <span className="text-sm font-semibold text-[#245A8D] whitespace-nowrap self-start sm:self-auto group-hover:translate-x-1 transition-transform">
+          Apri documento →
+        </span>
+      </a>
+
+      <a
+        href="/documenti/elenco-mandati.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-6 py-5 border-b border-slate-200"
+      >
+        <span className="font-semibold text-[#172B45]">
+          Elenco Mandati
+        </span>
+
+        <span className="text-sm font-semibold text-[#245A8D] whitespace-nowrap self-start sm:self-auto group-hover:translate-x-1 transition-transform">
+          Apri documento →
+        </span>
+      </a>
+
+    </div>
+  </div>
+
+  </div>
+  <div className="border-t border-slate-200 py-7 lg:py-9">
+<div className="grid lg:grid-cols-[320px_1fr] gap-7 lg:gap-12">
+
+    <div>
+      <div className="text-xs font-bold uppercase tracking-[0.18em] text-[#245A8D] mb-3">
+        03
+      </div>
+
+      <h2 className="text-[24px] font-bold tracking-[-0.02em] text-[#172B45]">
+        Reclami e segnalazioni
+      </h2>
+
+      <p className="mt-3 text-[14px] leading-6 text-slate-500">
+        Documentazione dedicata a reclami e segnalazioni.
+      </p>
+    </div>
+
+    <div className="border-t border-slate-200">
+
+  <a
+    href="/documenti/procedura-reclami.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-6 py-5 border-b border-slate-200"
+  >
+    <span className="font-semibold text-[#172B45]">
+      Procedura Reclami
+    </span>
+
+    <span className="text-sm font-semibold text-[#245A8D] whitespace-nowrap self-start sm:self-auto group-hover:translate-x-1 transition-transform">
+      Apri documento →
+    </span>
+  </a>
+
+  <a
+    href="/documenti/whistleblowing-manuale-procedura-segnalazioni.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-6 py-5 border-b border-slate-200"
+  >
+    <span className="font-semibold text-[#172B45]">
+      Procedura Whistleblowing
+    </span>
+
+    <span className="text-sm font-semibold text-[#245A8D] whitespace-nowrap self-start sm:self-auto group-hover:translate-x-1 transition-transform">
+      Apri documento →
+    </span>
+  </a>
+
+</div>
+
+  </div>
+</div>
+</div>
+</section>
+)}
 {activeView === "convenzioni-commercialisti" && (
   <section className="rounded-[2.5rem] border border-slate-200 bg-white overflow-hidden shadow-sm sigma-reveal">
     

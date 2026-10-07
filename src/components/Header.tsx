@@ -1,13 +1,14 @@
-import { Menu, UserRound, X } from "lucide-react";
+import { FileText, Menu, X } from "lucide-react";
 
 type View =
   | "home"
   | "professionisti"
   | "aziende"
   | "privati"
-  | "automotive"
+    | "automotive"
   | "reclami"
-  | "whistleblowing";
+  | "whistleblowing"
+  | "documenti";
 
 type HeaderProps = {
   mobileMenuOpen: boolean;
@@ -107,11 +108,15 @@ export default function Header({
 
           </nav>
 
-          {/* AREA RISERVATA + MENU MOBILE */}
+         {/* DOCUMENTI + MENU MOBILE */}
          <div className="flex items-center justify-end gap-3 shrink-0 ml-auto pl-5 sm:pl-0">
-<button className="flex items-center gap-2 rounded-full border border-[#245A8D] px-3 sm:px-4 lg:px-5 py-2 text-[13px] sm:text-sm font-semibold text-[#245A8D] hover:bg-[#eef6fb] transition whitespace-nowrap">
-           <UserRound size={18} className="shrink-0" />
-<span className="hidden sm:inline">Area riservata</span>
+<button
+  type="button"
+  onClick={() => goTo("documenti")}
+  className="flex items-center gap-2 rounded-full border border-[#245A8D] px-3 sm:px-4 lg:px-5 py-2 text-[13px] sm:text-sm font-semibold text-[#245A8D] hover:bg-[#eef6fb] transition whitespace-nowrap"
+>
+   <FileText size={18} className="shrink-0" />
+<span className="hidden sm:inline">Documenti</span>
             </button>
 
             <button
