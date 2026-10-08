@@ -168,7 +168,7 @@ export default function Footer({ goTo, goToSection }: any) {
               </p>
 
               <p className="max-w-[390px] text-[13px] lg:text-[14px] leading-[1.6] text-white/60">
-                Sigma Studi Brescia S.r.l. è soggetta al controllo IVASS.
+                Sigma Insurance Broker S.r.l è soggetta al controllo IVASS.
                 L’iscrizione è verificabile nel Registro Unico degli
                 Intermediari (RUI) sul sito IVASS.
               </p>

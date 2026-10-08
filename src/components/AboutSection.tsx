@@ -47,16 +47,16 @@ export default function AboutSection() {
             <div className="space-y-4 sm:space-y-6 max-w-[680px]">
 
               <p className="text-[16px] sm:text-lg lg:text-xl text-[#526174] leading-[1.55] sm:leading-relaxed animate-[sigmaFadeUp_900ms_cubic-bezier(0.22,1,0.36,1)_both] [animation-delay:240ms]">
-                Fondata nel 2009, Sigma Studi Brescia affianca aziende,
-                professionisti e affinity group nella progettazione, gestione e
-                ottimizzazione delle coperture assicurative.
+                Nata nel 2009 come Sigma Studi Brescia, oggi siamo Sigma Insurance Broker:
+  una nuova identità che racconta l’evoluzione del nostro percorso e guarda
+  al futuro con la stessa esperienza, competenza e attenzione costruite nel tempo.
               </p>
 
               <p className="text-[16px] sm:text-lg lg:text-xl text-[#526174] leading-[1.55] sm:leading-relaxed animate-[sigmaFadeUp_900ms_cubic-bezier(0.22,1,0.36,1)_both] [animation-delay:360ms]">
-                Operiamo nei principali rami assicurativi con un approccio
-                consulenziale basato su analisi dei rischi, trasparenza e
-                continuità della relazione, accompagnando il cliente dalla
-                scelta delle coperture fino alla gestione dei sinistri.
+                 Affianchiamo aziende, professionisti e affinity group nella progettazione,
+  gestione e ottimizzazione delle coperture assicurative, con un approccio
+  consulenziale basato sull’analisi dei rischi, sulla trasparenza e sulla
+  continuità della relazione.
               </p>
 
             </div>

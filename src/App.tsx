@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import {
   CarFront,
   Handshake,
@@ -102,28 +102,28 @@ const professionalDetails: Record<string, DetailData> = {
   patrimoniale: {
     label: "Tutela patrimoniale",
     title: "Protezione coordinata tra attività, famiglia e patrimonio.",
-    text: "La tutela del patrimonio richiede una visione che consideri insieme attività professionale, responsabilità personali e situazione familiare. Un evento imprevisto può infatti produrre conseguenze economiche che vanno oltre la sola attività lavorativa. Sigma Studi Brescia analizza le diverse aree di esposizione e le coperture già presenti, con l’obiettivo di individuare eventuali sovrapposizioni o esigenze non adeguatamente tutelate. Le soluzioni vengono valutate in funzione delle caratteristiche del professionista e delle condizioni offerte dalle diverse compagnie.",
+    text: "La tutela del patrimonio richiede una visione che consideri insieme attività professionale, responsabilità personali e situazione familiare. Un evento imprevisto può infatti produrre conseguenze economiche che vanno oltre la sola attività lavorativa. Sigma Insurance Broker analizza le diverse aree di esposizione e le coperture già presenti, con l’obiettivo di individuare eventuali sovrapposizioni o esigenze non adeguatamente tutelate. Le soluzioni vengono valutate in funzione delle caratteristiche del professionista e delle condizioni offerte dalle diverse compagnie.",
     points: ["Patrimonio personale", "Continuità economica", "Coperture coordinate"],
   },
 
   convenzioni: {
     label: "Convenzioni dedicate",
     title: "Condizioni dedicate per categorie professionali e ordini.",
-    text: "Le esigenze assicurative possono cambiare sensibilmente in base alla professione esercitata, alle responsabilità assunte e alle caratteristiche dello studio. Per alcune categorie sono inoltre disponibili convenzioni e soluzioni sviluppate in relazione a specifici profili professionali. Sigma Studi Brescia valuta le opportunità disponibili presso le diverse compagnie, confrontandone condizioni, garanzie, limiti ed eventuali esclusioni. L’obiettivo è individuare una soluzione coerente con l’attività effettivamente svolta, senza fermarsi alla sola appartenenza a una categoria.",
+    text: "Le esigenze assicurative possono cambiare sensibilmente in base alla professione esercitata, alle responsabilità assunte e alle caratteristiche dello studio. Per alcune categorie sono inoltre disponibili convenzioni e soluzioni sviluppate in relazione a specifici profili professionali. Sigma Insurance Broker valuta le opportunità disponibili presso le diverse compagnie, confrontandone condizioni, garanzie, limiti ed eventuali esclusioni. L’obiettivo è individuare una soluzione coerente con l’attività effettivamente svolta, senza fermarsi alla sola appartenenza a una categoria.",
     points: ["Ordini professionali", "Categorie specialistiche", "Analisi delle condizioni"],
   },
 
   "cyber-prof": {
     label: "Cyber Risk",
     title: "Protezione per studi che lavorano con dati e sistemi digitali.",
-    text: "Dati dei clienti, documenti riservati, posta elettronica e strumenti informatici sono ormai parte essenziale dell’attività di molti studi professionali. Un incidente informatico può comportare interruzioni operative, perdita o compromissione dei dati e possibili responsabilità verso terzi. L’analisi del rischio cyber parte dall’organizzazione dello studio e dal tipo di informazioni gestite. Sigma Studi Brescia confronta le soluzioni disponibili valutando garanzie, limiti, servizi di assistenza ed esclusioni previsti dalle diverse compagnie.",
+    text: "Dati dei clienti, documenti riservati, posta elettronica e strumenti informatici sono ormai parte essenziale dell’attività di molti studi professionali. Un incidente informatico può comportare interruzioni operative, perdita o compromissione dei dati e possibili responsabilità verso terzi. L’analisi del rischio cyber parte dall’organizzazione dello studio e dal tipo di informazioni gestite. Sigma Insurance Broker confronta le soluzioni disponibili valutando garanzie, limiti, servizi di assistenza ed esclusioni previsti dalle diverse compagnie.",
     points: ["Dati sensibili", "Continuità operativa", "Responsabilità verso terzi"],
   },
 
   "legale-prof": {
     label: "Tutela legale",
     title: "Supporto nelle controversie collegate all’attività.",
-    text: "Una controversia professionale può comportare costi legali e necessità di assistenza anche quando il professionista ritiene di avere operato correttamente. Per questo la tutela legale può rappresentare un elemento complementare alla protezione della responsabilità professionale. Sigma Studi Brescia valuta l’ambito delle coperture disponibili e la loro coerenza con l’attività esercitata, considerando le condizioni e i limiti previsti dalle diverse soluzioni assicurative.",
+    text: "Una controversia professionale può comportare costi legali e necessità di assistenza anche quando il professionista ritiene di avere operato correttamente. Per questo la tutela legale può rappresentare un elemento complementare alla protezione della responsabilità professionale. Sigma Insurance Broker valuta l’ambito delle coperture disponibili e la loro coerenza con l’attività esercitata, considerando le condizioni e i limiti previsti dalle diverse soluzioni assicurative.",
     points: ["Spese legali", "Controversie professionali", "Assistenza specialistica"],
   },
 
@@ -137,7 +137,7 @@ const professionalDetails: Record<string, DetailData> = {
   continuita: {
     label: "Continuità dello studio",
     title: "Proteggere operatività, persone e organizzazione.",
-    text: "Uno studio professionale non è composto soltanto dal professionista: locali, collaboratori, strumenti, dati e organizzazione contribuiscono ogni giorno alla sua capacità di operare. Un evento imprevisto può quindi produrre effetti su più aspetti contemporaneamente. Sigma Studi Brescia considera queste esposizioni nel loro insieme, verificando quali rischi possano compromettere maggiormente l’operatività e quali soluzioni assicurative possano contribuire alla continuità dello studio.",
+    text: "Uno studio professionale non è composto soltanto dal professionista: locali, collaboratori, strumenti, dati e organizzazione contribuiscono ogni giorno alla sua capacità di operare. Un evento imprevisto può quindi produrre effetti su più aspetti contemporaneamente. Sigma Insurance Broker considera queste esposizioni nel loro insieme, verificando quali rischi possano compromettere maggiormente l’operatività e quali soluzioni assicurative possano contribuire alla continuità dello studio.",
     points: ["Operatività", "Collaboratori", "Strumenti e locali"],
   },
 };
@@ -158,31 +158,31 @@ const businessDetails: Record<string, DetailData> = {
   business: {
     label: "Business Interruption",
     title: "Il vero costo di un danno spesso non è il danno, ma il tempo in cui l’azienda resta ferma.",
-    text: "Un evento critico può interrompere produzione, vendite, consegne o servizi anche per periodi prolungati. Il danno economico non dipende soltanto dal valore dei beni coinvolti, ma anche dal tempo necessario per riprendere l’attività e dalla capacità dell’impresa di sostenere costi e impegni durante il fermo. La Business Interruption consente di valutare margini, costi fissi, tempi di ripristino e dipendenze critiche da fornitori, clienti o linee produttive. Sigma Studi Brescia analizza questi elementi insieme alle coperture Property, con l’obiettivo di costruire una protezione coerente con la reale capacità dell’azienda di affrontare un’interruzione dell’attività.",
+    text: "Un evento critico può interrompere produzione, vendite, consegne o servizi anche per periodi prolungati. Il danno economico non dipende soltanto dal valore dei beni coinvolti, ma anche dal tempo necessario per riprendere l’attività e dalla capacità dell’impresa di sostenere costi e impegni durante il fermo. La Business Interruption consente di valutare margini, costi fissi, tempi di ripristino e dipendenze critiche da fornitori, clienti o linee produttive. Sigma Insurance Broker analizza questi elementi insieme alle coperture Property, con l’obiettivo di costruire una protezione coerente con la reale capacità dell’azienda di affrontare un’interruzione dell’attività.",
     points: ["Margine operativo", "Tempi di ripristino", "Dipendenze critiche"],
   },
   cyber: {
     label: "Cyber Risk",
     title: "La continuità digitale oggi è parte integrante della continuità aziendale.",
-    text: "La dipendenza da dati, sistemi informatici e servizi digitali espone oggi le imprese a rischi che possono incidere direttamente sulla continuità operativa. Attacchi ransomware, violazioni di dati, indisponibilità dei sistemi o errori umani possono generare costi di ripristino, interruzioni dell’attività e responsabilità verso clienti e terzi. La copertura Cyber deve quindi essere valutata rispetto al modo in cui l’azienda opera realmente, ai dati trattati e alle proprie dipendenze tecnologiche. Sigma Studi Brescia analizza questi elementi e confronta le condizioni offerte dalle diverse compagnie per individuare una protezione coerente con il profilo di rischio dell’impresa.",
+    text: "La dipendenza da dati, sistemi informatici e servizi digitali espone oggi le imprese a rischi che possono incidere direttamente sulla continuità operativa. Attacchi ransomware, violazioni di dati, indisponibilità dei sistemi o errori umani possono generare costi di ripristino, interruzioni dell’attività e responsabilità verso clienti e terzi. La copertura Cyber deve quindi essere valutata rispetto al modo in cui l’azienda opera realmente, ai dati trattati e alle proprie dipendenze tecnologiche. Sigma Insurance Broker analizza questi elementi e confronta le condizioni offerte dalle diverse compagnie per individuare una protezione coerente con il profilo di rischio dell’impresa.",
   points: ["Violazione dati", "Blocco sistemi", "Responsabilità verso terzi"],
   },
   do: {
     label: "D&O",
     title: "Chi prende decisioni per l’impresa ha bisogno di una tutela coerente con il proprio ruolo.",
-    text: "Amministratori, sindaci, dirigenti e altre figure con responsabilità decisionali possono essere chiamati a rispondere personalmente per atti, omissioni o contestazioni connesse all’esercizio del proprio ruolo. Le richieste possono provenire dalla società, dai soci, dai creditori, dai dipendenti o da altri soggetti e comportare conseguenze economiche e spese di difesa. Una copertura D&O deve essere valutata considerando struttura societaria, deleghe, ruoli e processi decisionali dell’impresa. Sigma Studi Brescia analizza questi elementi e le condizioni proposte dalle diverse compagnie per individuare una tutela coerente con le responsabilità effettivamente assunte dal management.",
+    text: "Amministratori, sindaci, dirigenti e altre figure con responsabilità decisionali possono essere chiamati a rispondere personalmente per atti, omissioni o contestazioni connesse all’esercizio del proprio ruolo. Le richieste possono provenire dalla società, dai soci, dai creditori, dai dipendenti o da altri soggetti e comportare conseguenze economiche e spese di difesa. Una copertura D&O deve essere valutata considerando struttura societaria, deleghe, ruoli e processi decisionali dell’impresa. Sigma Insurance Broker analizza questi elementi e le condizioni proposte dalle diverse compagnie per individuare una tutela coerente con le responsabilità effettivamente assunte dal management.",
     points: ["Governance", "Responsabilità gestionali", "Tutela del management"],
   },
   logistica: {
     label: "Logistica & Trasporti",
     title: "Merci, flotte e supply chain richiedono una protezione coordinata lungo tutto il percorso.",
-   text: "Le aziende che movimentano merci, gestiscono consegne, utilizzano flotte o dipendono da fornitori logistici sono esposte a rischi che possono coinvolgere più fasi della propria attività. Trasporto, deposito, valore delle merci, responsabilità contrattuali, caratteristiche della flotta e dipendenza dalla supply chain possono incidere in modo diverso sulla continuità operativa. Per questo è importante valutare non soltanto il singolo rischio, ma il percorso complessivo delle merci e le responsabilità dei diversi soggetti coinvolti. Sigma Studi Brescia analizza queste esposizioni e confronta le soluzioni disponibili per costruire una protezione coerente con l’organizzazione e l’operatività dell’impresa.",
+   text: "Le aziende che movimentano merci, gestiscono consegne, utilizzano flotte o dipendono da fornitori logistici sono esposte a rischi che possono coinvolgere più fasi della propria attività. Trasporto, deposito, valore delle merci, responsabilità contrattuali, caratteristiche della flotta e dipendenza dalla supply chain possono incidere in modo diverso sulla continuità operativa. Per questo è importante valutare non soltanto il singolo rischio, ma il percorso complessivo delle merci e le responsabilità dei diversi soggetti coinvolti. Sigma Insurance Broker analizza queste esposizioni e confronta le soluzioni disponibili per costruire una protezione coerente con l’organizzazione e l’operatività dell’impresa.",
   points: ["Merci trasportate", "Flotte aziendali", "Supply chain"],
   },
   legale: {
     label: "Tutela legale",
     title: "Una controversia può sottrarre tempo, risorse e attenzione alla gestione dell’impresa.",
-    text: "Contratti, rapporti con fornitori e clienti, gestione dei dipendenti, immobili e responsabilità operative possono generare controversie che richiedono tempo, competenze e risorse economiche. Una tutela legale adeguata può supportare l’impresa nelle spese di assistenza e difesa connesse alle situazioni previste dalla polizza. La copertura deve però essere valutata considerando ambiti di operatività, esclusioni, limiti e condizioni, che possono differire tra le diverse compagnie. Sigma Studi Brescia analizza questi elementi per individuare una soluzione coerente con le principali aree di esposizione dell’azienda.",
+    text: "Contratti, rapporti con fornitori e clienti, gestione dei dipendenti, immobili e responsabilità operative possono generare controversie che richiedono tempo, competenze e risorse economiche. Una tutela legale adeguata può supportare l’impresa nelle spese di assistenza e difesa connesse alle situazioni previste dalla polizza. La copertura deve però essere valutata considerando ambiti di operatività, esclusioni, limiti e condizioni, che possono differire tra le diverse compagnie. Sigma Insurance Broker analizza questi elementi per individuare una soluzione coerente con le principali aree di esposizione dell’azienda.",
     points: ["Spese legali", "Controversie contrattuali", "Supporto specialistico"],
   },
 };
@@ -191,25 +191,25 @@ const privateDetails: Record<string, DetailData> = {
   casa: {
     label: "Casa e patrimonio",
     title: "Proteggere la casa significa proteggere uno spazio di vita e un valore patrimoniale.",
-   text: "La protezione della casa non riguarda soltanto l’edificio, ma anche ciò che contiene e le responsabilità che possono derivare dalla vita quotidiana. Incendio, danni da acqua, eventi atmosferici, furto o danni involontariamente causati a terzi possono avere conseguenze economiche molto diverse. Per questo è importante valutare caratteristiche dell’abitazione, valore dei beni, composizione del nucleo familiare e coperture già presenti. Sigma Studi Brescia confronta garanzie, limiti, franchigie ed esclusioni delle diverse compagnie per individuare una soluzione coerente con le reali esigenze della famiglia.",
+   text: "La protezione della casa non riguarda soltanto l’edificio, ma anche ciò che contiene e le responsabilità che possono derivare dalla vita quotidiana. Incendio, danni da acqua, eventi atmosferici, furto o danni involontariamente causati a terzi possono avere conseguenze economiche molto diverse. Per questo è importante valutare caratteristiche dell’abitazione, valore dei beni, composizione del nucleo familiare e coperture già presenti. Sigma Insurance Broker confronta garanzie, limiti, franchigie ed esclusioni delle diverse compagnie per individuare una soluzione coerente con le reali esigenze della famiglia.",
     points: ["Abitazione", "Contenuto", "Responsabilità familiare"],
   },
   salute: {
     label: "Salute",
     title: "Una protezione sanitaria aiuta a gestire gli imprevisti con maggiore serenità.",
-    text: "La tutela della salute può aiutare la persona e la famiglia ad affrontare con maggiore serenità le conseguenze organizzative ed economiche legate a malattie, interventi o necessità di cure. Le soluzioni disponibili possono prevedere prestazioni, rimborsi, accesso a strutture sanitarie e servizi di assistenza differenti a seconda della compagnia e della formula scelta. Sigma Studi Brescia analizza le esigenze personali e familiari e confronta garanzie, limiti, franchigie, eventuali periodi di carenza ed esclusioni, con l’obiettivo di individuare una copertura coerente con le necessità del cliente.",
+    text: "La tutela della salute può aiutare la persona e la famiglia ad affrontare con maggiore serenità le conseguenze organizzative ed economiche legate a malattie, interventi o necessità di cure. Le soluzioni disponibili possono prevedere prestazioni, rimborsi, accesso a strutture sanitarie e servizi di assistenza differenti a seconda della compagnia e della formula scelta. Sigma Insurance Broker analizza le esigenze personali e familiari e confronta garanzie, limiti, franchigie, eventuali periodi di carenza ed esclusioni, con l’obiettivo di individuare una copertura coerente con le necessità del cliente.",
     points: ["Prevenzione", "Cure", "Assistenza"],
   },
   infortuni: {
     label: "Infortuni",
     title: "Tutela della persona e della continuità economica familiare.",
-   text: "Un infortunio può avere conseguenze che vanno oltre il momento dell’evento, incidendo sulla capacità di lavorare, sulle attività quotidiane e sull’equilibrio economico della famiglia. La protezione deve essere valutata considerando professione, abitudini, attività sportive, mobilità e possibili effetti di un’invalidità temporanea o permanente. Capitali assicurati, franchigie, indennizzi ed esclusioni possono variare sensibilmente tra le diverse soluzioni. Sigma Studi Brescia analizza questi elementi e confronta le condizioni disponibili per individuare una copertura coerente con le esigenze della persona e del nucleo familiare.",
+   text: "Un infortunio può avere conseguenze che vanno oltre il momento dell’evento, incidendo sulla capacità di lavorare, sulle attività quotidiane e sull’equilibrio economico della famiglia. La protezione deve essere valutata considerando professione, abitudini, attività sportive, mobilità e possibili effetti di un’invalidità temporanea o permanente. Capitali assicurati, franchigie, indennizzi ed esclusioni possono variare sensibilmente tra le diverse soluzioni. Sigma Insurance Broker analizza questi elementi e confronta le condizioni disponibili per individuare una copertura coerente con le esigenze della persona e del nucleo familiare.",
     points: ["Persona", "Reddito", "Famiglia"],
   },
   "legale-privati": {
     label: "Tutela legale",
     title: "Supporto nelle controversie della vita privata.",
-    text: "Le controversie della vita privata possono nascere da situazioni molto diverse: rapporti legati alla casa, acquisti e servizi, mobilità, rapporti familiari o richieste di risarcimento. Affrontarle può comportare spese legali, necessità di assistenza specialistica e tempi difficili da prevedere. La tutela legale deve quindi essere valutata considerando gli ambiti effettivamente coperti, i limiti, le esclusioni e le condizioni previste dalle diverse compagnie. Sigma Studi Brescia confronta le soluzioni disponibili per individuare una protezione coerente con le esigenze della persona e della famiglia.",
+    text: "Le controversie della vita privata possono nascere da situazioni molto diverse: rapporti legati alla casa, acquisti e servizi, mobilità, rapporti familiari o richieste di risarcimento. Affrontarle può comportare spese legali, necessità di assistenza specialistica e tempi difficili da prevedere. La tutela legale deve quindi essere valutata considerando gli ambiti effettivamente coperti, i limiti, le esclusioni e le condizioni previste dalle diverse compagnie. Sigma Insurance Broker confronta le soluzioni disponibili per individuare una protezione coerente con le esigenze della persona e della famiglia.",
     points: ["Casa", "Famiglia", "Mobilità"],
   },
 };
@@ -572,7 +572,7 @@ if (element) {
 
           <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
             <p>
-              Sigma Studi Brescia affianca commercialisti e studi professionali nella valutazione delle coperture assicurative dedicate alla responsabilità professionale.
+              Sigma Insurance Broker affianca commercialisti e studi professionali nella valutazione delle coperture assicurative dedicate alla responsabilità professionale.
             </p>
 
             <p>
@@ -701,7 +701,7 @@ if (element) {
 
           <div className="space-y-5 lg:space-y-6 text-slate-600 text-[16px] sm:text-[17px] lg:text-lg leading-[1.65] lg:leading-relaxed">
             <p>
-              Sigma Studi Brescia affianca avvocati e studi legali nella valutazione delle coperture assicurative dedicate alla responsabilità professionale.
+              Sigma Insurance Broker affianca avvocati e studi legali nella valutazione delle coperture assicurative dedicate alla responsabilità professionale.
             </p>
 
             <p>
@@ -833,7 +833,7 @@ if (element) {
 
           <div className="space-y-5 lg:space-y-6 text-slate-600 text-[16px] sm:text-[17px] lg:text-lg leading-[1.65] lg:leading-relaxed">
             <p>
-              Sigma Studi Brescia affianca professionisti tecnici e studi associati nell’analisi delle responsabilità professionali e delle esposizioni connesse all’attività progettuale e consulenziale.
+              Sigma Insurance Broker affianca professionisti tecnici e studi associati nell’analisi delle responsabilità professionali e delle esposizioni connesse all’attività progettuale e consulenziale.
             </p>
 
             <p>
@@ -1027,8 +1027,8 @@ function ReclamiSection() {
         <div className="inline-flex rounded-full bg-[#eaf3f9] text-[#245A8D] px-4 py-2 text-[14px] font-bold uppercase tracking-[0.16em] mb-6">Reclami</div>
         <h2 className="text-4xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.95] mb-8">Gestione reclami e tutela degli utenti.</h2>
        <div className="max-w-5xl space-y-6 text-slate-600 leading-[1.7] text-[17px] lg:text-[18px] xl:text-[19px] mb-14">
-          <p>La soddisfazione dei propri clienti e collaboratori è al centro delle priorità di Sigma Studi Brescia Srl.</p>
-          <p>A seguito del Provvedimento IVASS n. 46 del 3 maggio 2016 Sigma Studi Brescia Srl ha istituito una funzione e una procedura specifica di gestione degli eventuali reclami da parte degli utenti, secondo gli standard di qualità previsti per il settore assicurativo.</p>
+          <p>La soddisfazione dei propri clienti e collaboratori è al centro delle priorità di Sigma Insurance Broker Srl.</p>
+          <p>A seguito del Provvedimento IVASS n. 46 del 3 maggio 2016 Sigma Insurance Broker Srl ha istituito una funzione e una procedura specifica di gestione degli eventuali reclami da parte degli utenti, secondo gli standard di qualità previsti per il settore assicurativo.</p>
           <p>Per reclamo si intende una dichiarazione di insoddisfazione presentata in forma scritta nei confronti di un’impresa di assicurazione o di un intermediario assicurativo relativamente a un contratto o a un servizio assicurativo.</p>
           <p>Ogni segnalazione viene considerata come un’opportunità per migliorare la qualità del servizio e rafforzare trasparenza, correttezza e imparzialità nella gestione dei rapporti con clienti e collaboratori.</p>
         </div>
@@ -1100,7 +1100,7 @@ function WhistleblowingSection() {
         <div className="inline-flex rounded-full bg-[#eef2ff] text-[#243c7b] px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6">Segnalazione illeciti</div>
         <h2 className="text-4xl lg:text-6xl font-black tracking-[-0.04em] leading-[0.95] mb-8">Whistleblowing</h2>
         <div className="max-w-5xl space-y-6 text-slate-600 leading-relaxed text-lg mb-12">
-          <p>In attuazione del D.lgs. 242023, Sigma Studi Brescia Srl mette a disposizione un canale di segnalazione degli illeciti commessi nella propria organizzazione ed ha regolamentato un processo di Whistleblowing che garantisca ai segnalanti la riservatezza della loro identità, la corretta gestione della segnalazione e la protezione da eventuali atti di ritorsione.</p>
+          <p>In attuazione del D.lgs. 242023, Sigma Insurance Broker Srl mette a disposizione un canale di segnalazione degli illeciti commessi nella propria organizzazione ed ha regolamentato un processo di Whistleblowing che garantisca ai segnalanti la riservatezza della loro identità, la corretta gestione della segnalazione e la protezione da eventuali atti di ritorsione.</p>
           <p>Si rendono disponibili per il download i documenti previsti da tali disposizioni.</p>
         </div>
         <div className="grid md:grid-cols-2 gap-6 mb-10">
@@ -1863,7 +1863,7 @@ const privatiQuickLinks = [
         <div className="rounded-[2rem] border border-slate-200 bg-[#f8fafc] p-8 mb-10 sigma-reveal">
           <div className="text-sm uppercase tracking-[0.2em] font-bold text-[#243c7b] mb-4">Questionari professionisti</div>
           <h3 className="text-3xl font-black tracking-[-0.03em] mb-4">Scarica il questionario dedicato alla tua categoria.</h3>
-          <p className="text-slate-600 leading-relaxed mb-6">I documenti potranno essere compilati e inviati a Sigma Studi Brescia per una valutazione più mirata della copertura professionale.</p>
+          <p className="text-slate-600 leading-relaxed mb-6">I documenti potranno essere compilati e inviati a Sigma Insurance Broker per una valutazione più mirata della copertura professionale.</p>
           <div className="grid md:grid-cols-3 gap-4">
             {questionari.map((item) => (
               <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" className="rounded-2xl bg-white border border-slate-200 p-5 font-bold text-slate-800 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
@@ -1929,7 +1929,7 @@ function RcProfessionaleDetail() {
             </p>
 
             <p>
-              Sigma Studi Brescia affianca professionisti e studi associati nell’analisi del rischio professionale, verificando la coerenza tra attività svolta, responsabilità assunte e coperture assicurative esistenti.
+              Sigma Insurance Broker affianca professionisti e studi associati nell’analisi del rischio professionale, verificando la coerenza tra attività svolta, responsabilità assunte e coperture assicurative esistenti.
             </p>
 
             <p>
