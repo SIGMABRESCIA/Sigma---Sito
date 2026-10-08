@@ -1394,8 +1394,35 @@ function AziendeView({ activeDetail, setActiveDetail, goHome }: { activeDetail: 
   return <SectionView heroImage="/images/aziende-hero.png" accent="green" eyebrow="Soluzioni per Aziende" title="Proteggere un’azienda significa proteggere continuità, persone e responsabilità." subtitle="Costruiamo programmi assicurativi coordinati per imprese che desiderano tutelare operatività, patrimonio, governance e continuità aziendale." heroTitle="RC Aziendale & Responsabilità d’impresa" heroText="Una copertura efficace deve adattarsi al reale funzionamento dell’impresa: attività operative, clienti, dipendenti, fornitori e responsabilità gestionali." heroButton="Approfondisci RC Aziendale" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey="rc-azienda" primaryDetail={<SimpleDetail data={businessDetails["rc-azienda"]} />} cards={businessCards} details={businessDetails} gridTitle="Soluzioni per una protezione aziendale più evoluta." />;
 }
 
-function PrivatiView({ activeDetail, setActiveDetail, goHome }: { activeDetail: Detail; setActiveDetail: (value: Detail) => void; goHome: () => void }) {
-  return <SectionView heroImage="/images/privati-hero.png" accent="gold" eyebrow="Soluzioni per Privati" title="Protezione per famiglia, casa e patrimonio personale." subtitle="Soluzioni pensate per tutelare la vita quotidiana con chiarezza, semplicità e coerenza." heroTitle="Casa, famiglia e responsabilità personale" heroText="Una protezione privata efficace deve essere semplice da capire ma costruita sulle esigenze reali della persona e della famiglia." heroButton="Scopri le soluzioni" activeDetail={activeDetail} setActiveDetail={setActiveDetail} goHome={goHome} primaryKey={null} primaryDetail={null} cards={privateCards} details={privateDetails} gridTitle="Soluzioni per completare la protezione personale e familiare." />;
+function PrivatiView({
+  activeDetail,
+  setActiveDetail,
+  goHome,
+}: {
+  activeDetail: Detail;
+  setActiveDetail: (value: Detail) => void;
+  goHome: () => void;
+}) {
+  return (
+    <SectionView
+      heroImage="/images/privati-hero.png"
+      accent="gold"
+      eyebrow="Soluzioni per Privati"
+      title="Protezione per famiglia, casa e patrimonio personale."
+      subtitle="Soluzioni pensate per tutelare la vita quotidiana, la famiglia e il patrimonio personale con chiarezza, semplicità e coperture costruite sulle esigenze reali."
+      heroTitle="Una protezione costruita intorno alla tua vita."
+      heroText="Una protezione privata efficace deve essere semplice da capire ma costruita sulle esigenze reali della persona e della famiglia."
+      heroButton="Scopri le soluzioni"
+      activeDetail={activeDetail}
+      setActiveDetail={setActiveDetail}
+      goHome={goHome}
+      primaryKey={null}
+      primaryDetail={null}
+      cards={privateCards}
+      details={privateDetails}
+      gridTitle="Soluzioni per completare la protezione personale e familiare."
+    />
+  );
 }
 function AutomotiveView({ goHome }: { goHome: () => void }) {
 const automotiveAreas = [
@@ -1459,7 +1486,7 @@ const automotiveAreas = [
     >
       <button
         onClick={goHome}
-        className="mb-6 inline-flex rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold hover:-translate-y-0.5 hover:shadow-md transition-all duration-300"
+     className="mb-5 inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-[13px] font-semibold hover:-translate-y-0.5 hover:shadow-md transition-all duration-300"
       >
         ← Torna alla home
       </button>
@@ -1674,191 +1701,214 @@ const privatiQuickLinks = [
   return (
  <section
   id={`view-${viewId}`}
-  className={`w-full max-w-[1380px] mx-auto rounded-[2rem] border border-slate-200 px-10 lg:px-16 py-3 lg:py-4 shadow-sm mb-10 sigma-reveal scroll-mt-28
-    ${
-      accent === "blue"
-        ? "bg-gradient-to-br from-white via-white to-[#eef4ff]"
-        : accent === "green"
-        ? "bg-gradient-to-br from-white via-white to-[#edf7f2]"
-        : "bg-gradient-to-br from-white via-white to-[#fff6e8]"
-    }
+className={`w-full max-w-[1380px] mx-auto px-6 sm:px-10 lg:px-16 pt-8 lg:pt-10 pb-12 sigma-reveal scroll-mt-28
+   bg-white
   `}
 
 >
       <button onClick={goHome} className="mb-6 inline-flex rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-bold hover:-translate-y-0.5 hover:shadow-md transition-all duration-300">← Torna alla home</button>
-<div className="mb-6 lg:mb-8 border-b border-slate-200 pb-6 lg:pb-7">
-  <div className="grid lg:grid-cols-[1fr_300px] gap-8 lg:gap-14 items-end">
+{/* HERO PRINCIPALE */}
+<div className="mb-10 lg:mb-12">
 
-    <div className="max-w-5xl">
-      <div
-        className={`inline-flex rounded-full ${style.bg} ${style.text} px-4 py-2 text-[12px] font-bold uppercase tracking-[0.22em] mb-6`}
-      >
+  {/* TESTATA FOTOGRAFICA */}
+  <div className="relative min-h-[400px] lg:min-h-[440px] overflow-hidden rounded-[2rem] text-white">
+
+    {/* FOTO */}
+    <img
+  src={heroImage}
+  alt=""
+className="sigma-hero-image absolute inset-0 h-full w-full object-cover object-center lg:object-right
+           scale-[1.02] animate-[sigmaHeroImage_9s_ease-in-out_infinite_alternate]"
+/>
+    {/* OVERLAY COLORE */}
+    {accent === "blue" && (
+      <div className="absolute inset-0 bg-gradient-to-r from-[#243c7b] from-[0%] via-[#243c7b]/95 via-[42%] to-[#243c7b]/10 to-[82%]" />
+    )}
+
+    {accent === "green" && (
+      <div className="absolute inset-0 bg-gradient-to-r from-[#123f32] from-[0%] via-[#123f32]/95 via-[42%] to-[#123f32]/10 to-[82%]" />
+    )}
+
+    {accent === "gold" && (
+      <div className="absolute inset-0 bg-gradient-to-r from-[#8a531d] from-[0%] via-[#8a531d]/95 via-[42%] to-[#8a531d]/10 to-[82%]" />
+    )}
+
+    {/* CONTENUTO HERO */}
+    <div className="relative z-10 min-h-[400px] lg:min-h-[440px] px-8 py-10 lg:px-14 lg:py-12">
+
+      {/* ETICHETTA */}
+      <div className="inline-flex rounded-full border border-white/25 bg-white/10 backdrop-blur-sm px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white mb-7">
         {eyebrow}
       </div>
 
-      <h2 className="text-[38px] sm:text-[46px] lg:text-[54px] font-semibold text-[#101828] tracking-[-0.045em] leading-[1.02] max-w-4xl">
+      {/* TITOLO */}
+      <h2 className="max-w-[700px] text-[38px] sm:text-[46px] lg:text-[54px] font-semibold tracking-[-0.045em] leading-[1.02] text-white">
         {title}
       </h2>
-    </div>
 
-    <div className="lg:border-l lg:border-slate-200 lg:pl-8">
-      <div className={`text-[11px] font-bold uppercase tracking-[0.2em] ${style.text} mb-3`}>
-        Consulenza Sigma
-      </div>
-
-      <p className="text-[16px] lg:text-[17px] text-slate-600 leading-[1.65]">
+      {/* SOTTOTITOLO */}
+      <p className="mt-6 max-w-[570px] text-[16px] lg:text-[18px] leading-[1.6] text-white/90">
         {subtitle}
       </p>
+
+      {/* CONSULENZA SIGMA */}
+ <div
+  className={`hidden xl:block absolute right-10 top-1/2 -translate-y-1/2
+              w-[320px] rounded-[1.25rem] border border-white/20
+              backdrop-blur-sm px-7 py-6
+              shadow-[0_12px_35px_rgba(15,23,42,0.10)] ${
+    accent === "blue"
+      ? "bg-[#243c7b]/40"
+      : accent === "green"
+      ? "bg-[#123f32]/40"
+      : "bg-[#8a531d]/40"
+  }`}
+>
+        <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-white mb-3">
+          Consulenza Sigma
+        </div>
+
+  <p className="text-[16px] leading-[1.65] text-white">
+          Analizziamo esigenze, esposizioni e priorità per costruire una
+          protezione coerente con il profilo del cliente.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  {/* IN PRIMO PIANO */}
+  <div className="px-2 lg:px-6 pt-9 lg:pt-10">
+
+    <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+
+      {/* TESTO */}
+      <div className="max-w-[720px]">
+        <div className={`text-[11px] font-bold uppercase tracking-[0.2em] ${style.text} mb-3`}>
+          In primo piano
+        </div>
+
+        <h3 className="text-[30px] sm:text-[34px] lg:text-[40px] font-semibold tracking-[-0.035em] leading-[1.08] text-[#101828]">
+          {heroTitle}
+        </h3>
+
+        <p className="mt-4 max-w-[680px] text-[16px] lg:text-[17px] leading-[1.65] text-slate-600">
+          {heroText}
+        </p>
+      </div>
+
+      {/* PULSANTI */}
+      {primaryKey && (
+        <div className="flex flex-col sm:flex-row gap-3">
+          <button
+            onClick={() => {
+              if (activeDetail === primaryKey) {
+                setActiveDetail(null);
+                return;
+              }
+
+              setActiveDetail(primaryKey);
+
+              window.setTimeout(() => {
+                document
+                  .getElementById("primary-detail")
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+              }, 200);
+            }}
+            className="inline-flex items-center justify-center rounded-full bg-[#172033] px-6 py-3.5 text-[15px] font-semibold text-white hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300"
+          >
+            {activeDetail === primaryKey
+              ? "Chiudi approfondimento"
+              : heroButton}
+          </button>
+
+          {viewId === "professionisti" && (
+            <button
+              onClick={() => setQuestionariOpen(!questionariOpen)}
+              className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3.5 text-[15px] font-semibold text-[#172033] hover:border-slate-400 hover:shadow-md transition-all duration-300"
+            >
+              Scarica questionario
+            </button>
+          )}
+        </div>
+      )}
+
+    </div>
+
+    {/* QUATTRO AREE */}
+    <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 border-y border-slate-200">
+
+      {(
+        viewId === "aziende"
+          ? aziendeQuickLinks
+          : viewId === "privati"
+          ? privatiQuickLinks
+          : rcQuickLinks
+      ).map((item, index) => {
+        const isActive = activeDetail === item.key;
+
+        return (
+          <div
+            key={item.key}
+            className="border-b border-slate-200 sm:border-r lg:border-b-0 last:border-r-0"
+          >
+            <button
+              type="button"
+              onClick={() => setActiveDetail(isActive ? null : item.key)}
+              className="group w-full px-5 py-6 text-left"
+            >
+              <div className="flex items-start gap-4">
+
+                <div className="flex-1">
+                  <span className={`block text-[11px] font-bold tracking-[0.18em] ${style.text} mb-3`}>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span className="block text-[16px] lg:text-[17px] font-semibold leading-[1.35] text-[#172033]">
+                    {item.title}
+                  </span>
+                </div>
+
+                <span
+                  className={`mt-6 text-[18px] text-slate-400 transition-all duration-300 ${
+                    isActive
+                      ? "rotate-90"
+                      : "group-hover:translate-x-1"
+                  }`}
+                >
+                  →
+                </span>
+
+              </div>
+            </button>
+
+            {/* TESTO APERTO */}
+            <div
+              className={`grid transition-all duration-500 ease-out ${
+                isActive
+                  ? "grid-rows-[1fr] opacity-100"
+                  : "grid-rows-[0fr] opacity-0"
+              }`}
+            >
+              <div className="overflow-hidden">
+                <p className="px-5 pb-6 text-[14px] leading-[1.65] text-slate-600">
+                  {item.text}
+                </p>
+              </div>
+            </div>
+
+          </div>
+        );
+      })}
+
     </div>
 
   </div>
 </div>
-      <div className={`relative rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden bg-gradient-to-br ${style.gradient} text-white mb-10 lg:mb-12 shadow-[0_20px_80px_rgba(15,51,40,0.18)]`}>
-        {/* Fotografia dedicata, visibile sul lato destro e sfumata verso il colore */}
-        {/* Immagine editoriale della sezione */}
-<div className="absolute inset-0 hidden lg:block pointer-events-none">
-  <img
-    src={heroImage}
-    alt=""
-    className="absolute inset-0 h-full w-full object-cover object-right"
-  />
-
-{accent === "blue" && (
-  <div className="absolute inset-0 bg-gradient-to-r from-[#304d8c] from-[0%] via-[#304d8c]/95 via-[28%] to-transparent to-[88%]" />
-)}
-
-{accent === "green" && (
-  <div className="absolute inset-0 bg-gradient-to-r from-[#123f32] from-[0%] via-[#123f32]/95 via-[28%] to-transparent to-[88%]" />
-)}
-
-{accent === "gold" && (
-  <div className="absolute inset-0 bg-gradient-to-r from-[#965816] from-[0%] via-[#965816]/95 via-[28%] to-transparent to-[88%]" />
-)}
-</div>
-
-      <div
-  id="primary-card"
-  className="relative z-10 px-6 py-8 sm:p-8 lg:p-14 grid lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-center"
->
-          <div>
-            <div className="inline-flex rounded-full bg-white/10 backdrop-blur-md px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] mb-6 border border-white/15">
-              In primo piano
-            </div>
-
-            <h3 className="text-[30px] sm:text-[34px] lg:text-5xl font-semibold lg:font-black tracking-[-0.035em] lg:tracking-[-0.04em] leading-[1.02] lg:leading-[0.95] mb-5 lg:mb-8 max-w-3xl">
-              {heroTitle}
-            </h3>
-
-           <p className="text-[16px] sm:text-[17px] lg:text-[20px] text-white/85 lg:text-white/90 leading-[1.6] lg:leading-[1.65] mb-6 lg:mb-8 max-w-3xl">
-              {heroText}
-            </p>
-
-            {primaryKey && (
-              <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
-                <button
-                  onClick={() => {
-  if (activeDetail === primaryKey) {
-    setActiveDetail(null);
-    return;
-  }
-
-  setActiveDetail(primaryKey);
-
-  window.setTimeout(() => {
-    document
-      .getElementById("primary-detail")
-      ?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-  }, 200);
-}}
-                  className="sigma-button-motion inline-flex items-center justify-center rounded-full bg-white text-[#0f172a] px-6 py-3.5 lg:px-8 lg:py-4 text-[15px] lg:text-base font-semibold lg:font-bold hover:bg-slate-100 transition-all duration-300"
-                >
-                  {activeDetail === primaryKey ? "Chiudi approfondimento" : heroButton}
-                </button>
-
-                {viewId === "professionisti" && (
-                  <button
-                    onClick={() => setQuestionariOpen(!questionariOpen)}
-                   className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-6 py-3.5 lg:px-8 lg:py-4 text-[15px] lg:text-base font-semibold lg:font-bold text-white hover:bg-white/15 transition-all duration-300"
-                  >
-                    Scarica questionario
-                  </button>
-                )}
-              </div>
-            )}
-          </div>
-
-          <div className="space-y-3 max-w-[480px] ml-auto animate-[sigmaFadeUp_1000ms_cubic-bezier(0.22,1,0.36,1)_both]">
-{(
-  viewId === "aziende"
-    ? aziendeQuickLinks
-    : viewId === "privati"
-    ? privatiQuickLinks
-    : rcQuickLinks
-).map((item) => {
-  const isActive = activeDetail === item.key;
-
-  return (
-    <div
-      key={item.key}
-      className={`rounded-2xl border backdrop-blur-md overflow-hidden transition-all duration-300 ${
-        isActive
-          ? "bg-white/95 border-white shadow-lg"
-          : accent === "blue"
-          ? "bg-[#20345f]/75 border-white/20 hover:bg-[#20345f]/45"
-          : accent === "green"
-          ? "bg-[#123f32]/75 border-white/20 hover:bg-[#123f32]/45"
-          : "bg-[#5f3718]/78 border-white/20 hover:bg-[#5f3718]/45"
-      }`}
-    >
-      <button
-        onClick={() => setActiveDetail(isActive ? null : item.key)}
-        className={`group w-full text-left px-6 py-4 text-[17px] font-semibold transition-all duration-300 ${
-          isActive ? "text-[#20345f]" : "text-white"
-        }`}
-      >
-        <span className="flex items-center justify-between gap-4">
-<span
-  className={
-    isActive
-      ? accent === "blue"
-        ? "text-[#243c7b]"
-        : accent === "green"
-        ? "text-[#0f6b46]"
-        : "text-[#8a5418]"
-      : "text-white"
-  }
->
-  {item.title}
-</span>
-
-          <span
-            className={`text-[15px] transition-all duration-300 ${
-              isActive ? "text-[#20345f]/70" : "text-white/70"
-            }`}
-          >
-            {isActive ? "Chiudi ↑" : "Apri →"}
-          </span>
-        </span>
-      </button>
-
-      {isActive && (
-        <div className="px-6 pb-5">
-          <div className="h-px bg-slate-200 mb-4" />
-
-          <p className="text-[16px] leading-[1.7] text-slate-700">
-            {item.text}
-          </p>
-        </div>
-      )}
-    </div>
-  );
-})}
-          </div>
-        </div>
-      </div>
+    
       {viewId === "professionisti" && questionariOpen && (
         <div className="rounded-[2rem] border border-slate-200 bg-[#f8fafc] p-8 mb-10 sigma-reveal">
           <div className="text-sm uppercase tracking-[0.2em] font-bold text-[#243c7b] mb-4">Questionari professionisti</div>
@@ -1897,7 +1947,58 @@ const privatiQuickLinks = [
     </div>
   </div>
 )}
-      <DetailGrid title={gridTitle} cards={cards} active={activeDetail} setActive={setActiveDetail} activeBorder={style.border} details={details} accent={accent} />
+<div
+  className={`relative mt-10 lg:mt-14 overflow-hidden rounded-[2.5rem] px-6 py-10 sm:p-10 lg:px-14 lg:py-14 ${
+    accent === "blue"
+      ? "bg-gradient-to-br from-[#F4F7FC] via-[#EEF3FA] to-[#E7EEF8]"
+      : accent === "green"
+      ? "bg-gradient-to-br from-[#F3F8F5] via-[#EDF5F1] to-[#E5F0EA]"
+      : "bg-gradient-to-br from-[#FFFCF8] via-[#FAF8F4] to-[#F5EFE7]"
+  }`}
+>
+  {/* elementi grafici decorativi */}
+  <div
+    className={`pointer-events-none absolute -right-20 -top-24 h-[320px] w-[320px] rounded-full border ${
+      accent === "blue"
+        ? "border-[#245A8D]/10"
+        : accent === "green"
+        ? "border-[#1F6B52]/10"
+        : "border-[#A66724]/10"
+    }`}
+  />
+
+  <div
+    className={`pointer-events-none absolute -right-5 -top-10 h-[210px] w-[210px] rounded-full border ${
+      accent === "blue"
+        ? "border-[#245A8D]/10"
+        : accent === "green"
+        ? "border-[#1F6B52]/10"
+        : "border-[#A66724]/10"
+    }`}
+  />
+
+  <div
+    className={`pointer-events-none absolute -left-24 bottom-[-120px] h-[280px] w-[280px] rounded-full ${
+      accent === "blue"
+        ? "bg-[#245A8D]/[0.035]"
+        : accent === "green"
+        ? "bg-[#1F6B52]/[0.035]"
+       : "bg-[#A66724]/[0.025]"
+    }`}
+  />
+
+  <div className="relative z-10">
+    <DetailGrid
+      title={gridTitle}
+      cards={cards}
+      active={activeDetail}
+      setActive={setActiveDetail}
+      activeBorder={style.border}
+      details={details}
+      accent={accent}
+    />
+  </div>
+</div>
     </section>
   );
 }
@@ -2006,7 +2107,7 @@ function DetailGrid({
 
   return (
     <>
-      <div className="mt-12 mb-8">
+      <div className="mt-2 mb-8">
         <div
           className={`text-sm font-bold uppercase tracking-[0.2em] mb-4 opacity-80 ${
             accent === "blue"

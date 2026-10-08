@@ -1,4 +1,5 @@
-import { FileText, Menu, X } from "lucide-react";
+import { useState } from "react";
+import { ChevronDown, FileText, Menu, X } from "lucide-react";
 
 type View =
   | "home"
@@ -23,6 +24,8 @@ export default function Header({
   goTo,
   goToSection,
 }: HeaderProps) {
+  const [supportOpen, setSupportOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-[0_8px_30px_rgba(15,23,42,0.04)] transition-all duration-500">
 
@@ -30,86 +33,167 @@ export default function Header({
      <div className="w-full px-5 sm:px-8 lg:px-10 h-20 flex items-center">
 
         {/* BLOCCO DESKTOP LEGGERMENTE SPOSTATO A SINISTRA */}
-        <div className="w-full grid grid-cols-[190px_minmax(0,1fr)_190px] items-center gap-8">
+        <div className="w-full flex items-center justify-between">
 
           {/* LOGO */}
-          <div className="flex items-center justify-start">
-            <img
-              src="/logo-sigma-new.png"
-              alt="Sigma Insurance Broker"
-              className="w-[150px] sm:w-[165px] lg:w-[175px] h-auto object-contain"
-            />
-          </div>
+   <button
+  type="button"
+  onClick={() => goTo("home")}
+ className="flex items-center justify-start cursor-pointer border-0 outline-none bg-transparent p-0 appearance-none focus:outline-none"
+  aria-label="Torna alla Home"
+>
+  <img
+    src="/logo-sigma-new.png"
+    alt="Sigma Insurance Broker"
+    className="w-[150px] sm:w-[165px] lg:w-[175px] h-auto object-contain"
+  />
+</button>
 
           {/* NAVIGAZIONE DESKTOP */}
-    <nav className="hidden 2xl:flex w-full items-center justify-between text-[14px] font-medium text-[#172033] whitespace-nowrap">
-            <button
-              onClick={() => goTo("home")}
-              className="hover:text-[#245A8D] transition-colors"
-            >
-              Home
-            </button>
+{/* NAVIGAZIONE DESKTOP */}
+<nav className="hidden 2xl:flex items-center gap-8 ml-auto mr-5 text-[14px] font-medium text-[#172033] whitespace-nowrap">
 
-            <button
-              onClick={() => goTo("professionisti")}
-              className="hover:text-[#245A8D] transition-colors"
-            >
-              Professionisti
-            </button>
+  {/* SOLUZIONI */}
+  <div className="relative">
+    <button
+      type="button"
+      onClick={() => setSolutionsOpen(!solutionsOpen)}
+      className="relative flex items-center gap-1.5 py-2 transition-colors duration-300 hover:text-[#245A8D]
+                 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0
+                 after:bg-[#245A8D] after:transition-all after:duration-300
+                 hover:after:w-full"
+    >
+      Soluzioni
+      <ChevronDown
+        size={15}
+        className={`transition-transform duration-200 ${
+          solutionsOpen ? "rotate-180" : ""
+        }`}
+      />
+    </button>
 
-            <button
-              onClick={() => goTo("aziende")}
-              className="hover:text-[#245A8D] transition-colors"
-            >
-              Aziende
-            </button>
+    {solutionsOpen && (
+      <div className="absolute top-full left-0 mt-4 w-[220px] flex flex-col rounded-2xl border border-slate-200 bg-white p-2 shadow-xl z-50">
+        <button
+          type="button"
+          onClick={() => {
+            goTo("professionisti");
+            setSolutionsOpen(false);
+          }}
+          className="w-full text-left px-4 py-3 rounded-xl hover:bg-[#eef6fb] hover:text-[#245A8D] transition"
+        >
+          Professionisti
+        </button>
 
-            <button
-              onClick={() => goTo("privati")}
-              className="hover:text-[#245A8D] transition-colors"
-            >
-              Privati
-            </button>
+        <button
+          type="button"
+          onClick={() => {
+            goTo("aziende");
+            setSolutionsOpen(false);
+          }}
+          className="w-full text-left px-4 py-3 rounded-xl hover:bg-[#eef6fb] hover:text-[#245A8D] transition"
+        >
+          Aziende
+        </button>
 
-            <button
-              onClick={() => goTo("automotive")}
-              className="hover:text-[#245A8D] transition-colors"
-            >
-              Automotive
-            </button>
+        <button
+          type="button"
+          onClick={() => {
+            goTo("privati");
+            setSolutionsOpen(false);
+          }}
+          className="w-full text-left px-4 py-3 rounded-xl hover:bg-[#eef6fb] hover:text-[#245A8D] transition"
+        >
+          Privati
+        </button>
+      </div>
+    )}
+  </div>
 
-            <button
-              onClick={() => goToSection("convenzioni")}
-              className="hover:text-[#245A8D] transition-colors"
-            >
-              Convenzioni
-            </button>
+  {/* CONVENZIONI */}
+  <button
+    onClick={() => goToSection("convenzioni")}
+    className="relative py-2 transition-colors duration-300 hover:text-[#245A8D]
+               after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0
+               after:bg-[#245A8D] after:transition-all after:duration-300
+               hover:after:w-full"
+  >
+    Convenzioni
+  </button>
 
-            <button
-              onClick={() => goToSection("contatti")}
-              className="hover:text-[#245A8D] transition-colors"
-            >
-              Contatti
-            </button>
+  {/* AUTOMOTIVE */}
+  <button
+    onClick={() => goTo("automotive")}
+    className="relative py-2 transition-colors duration-300 hover:text-[#245A8D]
+               after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0
+               after:bg-[#245A8D] after:transition-all after:duration-300
+               hover:after:w-full"
+  >
+    Automotive
+  </button>
 
-            <button
-              onClick={() => goTo("reclami")}
-              className="hover:text-[#245A8D] transition-colors"
-            >
-              Reclami
-            </button>
+  {/* CONTATTI */}
+  <button
+    onClick={() => goToSection("contatti")}
+    className="relative py-2 transition-colors duration-300 hover:text-[#245A8D]
+               after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0
+               after:bg-[#245A8D] after:transition-all after:duration-300
+               hover:after:w-full"
+  >
+    Contatti
+  </button>
 
-            <button
-              onClick={() => goTo("whistleblowing")}
-           className="hover:text-[#245A8D] transition-colors whitespace-nowrap"
-            >
-           Segnalazione illeciti
-            </button>
+  {/* SUPPORTO */}
+  <div className="relative">
+    <button
+      type="button"
+      onClick={() => setSupportOpen(!supportOpen)}
+      className="relative flex items-center gap-1.5 py-2 transition-colors duration-300 hover:text-[#245A8D]
+                 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0
+                 after:bg-[#245A8D] after:transition-all after:duration-300
+                 hover:after:w-full"
+    >
+      Supporto
+      <ChevronDown
+        size={15}
+        className={`transition-transform duration-200 ${
+          supportOpen ? "rotate-180" : ""
+        }`}
+      />
+    </button>
 
-          </nav>
+    {supportOpen && (
+      <div className="absolute top-full right-0 mt-4 w-[250px] flex flex-col rounded-2xl border border-slate-200 bg-white p-2 shadow-xl z-50">
+        <button
+          type="button"
+          onClick={() => {
+            goTo("reclami");
+            setSupportOpen(false);
+          }}
+          className="w-full text-left px-4 py-3 rounded-xl hover:bg-[#eef6fb] hover:text-[#245A8D] transition"
+        >
+          Reclami
+        </button>
+
+        <button
+          type="button"
+          onClick={() => {
+            goTo("whistleblowing");
+            setSupportOpen(false);
+          }}
+          className="w-full text-left px-4 py-3 rounded-xl hover:bg-[#eef6fb] hover:text-[#245A8D] transition"
+        >
+          Segnalazione illeciti
+        </button>
+      </div>
+    )}
+  </div>
+
+</nav>
 
          {/* DOCUMENTI + MENU MOBILE */}
-         <div className="flex items-center justify-end gap-3 shrink-0 ml-auto pl-5 sm:pl-0">
+ {/* DOCUMENTI + MENU MOBILE */}
+<div className="flex items-center justify-end gap-3 shrink-0">
 <button
   type="button"
   onClick={() => goTo("documenti")}
