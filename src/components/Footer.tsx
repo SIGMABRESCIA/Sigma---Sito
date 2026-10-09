@@ -1,7 +1,20 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-export default function Footer({ goTo, goToSection }: any) {
+type FooterProps = {
+  goTo: (
+    view:
+      | "professionisti"
+      | "aziende"
+      | "privati"
+      | "automotive"
+      | "reclami"
+      | "whistleblowing"
+  ) => void;
+  goToSection: (section: string) => void;
+};
+
+export default function Footer({ goTo, goToSection }: FooterProps) {
   const [contactsOpen, setContactsOpen] = useState(false);
 
   return (
